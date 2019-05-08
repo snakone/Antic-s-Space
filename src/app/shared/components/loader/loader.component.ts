@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { MenuController } from '@ionic/angular';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-loader',
@@ -9,15 +8,11 @@ import { MenuController } from '@ionic/angular';
 
 export class LoaderComponent implements OnInit {
 
-  version = '0.0.2-dev';
+  @Input() version: string;
 
-  constructor(private menu: MenuController) { }
+  constructor() { }
 
   ngOnInit() {
-    this.menu.open()
-      .then(() => {
-        this.menu.close();
-    });
   }
 
 }
