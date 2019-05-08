@@ -1,0 +1,37 @@
+<div class="comments">
+  <ion-grid>
+    <ion-row class="comments-header">
+      <ion-col class="comments-title">
+        Comments
+      </ion-col>
+      <ion-col class="comments-select">
+          <ion-item>
+            <ion-select slot="end"
+                        interface="popover"
+                        placeholder="All"
+                        mode="ios">
+              <ion-select-option value="brown">Top</ion-select-option>
+              <ion-select-option value="green">Latest</ion-select-option>
+            </ion-select>
+          </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row class="list" *ngFor="let c of [1,2,3]">
+      <ion-col size="3">
+        <ion-avatar>
+          <img src="assets/img/avatar.png"/>
+        </ion-avatar>
+      </ion-col>
+      <ion-col size="8" text-left>
+        <h5>Herry George</h5>
+        <span class="comments-date">
+          Dec 1, 2017 at 11:25 pm
+        </span>
+        <p>Awesome theme. Must buy really worth it. Love it!</p>
+      </ion-col>
+      <ion-col size="1">
+        <ion-icon src="assets/icons/see_more.svg"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>

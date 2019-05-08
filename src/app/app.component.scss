@@ -1,0 +1,22 @@
+ion-menu {
+  --max-width: 360px;
+  --width: 100%;
+}
+
+ion-list {
+  margin-left: 20px;
+}
+
+ion-label {
+  font-size: 1.3em !important;
+}
+
+.active {
+  color: var(--ion-color-primary);
+  font-weight: bold;
+}
+
+.split-pane-md.split-pane-visible>.split-pane-side {
+  max-width: 360px !important;
+}
+

@@ -1,0 +1,10 @@
+<div class="share">
+ <h5>Share now</h5>
+ <ion-grid>
+   <ion-row text-center>
+     <ion-col *ngFor="let i of icons">
+      <img [src]="i.image" (click)="share(i.name)">
+     </ion-col>
+   </ion-row>
+ </ion-grid>
+</div>

@@ -1,0 +1,32 @@
+.footer {
+  max-width: 412px;
+  margin: 0 auto;
+  height: 75px;
+  padding: 5px;
+  border-top: 2px solid var(--ion-color-primary);
+  font-weight: bold;
+  text-align: center;
+  color: var(--ion-color-dark);
+  background: var(--ion-color-light);
+}
+
+p {
+  font-size: .9em;
+  margin: 7px auto;
+  line-height: 24px;
+}
+
+.bold {
+  color: var(--ion-color-primary);
+}
+
+ion-icon {
+  font-size: 1.2em;
+  color: lightcoral;
+  position: relative;
+  top: 2px;
+}
+
+.ionic {
+  color: #1b6dda;
+}

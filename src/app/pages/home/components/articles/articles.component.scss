@@ -1,0 +1,74 @@
+.articles {
+  max-width: 412px;
+  margin: 0 auto;
+  height: 355px;
+  margin-top: 5px;
+}
+
+@media (max-width: 388px) {
+  .articles {
+    margin-top: 25px;
+  }
+}
+
+ion-grid {
+  margin-left: 10px;
+  height: 285px;
+}
+
+img {
+  border-radius: 2px;
+  max-width: 100%;
+  height: 72px;
+}
+
+.image {
+  max-width: 96px !important;
+}
+
+.article {
+  margin-top: 3px;
+  margin-left: 6px;
+  padding-right: 35px;
+  text-align: left;
+
+  &-title {
+    font-size: .9em;
+    margin-top: 3px;
+    padding-right: 10px;
+  }
+}
+
+.date {
+  font-size: .7em;
+  color: var(--ion-color-medium);
+}
+
+.row-pagination {
+  margin: 0 auto;
+}
+
+.pagination /deep/ .ngx-pagination  {
+  margin-top: 0;
+  margin-left: -45px;
+}
+
+.pagination /deep/ .ngx-pagination a {
+  color: var(--ion-color-primary);
+}
+
+.pagination /deep/ .ngx-pagination .current {
+  background: var(--ion-color-primary);
+  border-radius: 4px;
+}
+
+@media (max-width: 359px) {
+  .message-title {
+    font-size: .8em;
+    padding-right: 0;
+  }
+
+  .date {
+    font-size: .8em;
+  }
+}

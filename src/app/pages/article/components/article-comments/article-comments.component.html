@@ -1,0 +1,52 @@
+<div class="comments">
+  <ion-grid>
+    <ion-row class="comments-header">
+      <ion-col [ngClass]="!reply ? 'comments-title' : 'comments-reply'"
+               (click)="reply = !reply">
+        Comments
+      </ion-col>
+      <ion-col [ngClass]="reply ? 'comments-title' : 'comments-reply'"
+                (click)="reply = !reply">
+        Reply
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div *ngIf="!reply">
+    <ion-grid class="animated fadeIn fast grid" id="rows">
+      <ion-row class="list"
+              *ngFor="let c of [1,2,3,4,5,6] |
+                      paginate: { itemsPerPage: itemsPerPage, currentPage: page }">
+        <ion-col size="3">
+          <ion-avatar>
+            <img src="assets/img/avatar.png"/>
+          </ion-avatar>
+        </ion-col>
+        <ion-col size="9" text-left>
+          <h5>Herry George</h5>
+          <span class="comments-date">
+            Dec 1, 2017 at 11:25 pm
+          </span>
+          <p>Awesome theme. Must buy really worth it. Love it!</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid>
+      <ion-row class="row-pagination">
+        <ion-col text-center>
+          <pagination-controls (pageChange)="changeFrom($event)"
+                                class="pagination"
+                                previousLabel=""
+                                nextLabel="">
+          </pagination-controls>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div *ngIf="reply">
+    <ion-grid class="grid-reply">
+      <ion-row>
+        <ion-col></ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</div>
