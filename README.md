@@ -12,4 +12,4 @@ Run on the CLI - npm run ios:dev
 
 * Ionic DevApp
 
-Run on the CLI - ionic serve --devapp"# Antic-s-Space" 
+Run on the CLI - ionic serve --devapp
