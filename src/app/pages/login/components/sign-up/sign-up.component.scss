@@ -1,0 +1,35 @@
+ion-list {
+  margin-bottom: 25px;
+  width: 300px;
+}
+
+ion-button {
+  margin-top: 10px;
+}
+
+.invalid {
+  color: var(--ion-color-danger);
+}
+
+.valid {
+  color: var(--ion-color-success);
+}
+
+form {
+  width: 300px;
+  margin: 0 auto;
+  min-height: 100%;
+}
+
+.antic {
+  color: var(--ion-color-primary);
+}
+
+h1 {
+  margin: 5px auto;
+  font-size: 1.8em;
+}
+
+h3 {
+  margin-bottom: 0;
+}

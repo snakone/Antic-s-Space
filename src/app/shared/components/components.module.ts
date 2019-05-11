@@ -6,22 +6,30 @@ import { SharedModule } from '../shared.module';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoaderComponent } from './loader/loader.component';
+import { PickAvatarComponent } from './pick-avatar/pick-avatar.component';
+import { PaginationComponent } from './pagination/pagination.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
     HeaderComponent,
     FooterComponent,
-    LoaderComponent
+    LoaderComponent,
+    PickAvatarComponent,
+    PaginationComponent
   ],
   imports: [
     CommonModule,
     IonicModule,
-    SharedModule
+    SharedModule,
+    NgxPaginationModule
   ],
   exports: [
     HeaderComponent,
     FooterComponent,
-    LoaderComponent
+    LoaderComponent,
+    PickAvatarComponent,
+    PaginationComponent
   ]
 })
 

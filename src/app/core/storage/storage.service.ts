@@ -36,6 +36,10 @@ export class StorageService {
     return this.data.id;
   }
 
+  public getRemember(): boolean {
+    return this.data.remember;
+  }
+
   // SET
   public setToken(token: string): void {
     if (!token) { return; }

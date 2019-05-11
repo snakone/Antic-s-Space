@@ -1,6 +1,6 @@
 import { NgModule, Optional, SkipSelf, ErrorHandler } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { IonicStorageModule } from '@ionic/storage';
 import { HttpService } from '@core/services/http/http.service';
 import { ErrorHandlerService } from '@core/error-handler/error-handler.service';
@@ -13,6 +13,7 @@ import { IonicGestureConfig } from '@app/shared/config/gesture.config';
 import { HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 import { StorageModule } from './storage/storage.module';
 import { ServicesModule } from './services/services.module';
+import { JwtInterceptor } from './services/http/jwt.interceptor';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, CORE_MODULE_CONSTANTS.TRANSLATE_CONFIG.I18N_PATH,
@@ -40,6 +41,7 @@ export function createTranslateLoader(http: HttpClient) {
     HttpService,
     LanguageService,
     { provide: CORE_MODULE_CONFIG, useValue: CORE_MODULE_CONSTANTS },
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: ErrorHandler, useClass: ErrorHandlerService },
     { provide: HAMMER_GESTURE_CONFIG, useClass: IonicGestureConfig }
 

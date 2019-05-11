@@ -1,0 +1,27 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <ion-icon *ngIf="index === 1"
+                   slot="icon-only"
+                   name="arrow-back">
+        </ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="help-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-slides [options]="slidesOpts" class="swiper-no-swiping">
+    <ion-slide>
+      <app-sign-in (signUp)="swipe()"></app-sign-in>
+    </ion-slide>
+    <ion-slide>
+      <app-sign-up></app-sign-up>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

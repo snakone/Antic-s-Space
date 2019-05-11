@@ -1,13 +1,17 @@
 import { NgModule } from '@angular/core';
 import { HttpService,
-         ArticleService } from './services.index';
+         ArticleService,
+         UserService,
+         AuthService } from './services.index';
 
 @NgModule({
   declarations: [],
   imports: [],
   providers: [
     HttpService,
-    ArticleService
+    ArticleService,
+    UserService,
+    AuthService
   ]
 })
 

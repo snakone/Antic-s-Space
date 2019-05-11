@@ -1,12 +1,14 @@
-<div class="articles" (swipe)="swipe($event)">
-  <ion-grid class="animated fadeIn fast" id="rows">
+<div class="articles" >
+  <ion-grid class="animated fadeIn fast"
+            (swipe)="swipe($event)"
+            id="articles">
     <ion-row *ngFor="let a of articles |
-                     paginate: { itemsPerPage: itemsPerPage, currentPage: page }"
+                     paginate: { id: 'articles_pag', itemsPerPage: itemsPerPage, currentPage: page }"
                      (click)="goToArticle(a._id)">
-      <ion-col class="image">
+      <ion-col size="3" class="image">
         <img [src]="a.image || 'assets/img/slide1.jpg'"/>
       </ion-col>
-      <ion-col class="article">
+      <ion-col size="7" class="article">
         <span class="article-title">
           <strong>{{a.title}}</strong>
         </span>
@@ -14,18 +16,11 @@
           <strong>{{a.author}}</strong> - {{a.created}}
         </p>
       </ion-col>
-    </ion-row>
-  </ion-grid>
-  <ion-grid>
-    <ion-row class="row-pagination">
-      <ion-col text-center>
-        <pagination-controls (pageChange)="changeFrom($event)"
-                              class="pagination"
-                              previousLabel=""
-                              nextLabel="">
-        </pagination-controls>
+      <ion-col size="1">
+        <ion-icon src="assets/icons/see_more.svg"></ion-icon>
       </ion-col>
     </ion-row>
   </ion-grid>
+  <app-pagination (index)="changeFrom($event)" id="articles_pag"></app-pagination>
 </div>
 

@@ -25,7 +25,9 @@ export class ArticlesComponent implements OnInit {
   private getArticles(): void {
     this._article.getArticles()
       .subscribe((res: ArticleResponse) => {
-        if (res.ok) { this.articles.push(...res.articles); }
+        if (res.ok) {
+          this.articles.push(...res.articles);
+        }
       });
   }
 
@@ -45,7 +47,7 @@ export class ArticlesComponent implements OnInit {
   }
 
   changeFrom(value: number): void {
-    const rows = document.getElementById('rows').classList;
+    const rows = document.getElementById('articles').classList;
     if (value - this.page >= 1) {
         rows.add('slideOutLeft');
         rows.remove('slideInRight', 'slideInLeft');

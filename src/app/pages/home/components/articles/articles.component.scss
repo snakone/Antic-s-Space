@@ -1,13 +1,13 @@
 .articles {
   max-width: 412px;
   margin: 0 auto;
-  height: 355px;
+  height: 345px;
   margin-top: 5px;
 }
 
 @media (max-width: 388px) {
   .articles {
-    margin-top: 25px;
+    margin-top: 20px;
   }
 }
 
@@ -31,44 +31,38 @@ img {
   margin-left: 6px;
   padding-right: 35px;
   text-align: left;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 
   &-title {
     font-size: .9em;
     margin-top: 3px;
     padding-right: 10px;
+    margin-bottom: 10px;
   }
+}
+
+ion-icon {
+  position: relative;
+  right: -8px;
+  top: 7px;
+  font-size: 1.2em;
 }
 
 .date {
   font-size: .7em;
   color: var(--ion-color-medium);
-}
-
-.row-pagination {
-  margin: 0 auto;
-}
-
-.pagination /deep/ .ngx-pagination  {
   margin-top: 0;
-  margin-left: -45px;
-}
-
-.pagination /deep/ .ngx-pagination a {
-  color: var(--ion-color-primary);
-}
-
-.pagination /deep/ .ngx-pagination .current {
-  background: var(--ion-color-primary);
-  border-radius: 4px;
 }
 
 @media (max-width: 359px) {
-  .message-title {
+  .article-title {
     font-size: .8em;
     padding-right: 0;
   }
 
   .date {
-    font-size: .8em;
+    font-size: .6em;
   }
 }

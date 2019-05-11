@@ -1,4 +1,4 @@
-import { Article } from './interfaces/interfaces';
+import { Article, Comment } from './interfaces/interfaces';
 
 // MENU
 export const MENU: Item[] = [
@@ -42,3 +42,44 @@ interface Media {
   kind: string;
   people?: number;
 }
+
+// COMMENTS
+export const COMMENTS: Comment[] = [
+  {
+    _id: '1',
+    author: 'Harry George',
+    created: 'Dec 1, 2017 at 11.25 pm',
+    comment: 'Awesome theme. Must buy really worth it. Love it!'
+  },
+  {
+    _id: '2',
+    author: 'Sergi Martinez',
+    created: 'Dec 1, 2017 at 11.25 pm',
+    comment: 'Awesome theme. Must buy really worth it. Love it!'
+  },
+  {
+    _id: '3',
+    author: 'Harry George',
+    created: 'Dec 1, 2017 at 11.25 pm',
+    comment: 'Awesome theme. Must buy really worth it. Love it!'
+  },
+  {
+    _id: '4',
+    author: 'Harry George',
+    created: 'Dec 1, 2017 at 11.25 pm',
+    comment: 'Awesome theme. Must buy really worth it. Love it!'
+  },
+  {
+    _id: '5',
+    author: 'Harry George',
+    created: 'Dec 1, 2017 at 11.25 pm',
+    comment: 'Awesome theme. Must buy really worth it. Love it!'
+  },
+  {
+    _id: '6',
+    author: 'Harry George',
+    created: 'Dec 1, 2017 at 11.25 pm',
+    comment: 'Awesome theme. Must buy really worth it. Love it!'
+  },
+];
+

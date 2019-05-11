@@ -16,22 +16,30 @@
           </ion-item>
       </ion-col>
     </ion-row>
-    <ion-row class="list" *ngFor="let c of [1,2,3]">
+    </ion-grid>
+    <ion-grid id="comments" class="animated fadeIn fast"
+              (swipe)="swipe($event)">
+    <ion-row class="list"
+            *ngFor="let c of comments |
+                    paginate: { id: 'comments_pag',
+                                itemsPerPage: itemsPerPage,
+                                currentPage: page }">
       <ion-col size="3">
         <ion-avatar>
-          <img src="assets/img/avatar.png"/>
+          <img src="assets/img/avatars/avatar-1.png"/>
         </ion-avatar>
       </ion-col>
-      <ion-col size="8" text-left>
-        <h5>Herry George</h5>
+      <ion-col size="7" text-left>
+        <h5>{{c.author}}</h5>
         <span class="comments-date">
-          Dec 1, 2017 at 11:25 pm
+          {{c.created}}
         </span>
-        <p>Awesome theme. Must buy really worth it. Love it!</p>
+        <p class="comment">{{c.comment}}</p>
       </ion-col>
       <ion-col size="1">
         <ion-icon src="assets/icons/see_more.svg"></ion-icon>
       </ion-col>
     </ion-row>
   </ion-grid>
+  <app-pagination (index)="changeFrom($event)" id="comments_pag"></app-pagination>
 </div>

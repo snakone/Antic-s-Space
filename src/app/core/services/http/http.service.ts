@@ -16,7 +16,7 @@ export class HttpService {
   constructor(private http: HttpClient,
               private storage: StorageService) {
                 console.log('HttpService');
-               }
+              }
 
   public get<T>(url: string,
                 headers?: HttpHeaders,

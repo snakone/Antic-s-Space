@@ -42,7 +42,7 @@ h5 {
 }
 
 .grid {
-  height: 375px;
+  height: auto;
 }
 
 .grid-reply {
@@ -54,22 +54,14 @@ ion-avatar {
   height: 60px;
 }
 
-ion-icon {
-  position: relative;
-  right: 10px;
-  top: 7px;
-  color: var(--ion-color-primary-shade);
-  font-size: 1.4em;
-}
-
 .list {
   margin-left: 5px;
   margin-bottom: 5px;
   margin-top: -10px;
 }
 
-p {
-  font-size: .9em;
+.comment {
+  font-size: .8em;
   padding-right: 5px;
 }
 
@@ -90,4 +82,19 @@ p {
 .pagination /deep/ .ngx-pagination .current {
   background: var(--ion-color-primary);
   border-radius: 4px;
+}
+
+@media (max-width: 359px) {
+  .comment {
+    font-size: .7em;
+    padding-right: 0;
+  }
+
+  .comments-date {
+    font-size: .6em;
+  }
+
+  h5 {
+    font-size: .8em;
+  }
 }

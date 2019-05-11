@@ -14,33 +14,23 @@
   <div *ngIf="!reply">
     <ion-grid class="animated fadeIn fast grid" id="rows">
       <ion-row class="list"
-              *ngFor="let c of [1,2,3,4,5,6] |
-                      paginate: { itemsPerPage: itemsPerPage, currentPage: page }">
+              *ngFor="let c of comments |
+                      paginate: { id: 'article_comment', itemsPerPage: itemsPerPage, currentPage: page }">
         <ion-col size="3">
           <ion-avatar>
-            <img src="assets/img/avatar.png"/>
+            <img src="assets/img/avatars/avatar-1.png"/>
           </ion-avatar>
         </ion-col>
         <ion-col size="9" text-left>
-          <h5>Herry George</h5>
+          <h5>{{c.author}}</h5>
           <span class="comments-date">
-            Dec 1, 2017 at 11:25 pm
+            {{c.created}}
           </span>
-          <p>Awesome theme. Must buy really worth it. Love it!</p>
+          <p class="comment">{{c.comment}}</p>
         </ion-col>
       </ion-row>
     </ion-grid>
-    <ion-grid>
-      <ion-row class="row-pagination">
-        <ion-col text-center>
-          <pagination-controls (pageChange)="changeFrom($event)"
-                                class="pagination"
-                                previousLabel=""
-                                nextLabel="">
-          </pagination-controls>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
+    <app-pagination (index)="changeFrom($event)" id="article_comment"></app-pagination>
   </div>
   <div *ngIf="reply">
     <ion-grid class="grid-reply">

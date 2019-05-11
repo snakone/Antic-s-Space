@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Article } from '@app/shared/interfaces/interfaces';
+import { COMMENTS } from '@app/shared/shared.data';
 
 @Component({
   selector: 'app-article-comments',
@@ -13,6 +14,7 @@ export class ArticleCommentsComponent implements OnInit {
   page = 1;
   itemsPerPage = 3;
   reply = false;
+  comments = COMMENTS;
 
   constructor() { }
 

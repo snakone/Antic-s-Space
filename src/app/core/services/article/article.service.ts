@@ -8,7 +8,6 @@ import { Observable } from 'rxjs';
 
 export class ArticleService {
 
-  public page = 0;
   readonly API_ARTICLES = APP_CONSTANTS.END_POINT + 'articles';
 
   constructor(private http: HttpService) {
@@ -16,15 +15,11 @@ export class ArticleService {
   }
 
   public getArticles(): Observable<ArticleResponse> {
-    this.page++;
-    return this.http.get(this.API_ARTICLES + '?page=' + this.page);
+    return this.http.get(this.API_ARTICLES);
   }
 
   public getArticleById(id: string): Observable<ArticleResponse> {
     return this.http.get(this.API_ARTICLES + '/' + id);
   }
 
-  public resetPage(): void {
-    this.page = 0;
-  }
 }

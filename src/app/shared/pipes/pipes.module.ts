@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { AvatarPipe } from './avatar/avatar.pipe';
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule
+  declarations: [
+    AvatarPipe
   ],
-  exports: []
+  imports: [],
+  exports: [
+    AvatarPipe
+  ]
 })
 
 export class PipesModule { }

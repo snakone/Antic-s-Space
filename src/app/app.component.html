@@ -9,6 +9,11 @@
         </ion-header>
         <ion-content>
           <ion-list>
+            <ion-menu-toggle autoHide="false">
+              <ion-item lines="none" routerLink="/profile" routerLinkActive="active">
+                <ion-label>Profile</ion-label>
+              </ion-item>
+            </ion-menu-toggle>
             <ion-menu-toggle autoHide="false" *ngFor="let i of menu">
               <ion-item lines="none" [routerLink]="i.url" routerLinkActive="active">
                 <ion-label>{{i.name}}</ion-label>

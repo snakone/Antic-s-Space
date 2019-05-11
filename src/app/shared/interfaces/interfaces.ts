@@ -16,13 +16,39 @@ export interface ArticleResponse {
   message: string;
   articles?: Article[];
   article?: Article;
-  page?: number;
+}
+
+export interface User {
+  _id?: string;
+  avatar?: string;
+  name: string;
+  email: string;
+  password: string;
+  account: string;
+}
+
+export interface UserResponse {
+  ok: boolean;
+  message: string;
+  user: User;
+  token?: string;
+}
+
+export interface Comment {
+  _id?: string;
+  author: string;
+  created: string;
+  comment: string;
+  user?: User;
 }
 
 export class AppStorage {
   id?: string;
   token?: string;
-  constructor(token: string = STORAGE_CONSTANTS.TOKEN) {
+  remember?: boolean;
+  constructor(token: string = STORAGE_CONSTANTS.TOKEN,
+              remember: boolean = false) {
     this.token = token;
+    this.remember = remember;
   }
 }

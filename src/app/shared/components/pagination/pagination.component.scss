@@ -1,0 +1,18 @@
+.row-pagination {
+  margin: 0 auto;
+  margin-top: -15px;
+}
+
+.pagination /deep/ .ngx-pagination  {
+  margin-top: 0;
+  margin-left: -45px;
+}
+
+.pagination /deep/ .ngx-pagination a {
+  color: var(--ion-color-primary);
+}
+
+.pagination /deep/ .ngx-pagination .current {
+  background: var(--ion-color-primary);
+  border-radius: 4px;
+}

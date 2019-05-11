@@ -33,8 +33,7 @@ export class AppComponent {
   initializeApp() {
     this.platform.ready().then(() => {
       this.statusBar.styleLightContent();
-      if ((this.platform.is('iphone') || this.platform.is('android'))
-        && screen.availWidth < 769) {
+      if (screen.availWidth < 769) {
         this.menuCtrl.open().then(() => {
           this.menuCtrl.close().then(() => {
             this.splashScreen.hide();
@@ -42,6 +41,7 @@ export class AppComponent {
           });
         });
       } else {
+        this.splashScreen.hide();
         this.showSplash = false;
       }
     });
