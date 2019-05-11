@@ -1,4 +1,4 @@
-import { Article, Comment } from './interfaces/interfaces';
+import { Comment } from './interfaces/interfaces';
 
 // MENU
 export const MENU: Item[] = [
@@ -36,12 +36,26 @@ export const SHARE: any[] = [
   { name: 'share', image: 'assets/img/share/share.png' },
 ];
 
-interface Media {
+export interface Media {
   logo: string;
   action: string;
   kind: string;
   people?: number;
 }
+
+export interface Emoji {
+  title: string;
+  height: string;
+  image: string;
+}
+
+export const EMOJIS: Emoji[] = [
+  { title: 'Love', height: '5', image: 'in-love.png' },
+  { title: 'Laugh', height: '70', image: 'laughing.png' },
+  { title: 'Wow', height: '50', image: 'surprised.png' },
+  { title: 'Sad', height: '15', image: 'embarrassed.png' },
+  { title: 'Angry', height: '25', image: 'angry.png' },
+]
 
 // COMMENTS
 export const COMMENTS: Comment[] = [

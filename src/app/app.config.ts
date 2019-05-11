@@ -22,7 +22,7 @@ export interface AppConfig extends ModuleConfig {
 export const APP_CONSTANTS: AppConfig = {
   TITLE: 'Antic\'s Space',
   DEFAULT_LANGUAGE: 'es',
-  END_POINT: DEV,
+  END_POINT: PROD,
   APP_VERSION,
   NAVIGATION: {
     EMPTY: '',

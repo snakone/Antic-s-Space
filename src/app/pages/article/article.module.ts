@@ -14,6 +14,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { RelatedComponent } from './components/related/related.component';
 import { ReactionComponent } from './components/reaction/reaction.component';
 import { ComponentsModule } from '@app/shared/components/components.module';
+import { FaceReactionComponent } from './components/face-reaction/face-reaction.component';
+import { SharedModule } from '@app/shared/shared.module';
 
 const routes: Routes = [
   {
@@ -29,6 +31,7 @@ const routes: Routes = [
     IonicModule,
     NgxPaginationModule,
     ComponentsModule,
+    SharedModule,
     RouterModule.forChild(routes)
   ],
   declarations: [
@@ -38,7 +41,8 @@ const routes: Routes = [
     ShareComponent,
     ArticleCommentsComponent,
     RelatedComponent,
-    ReactionComponent
+    ReactionComponent,
+    FaceReactionComponent
   ]
 })
 export class ArticlePageModule {}
