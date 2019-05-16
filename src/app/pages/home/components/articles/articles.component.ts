@@ -28,7 +28,7 @@ export class ArticlesComponent implements OnInit {
         if (res.ok) {
           this.articles.push(...res.articles);
         }
-      });
+    });
   }
 
   goToArticle(id: string): void {
@@ -54,16 +54,16 @@ export class ArticlesComponent implements OnInit {
         setTimeout(() => {
           rows.remove('slideOutLeft');
           rows.add('slideInRight');
-        }, 500);
+        }, 400);
     } else if (value - this.page <= -1) {
         rows.add('slideOutRight');
         rows.remove('slideInRight', 'slideInLeft');
         setTimeout(() => {
           rows.remove('slideOutRight');
           rows.add('slideInLeft');
-        }, 500);
+        }, 400);
     }
-    setTimeout(() => { this.page = value; }, 500);
+    setTimeout(() => { this.page = value; }, 400);
 }
 
 }

@@ -16,30 +16,29 @@
           </ion-item>
       </ion-col>
     </ion-row>
-    </ion-grid>
-    <ion-grid id="comments" class="animated fadeIn fast"
-              (swipe)="swipe($event)">
+  </ion-grid>
+  <ion-grid id="comments" class="animated fadeIn fast"
+            (swipe)="swipe($event)">
     <ion-row class="list"
             *ngFor="let c of comments |
                     paginate: { id: 'comments_pag',
                                 itemsPerPage: itemsPerPage,
                                 currentPage: page }">
-      <ion-col size="3">
+      <ion-col size="3" class="flex-col">
         <ion-avatar>
           <img src="assets/img/avatars/avatar-1.png"/>
         </ion-avatar>
       </ion-col>
-      <ion-col size="7" text-left>
+      <ion-col size="9" text-left>
         <h5>{{c.author}}</h5>
         <span class="comments-date">
           {{c.created}}
         </span>
         <p class="comment">{{c.comment}}</p>
       </ion-col>
-      <ion-col size="1">
+      <!-- <ion-col size="1" class="flex-col">
         <ion-icon src="assets/icons/see_more.svg"></ion-icon>
-      </ion-col>
+      </ion-col> -->
     </ion-row>
   </ion-grid>
-  <app-pagination (index)="changeFrom($event)" id="comments_pag"></app-pagination>
 </div>

@@ -1,42 +1,24 @@
-<div class="comments">
-  <ion-grid>
-    <ion-row class="comments-header">
-      <ion-col [ngClass]="!reply ? 'comments-title' : 'comments-reply'"
-               (click)="reply = !reply">
-        Comments
-      </ion-col>
-      <ion-col [ngClass]="reply ? 'comments-title' : 'comments-reply'"
-                (click)="reply = !reply">
-        Reply
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-  <div *ngIf="!reply">
-    <ion-grid class="animated fadeIn fast grid" id="rows">
-      <ion-row class="list"
-              *ngFor="let c of comments |
-                      paginate: { id: 'article_comment', itemsPerPage: itemsPerPage, currentPage: page }">
-        <ion-col size="3">
-          <ion-avatar>
-            <img src="assets/img/avatars/avatar-1.png"/>
-          </ion-avatar>
-        </ion-col>
-        <ion-col size="9" text-left>
-          <h5>{{c.author}}</h5>
-          <span class="comments-date">
-            {{c.created}}
-          </span>
-          <p class="comment">{{c.comment}}</p>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-    <app-pagination (index)="changeFrom($event)" id="article_comment"></app-pagination>
-  </div>
-  <div *ngIf="reply">
-    <ion-grid class="grid-reply">
-      <ion-row>
-        <ion-col></ion-col>
-      </ion-row>
-    </ion-grid>
-  </div>
-</div>
+<ion-grid class="animated fadeIn fast grid"
+          id="rows"
+          (swipe)="swipe($event)">
+  <ion-row class="list"
+          *ngFor="let c of comments |
+                  paginate: { id: 'article_comment',
+                              itemsPerPage: itemsPerPage,
+                              currentPage: page }">
+    <ion-col size="3" class="flex-col">
+      <ion-avatar>
+        <img src="assets/img/avatars/avatar-1.png"/>
+      </ion-avatar>
+    </ion-col>
+    <ion-col size="9" text-left>
+      <h5>{{c.author}}</h5>
+      <span class="comments-date">
+        {{c.created}}
+      </span>
+      <p class="comment">{{c.comment}}</p>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+<app-pagination (index)="changeFrom($event)" id="article_comment"></app-pagination>

@@ -2,9 +2,32 @@
   height: auto;
   padding: 5px;
   max-width: 412px;
-  margin: 0 auto;
+  margin: 5px auto;
 }
 
-h4 {
-  margin-bottom: 65px;
- }
+h5 {
+font-size: 17px;
+}
+
+ion-item {
+  margin-top: -5px;
+  margin-left: -4px;
+}
+
+.default {
+  margin-top: 3px;
+  width: 30px;
+  height: 30px;
+}
+
+ion-button {
+  --background: transparent;
+}
+
+ion-icon {
+  font-size: 1.6em;
+}
+
+.reply-reaction {
+  margin-left: 4px;
+}

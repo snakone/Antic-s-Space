@@ -1,44 +1,46 @@
-<h3>Welcome to</h3>
-<h1 class="antic">Antic<ion-text color="light">'</ion-text>s
-  <ion-text color="light">Space</ion-text>
-</h1>
-<h4>Login to your account</h4>
+<div class="signin">
+  <h3>Welcome to</h3>
+  <h1 class="antic">Antic<ion-text color="light">'</ion-text>s
+    <ion-text color="light">Space</ion-text>
+  </h1>
+  <h4>Login to your account</h4>
 
-<form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
-    <ion-list>
-      <ion-item>
-        <ion-label position="floating">Email</ion-label>
-        <ion-input name="email"
-                   type="email"
-                   formControlName="email"
-                   mode="md">
-        </ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating">Password</ion-label>
-        <ion-input name="password"
-                   type="password"
-                   formControlName="password"
-                   mode="md">
-        </ion-input>
-      </ion-item>
-      <ion-item lines="none">
-        <ion-label position="floating">Remember?</ion-label>
-          <ion-checkbox color="light"
-                        [(ngModel)]="remember"
-                        slot="end"
-                        [ngModelOptions]="{standalone: true}">
-          </ion-checkbox>
-      </ion-item>
-    </ion-list>
-    <ion-button type="submit"
-                expand="full"
-                color="primary"
-                shape="round"
-                mode="md"
-                [disabled]="signInForm.invalid">
-                Login
-    </ion-button>
+  <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input name="email"
+                 type="email"
+                 formControlName="email"
+                 mode="md">
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Password</ion-label>
+      <ion-input name="password"
+                 type="password"
+                 formControlName="password"
+                 mode="md">
+      </ion-input>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label position="floating">Remember?</ion-label>
+        <ion-checkbox color="light"
+                      [(ngModel)]="remember"
+                      slot="end"
+                      [ngModelOptions]="{standalone: true}">
+        </ion-checkbox>
+    </ion-item>
+  </ion-list>
+  <ion-button type="submit"
+              expand="full"
+              color="primary"
+              shape="round"
+              mode="md"
+              [disabled]="signInForm.invalid">
+              Login
+  </ion-button>
   </form>
 
-  <h4>No Account? <span class="orange-text" (click)="goToSignUp()">Register</span>!</h4>
+  <h4>No Account? <span class="bold" (click)="goToSignUp()">Register</span>!</h4>
+</div>

@@ -1,8 +1,9 @@
-<h3>Register a</h3>
-<h1 class="antic">Free
-  <ion-text color="light">Account</ion-text>
-</h1>
-<form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+<div class="signup">
+  <h3>Register a</h3>
+  <h1 class="antic">Free
+    <ion-text color="light">Account</ion-text>
+  </h1>
+  <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
   <app-pick-avatar (avatar)="avatar = $event">
   </app-pick-avatar>
   <ion-list>
@@ -37,4 +38,6 @@
               mode="md">
               CREATE
   </ion-button>
-</form>
+  </form>
+</div>
+

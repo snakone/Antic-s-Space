@@ -13,12 +13,22 @@ export class ArticleCommentsComponent implements OnInit {
   @Input() article: Article;
   page = 1;
   itemsPerPage = 3;
-  reply = false;
   comments = COMMENTS;
 
   constructor() { }
 
   ngOnInit() {}
+
+  swipe(event: any): void {
+    if (event.deltaX < 0) {
+      if (this.page === Math.ceil
+        (this.comments.length / this.itemsPerPage)) { return; }
+      this.changeFrom(this.page + 1);
+    } else {
+      if (this.page === 1) { return; }
+      this.changeFrom(this.page - 1);
+    }
+  }
 
   changeFrom(value: number): void {
     const rows = document.getElementById('rows').classList;
@@ -38,6 +48,6 @@ export class ArticleCommentsComponent implements OnInit {
         }, 500);
     }
     setTimeout(() => { this.page = value; }, 500);
-}
+  }
 
 }

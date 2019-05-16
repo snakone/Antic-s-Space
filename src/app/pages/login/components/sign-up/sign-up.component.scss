@@ -1,10 +1,16 @@
+.signup {
+  min-height: 100%;
+  margin-top: 10px;
+}
+
 ion-list {
   margin-bottom: 25px;
+  margin-top: -5px;
   width: 300px;
 }
 
 ion-button {
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
 .invalid {
@@ -31,5 +37,24 @@ h1 {
 }
 
 h3 {
+  margin-top: 25px;
   margin-bottom: 0;
+}
+
+@media (max-width: 340px) {
+  h1 {
+    font-size: 1.2em;
+  }
+
+  h3 {
+    font-size: .8em;
+  }
+
+  ion-list, form {
+    width: 270px;
+  }
+
+  ion-input {
+    font-size: .9em;
+  }
 }

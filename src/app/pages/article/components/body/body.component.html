@@ -3,7 +3,10 @@
   <p class="date">
     <strong>{{article.author}}</strong> - {{article.created}}
   </p>
+
+  <app-article-share [article]="article"></app-article-share>
+
   <p class="message">{{article.message}}<br><br>{{article.message}}</p>
   <img [src]="article.images[0]"/>
-  <p class="message">{{article.message}}</p>
+  <p class="message last">{{article.message}}</p>
 </div>

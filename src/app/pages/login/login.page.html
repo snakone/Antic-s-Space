@@ -1,12 +1,12 @@
 <ion-header no-border>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-button (click)="goBack()">
         <ion-icon *ngIf="index === 1"
                    slot="icon-only"
+                   class="back"
+                   (click)="goBack()"
                    name="arrow-back">
         </ion-icon>
-      </ion-button>
     </ion-buttons>
     <ion-buttons slot="end">
       <ion-button>

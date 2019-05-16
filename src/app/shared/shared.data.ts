@@ -34,6 +34,8 @@ export const SHARE: any[] = [
   { name: 'twitter', image: 'assets/img/share/twitter.png' },
   { name: 'google', image: 'assets/img/share/google+.png' },
   { name: 'share', image: 'assets/img/share/share.png' },
+  { name: 'comment', image: 'assets/img/share/comment.png' },
+  { name: 'emoji', image: 'assets/img/share/emoji.png' }
 ];
 
 export interface Media {
@@ -53,7 +55,7 @@ export const EMOJIS: Emoji[] = [
   { title: 'Love', height: '5', image: 'in-love.png' },
   { title: 'Laugh', height: '70', image: 'laughing.png' },
   { title: 'Wow', height: '50', image: 'surprised.png' },
-  { title: 'Sad', height: '15', image: 'embarrassed.png' },
+  { title: 'Sad', height: '100', image: 'embarrassed.png' },
   { title: 'Angry', height: '25', image: 'angry.png' },
 ]
 
@@ -95,5 +97,29 @@ export const COMMENTS: Comment[] = [
     created: 'Dec 1, 2017 at 11.25 pm',
     comment: 'Awesome theme. Must buy really worth it. Love it!'
   },
+  {
+    _id: '7',
+    author: 'Harry George',
+    created: 'Dec 1, 2017 at 11.25 pm',
+    comment: 'Awesome theme. Must buy really worth it. Love it!'
+  },
+  {
+    _id: '8',
+    author: 'Harry George',
+    created: 'Dec 1, 2017 at 11.25 pm',
+    comment: 'Awesome theme. Must buy really worth it. Love it!'
+  },
+  {
+    _id: '9',
+    author: 'Harry George',
+    created: 'Dec 1, 2017 at 11.25 pm',
+    comment: 'Awesome theme. Must buy really worth it. Love it!'
+  },
+  {
+    _id: '10',
+    author: 'Harry George',
+    created: 'Dec 1, 2017 at 11.25 pm',
+    comment: 'Awesome theme. Must buy really worth it. Love it!'
+  }
 ];
 

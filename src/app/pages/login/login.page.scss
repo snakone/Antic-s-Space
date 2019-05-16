@@ -10,4 +10,13 @@ ion-slides {
   height: 100%;
 }
 
+@media (max-height: 500px) {
+  ion-slides {
+    height: auto;
+  }
+}
 
+.back {
+  margin-left: 5px !important;
+  font-size: 1.7em !important;
+}

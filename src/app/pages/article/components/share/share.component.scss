@@ -1,12 +1,11 @@
 .share {
-  margin: 25px auto;
-  max-width: 412px;
-  padding: 0 16px;
-  margin-bottom: 15px;
+  margin: 0 auto;
 }
 
 img {
-  width: 40px;
+  width: 27px;
+  margin: 0 10px;
+  margin-left: 0;
 }
 
 ion-grid {
@@ -15,4 +14,8 @@ ion-grid {
 
 h5 {
   margin-top: 10px;
+}
+
+.m-left {
+  margin-left: 15px;
 }

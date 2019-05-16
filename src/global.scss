@@ -15,3 +15,12 @@
 .in-item {
   max-width: 100% !important;
 }
+
+.animated.fast {
+  animation-duration: 400ms;
+}
+
+.bold {
+  color: var(--ion-color-primary);
+  font-weight: bold;
+}

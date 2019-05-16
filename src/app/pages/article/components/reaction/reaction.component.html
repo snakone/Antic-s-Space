@@ -1,4 +1,10 @@
-<div class="reaction"text-center>
-  <h4>PEOPLE REACTED</h4>
-  <app-face-reaction></app-face-reaction>
+<div class="reaction" text-center>
+  <ion-list>
+    <ion-item lines="none">
+      <ion-avatar (click)="openEmojis($event)" slot="end">
+        <img class="default" src="assets/img/emojis/smiley.png"/>
+      </ion-avatar>
+      <ion-icon slot="end" color="light" name="mail"></ion-icon>
+    </ion-item>
+  </ion-list>
 </div>

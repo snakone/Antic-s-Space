@@ -1,13 +1,19 @@
 .articles {
   max-width: 412px;
   margin: 0 auto;
-  height: 345px;
+  height: auto;
   margin-top: 5px;
 }
 
 @media (max-width: 388px) {
   .articles {
     margin-top: 20px;
+  }
+}
+
+@media (max-width: 359px) {
+  .articles {
+    margin-top: 30px;
   }
 }
 
@@ -22,13 +28,7 @@ img {
   height: 72px;
 }
 
-.image {
-  max-width: 96px !important;
-}
-
 .article {
-  margin-top: 3px;
-  margin-left: 6px;
   padding-right: 35px;
   text-align: left;
   display: flex;

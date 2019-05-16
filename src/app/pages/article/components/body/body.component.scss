@@ -12,6 +12,10 @@ h5 {
 
 .message {
   font-size: .9em;
+
+  &.last {
+    margin-bottom: 5px;
+  }
 }
 
 .date {

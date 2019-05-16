@@ -5,3 +5,9 @@ ion-title {
     color: var(--ion-color-primary);
   }
 }
+
+@media (min-width: 769px) {
+  .menu {
+    display: none;
+  }
+}

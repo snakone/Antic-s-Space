@@ -6,7 +6,6 @@ import { TranslateService } from '@ngx-translate/core';
 import { APP_CONSTANTS } from '@app/app.config';
 
 import { timer } from 'rxjs';
-import { MENU } from '@shared/shared.data';
 
 @Component({
   selector: 'app-root',
@@ -18,14 +17,13 @@ export class AppComponent {
 
   showSplash = true;
   version = APP_CONSTANTS.APP_VERSION;
-  menu = MENU;
 
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
     private translate: TranslateService,
-    private menuCtrl: MenuController,
+    private menu: MenuController,
   ) {
     this.initializeApp();
   }
@@ -34,15 +32,15 @@ export class AppComponent {
     this.platform.ready().then(() => {
       this.statusBar.styleLightContent();
       if (screen.availWidth < 769) {
-        this.menuCtrl.open().then(() => {
-          this.menuCtrl.close().then(() => {
+        this.menu.open().then(() => {
+          this.menu.close().then(() => {
             this.splashScreen.hide();
             this.showSplash = false;
           });
         });
       } else {
         this.splashScreen.hide();
-        this.showSplash = false;
+        timer(2000).subscribe(() => { this.showSplash = false; });
       }
     });
     this.translate.setDefaultLang(APP_CONSTANTS.DEFAULT_LANGUAGE);

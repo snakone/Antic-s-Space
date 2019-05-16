@@ -5,7 +5,7 @@
   height: auto;
 
   &-header {
-    margin-bottom: 25px;
+    margin-bottom: 8px;
   }
 
   &-title {
@@ -49,14 +49,14 @@ ion-select {
 }
 
 ion-avatar {
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
+  margin-top: -3px;
 }
 
 ion-icon {
   position: relative;
   right: -18px;
-  top: 7px;
   font-size: 1.2em;
 }
 
@@ -83,4 +83,10 @@ ion-icon {
   h5 {
     font-size: .8em;
   }
+}
+
+.flex-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
