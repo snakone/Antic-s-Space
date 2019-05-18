@@ -1,22 +1,22 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ReactionComponent } from './reaction.component';
+import { ArticleMakerComponent } from './article-maker.component';
 
-describe('ReactionComponent', () => {
-  let component: ReactionComponent;
-  let fixture: ComponentFixture<ReactionComponent>;
+describe('ArticleMakerComponent', () => {
+  let component: ArticleMakerComponent;
+  let fixture: ComponentFixture<ArticleMakerComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ReactionComponent ],
+      declarations: [ ArticleMakerComponent ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ReactionComponent);
+    fixture = TestBed.createComponent(ArticleMakerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

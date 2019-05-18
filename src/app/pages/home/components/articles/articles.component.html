@@ -22,3 +22,5 @@
   <app-pagination (index)="changeFrom($event)" id="articles_pag"></app-pagination>
 </div>
 
+<app-loader *ngIf="!articles"></app-loader>
+

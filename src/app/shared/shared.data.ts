@@ -3,6 +3,7 @@ import { Comment } from './interfaces/interfaces';
 // MENU
 export const MENU: Item[] = [
   { name: 'Home', url: '/home' },
+  { name: 'Articles', url: '/articles' },
   { name: 'Gaming', url: '/gaming' }
 ];
 

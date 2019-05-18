@@ -8,6 +8,7 @@ export interface Article {
   created?: string;
   message?: string;
   comments?: number;
+  code?: string[];
   images?: string[];
 }
 
@@ -20,11 +21,11 @@ export interface ArticleResponse {
 
 export interface User {
   _id?: string;
-  avatar?: string;
   name: string;
   email: string;
   password: string;
   account: string;
+  avatar?: string;
 }
 
 export interface UserResponse {

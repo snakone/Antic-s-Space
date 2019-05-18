@@ -11,6 +11,7 @@
 @import '~@ionic/angular/css/flex-utils.css';
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 @import './theme/partials/index/partials.scss';
+@import '../node_modules/highlight.js/styles/vs2015.css';
 
 .in-item {
   max-width: 100% !important;
@@ -21,6 +22,10 @@
 }
 
 .bold {
-  color: var(--ion-color-primary);
+  color: var(--ion-color-primary) !important;
   font-weight: bold;
+
+  &:focus {
+    outline: none;
+  }
 }

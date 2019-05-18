@@ -15,9 +15,20 @@ import { StorageModule } from './storage/storage.module';
 import { ServicesModule } from './services/services.module';
 import { JwtInterceptor } from './services/http/jwt.interceptor';
 
+import { HighlightModule } from 'ngx-highlightjs';
+import javascript from 'highlight.js/lib/languages/javascript';
+import typescript from 'highlight.js/lib/languages/typescript';
+
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, CORE_MODULE_CONSTANTS.TRANSLATE_CONFIG.I18N_PATH,
                                  CORE_MODULE_CONSTANTS.TRANSLATE_CONFIG.SUFFIX_FILE);
+}
+
+export function hljsLanguages() {
+  return [
+    {name: 'typescript', func: typescript},
+    {name: 'javascript', func: javascript}
+  ];
 }
 
 @NgModule({
@@ -35,6 +46,9 @@ export function createTranslateLoader(http: HttpClient) {
         deps: [HttpClient]
       }
     }),
+    HighlightModule.forRoot({
+      languages: hljsLanguages
+    })
   ],
   declarations: [],
   providers: [

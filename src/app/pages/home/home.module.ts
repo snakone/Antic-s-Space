@@ -12,10 +12,7 @@ import { MainSliderComponent } from './components/main-slider/main-slider.compon
 import { SmallSliderComponent } from './components/small-slider/small-slider.component';
 import { LatestComponent } from './components/latest/latest.component';
 import { ArticlesComponent } from './components/articles/articles.component';
-import { PopularComponent } from './components/popular/popular.component';
-import { ConnectComponent } from './components/connect/connect.component';
 import { TrendingComponent } from './components/trending/trending.component';
-import { CommentsComponent } from './components/comments/comments.component';
 
 @NgModule({
   imports: [
@@ -38,10 +35,7 @@ import { CommentsComponent } from './components/comments/comments.component';
     SmallSliderComponent,
     TrendingComponent,
     LatestComponent,
-    ArticlesComponent,
-    ConnectComponent,
-    PopularComponent,
-    CommentsComponent
+    ArticlesComponent
   ]
 })
 

@@ -5,6 +5,8 @@ import { NativeModule } from '@shared/native/native.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { LanguageModule } from '@app/core/language/language.module';
 
+import { HighlightModule } from 'ngx-highlightjs';
+
 @NgModule({
   declarations: [],
     imports: [
@@ -12,13 +14,15 @@ import { LanguageModule } from '@app/core/language/language.module';
     PipesModule,
     NativeModule,
     TranslateModule,
-    LanguageModule
+    LanguageModule,
+    HighlightModule
   ],
   exports: [
     PipesModule,
     NativeModule,
     TranslateModule,
-    LanguageModule
+    LanguageModule,
+    HighlightModule
   ],
   providers: []
 })

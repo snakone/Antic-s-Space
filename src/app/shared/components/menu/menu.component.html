@@ -1,9 +1,20 @@
 <ion-list>
-  <ion-menu-toggle autoHide="false">
-    <ion-item lines="none" routerLink="/profile" routerLinkActive="active">
-      <ion-label>Profile</ion-label>
-    </ion-item>
-  </ion-menu-toggle>
+  <ion-item *ngIf="user" lines="none" class="user">
+    <ion-avatar slot="start">
+      <img [src]="user.avatar | avatar"/>
+    </ion-avatar>
+    <ion-label>
+        <h4>{{user.name}}</h4>
+      <p>{{user.email}}</p>
+      <p><span>Account type:</span> {{user.account}}</p>
+      <p>
+        <span>Visit your</span>
+        <ion-menu-toggle>
+          <span class="bold" routerLink="/profile"> Profile</span>
+        </ion-menu-toggle>
+      </p>
+    </ion-label>
+  </ion-item>
   <ion-menu-toggle autoHide="false" *ngFor="let i of menu">
     <ion-item lines="none" [routerLink]="i.url" routerLinkActive="active">
       <ion-label>{{i.name}}</ion-label>

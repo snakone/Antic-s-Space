@@ -1,13 +1,13 @@
 .footer {
   max-width: 412px;
-  margin: 0 auto;
+  margin: 0 16px;
   height: 75px;
   padding: 5px;
   border-top: 2px solid var(--ion-color-primary);
   font-weight: bold;
   text-align: center;
-  color: var(--ion-color-dark);
-  background: var(--ion-color-light);
+  color: var(--ion-color-light);
+  // background: var(--ion-color-light);
 }
 
 p {

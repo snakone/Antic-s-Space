@@ -16,6 +16,11 @@ const routes: Routes = [
     canActivate: [NavigationGuard]
   },
   {
+    path: 'articles',
+    loadChildren: './pages/articles/articles.module#ArticlesPageModule',
+    canActivate: [NavigationGuard]
+  },
+  {
     path: 'gaming',
     loadChildren: './pages/gaming/gaming.module#GamingPageModule',
     canActivate: [NavigationGuard]
@@ -30,7 +35,7 @@ const routes: Routes = [
     loadChildren: './pages/profile/profile.module#ProfilePageModule',
     canActivate: [NavigationGuard]
   },
-  { path: '**', loadChildren: './shared/components/error404/error404.module#Error404PageModule' },
+  { path: '**', loadChildren: './shared/components/error404/error404.module#Error404PageModule' }
 ];
 
 @NgModule({
