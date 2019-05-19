@@ -1,0 +1,23 @@
+.comment {
+  padding: 10px;
+}
+
+ion-textarea {
+  padding: 14px 0;
+  --padding-top: 16px !important;
+  --padding-bottom: 0 !important;
+  --padding-start: 0 !important;
+}
+
+h5 {
+  margin-top: 10px;
+  display: inline-block;
+}
+
+ion-icon {
+  display: inline-block;
+  margin-left: 25px;
+  position: relative;
+  top: 5px;
+  font-size: 1.5em;
+}

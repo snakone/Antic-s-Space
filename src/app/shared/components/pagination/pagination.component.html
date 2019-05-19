@@ -1,0 +1,12 @@
+<ion-grid>
+  <ion-row class="row-pagination">
+    <ion-col text-center>
+      <pagination-controls (pageChange)="changeFrom($event)"
+                            class="pagination"
+                            previousLabel=""
+                            nextLabel=""
+                            [id]="id">
+      </pagination-controls>
+    </ion-col>
+  </ion-row>
+</ion-grid>

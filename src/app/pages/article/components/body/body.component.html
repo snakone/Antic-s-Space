@@ -1,0 +1,9 @@
+<div class="body">
+  <h5>{{article.title}}</h5>
+  <p class="date">
+    <strong>{{article.author}}</strong> - {{article.created}}
+  </p>
+
+  <app-article-share [article]="article"></app-article-share>
+  <app-article-maker [article]="article"></app-article-maker>
+</div>

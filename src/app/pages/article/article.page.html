@@ -1,0 +1,8 @@
+<ion-content *ngIf="article" class="animated fadeInUp fast">
+  <app-article-header [article]="article"></app-article-header>
+  <app-article-body [article]="article"></app-article-body>
+  <app-article-footer [article]="article"></app-article-footer>
+</ion-content>
+
+<app-loader *ngIf="!article"></app-loader>
+

@@ -1,0 +1,10 @@
+ion-menu {
+    --max-width: 360px;
+    --width: 100%!important;
+}
+
+@media (min-width: 769px) {
+    .split-pane-md.split-pane-visible>.split-pane-side {
+        max-width: 360px !important;
+    }
+}

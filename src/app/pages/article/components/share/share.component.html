@@ -1,0 +1,6 @@
+<div class="share">
+ <span *ngFor="let i of icons">
+    <img [src]="i.image" (click)="share(i.name)"
+         [ngClass]="{'m-left': i.name === 'comment'}">
+ </span>
+</div>

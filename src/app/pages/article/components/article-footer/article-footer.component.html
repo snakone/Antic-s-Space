@@ -1,0 +1,20 @@
+<div class="footer">
+  <ion-grid>
+    <ion-row class="footer-header" text-center>
+      <ion-col [ngClass]="header === 'comment' ? 'header-title' : 'header-uncheck'"
+               (click)="header = 'comment'">
+        Comments
+      </ion-col>
+      <ion-col [ngClass]="header === 'reaction' ? 'header-title' : 'header-uncheck'"
+                (click)="header = 'reaction'">
+        Reactions
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div *ngIf="header === 'comment'">
+    <app-article-comments [article]="article"></app-article-comments>
+  </div>
+  <div *ngIf="header === 'reaction'">
+    <app-face-reaction [article]="article"></app-face-reaction>
+  </div>
+</div>

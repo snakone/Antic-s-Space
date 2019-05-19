@@ -1,0 +1,13 @@
+ion-title {
+  font-size: 1.2em;
+
+  & .antic {
+    color: var(--ion-color-primary);
+  }
+}
+
+@media (min-width: 769px) {
+  .menu {
+    display: none;
+  }
+}
