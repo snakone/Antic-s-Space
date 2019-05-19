@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "author": "Sergi Martínez",
   "homepage": "https://ionicframework.com/",
+  "config": {
+    "ionic_purge_unused_fonts": false
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -13,7 +16,8 @@
     "android:dev": "ionic cordova platform add android && ionic cordova build android",
     "android:prod": "ionic cordova platform add android && ionic cordova build android --prod",
     "ios:dev": "ionic cordova platform add ios && ionic cordova build ios",
-    "ios:prod": "ionic cordova platform add ios && ionic cordova build ios --prod"
+    "ios:prod": "ionic cordova platform add ios && ionic cordova build ios --prod",
+    "release": "ng build --prod --aot=false --build-optimizer=false"
   },
   "private": true,
   "dependencies": {
@@ -46,7 +50,6 @@
     "core-js": "^2.5.4",
     "hammerjs": "^2.0.8",
     "highlight.js": "^9.15.6",
-    "ionic-tooltips": "^3.1.0",
     "ngx-highlightjs": "^3.0.3",
     "ngx-pagination": "^3.2.1",
     "rxjs": "~6.3.3",

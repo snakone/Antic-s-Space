@@ -1,15 +1,16 @@
+<ion-icon class="close" name="close" (click)="close()"></ion-icon>
 <ion-list>
-  <ion-item *ngIf="user" lines="none" class="user">
+  <ion-item *ngIf="_user.user" lines="none" class="user">
     <ion-avatar slot="start">
-      <img [src]="user.avatar | avatar"/>
+      <img [src]="_user.user.avatar | avatar"/>
     </ion-avatar>
     <ion-label>
-        <h4>{{user.name}}</h4>
-      <p>{{user.email}}</p>
-      <p><span>Account type:</span> {{user.account}}</p>
-      <p>
+        <h4>{{_user.user.name}}</h4>
+      <p>{{_user.user.email}}</p>
+      <p><span>Account type:</span> {{_user.user.account}}</p>
+      <p *ngIf="_user.user.account != 'Guest'">
         <span>Visit your</span>
-        <ion-menu-toggle>
+        <ion-menu-toggle autoHide="false">
           <span class="bold" routerLink="/profile"> Profile</span>
         </ion-menu-toggle>
       </p>

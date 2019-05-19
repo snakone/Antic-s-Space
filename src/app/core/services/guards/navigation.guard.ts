@@ -16,12 +16,13 @@ export class NavigationGuard implements CanActivate {
               private storage: StorageService) { }
 
   canActivate(): Observable<boolean> | Promise<boolean> | boolean {
-    if (this.storage.getToken()) { return true; }
+    if (this.user.getUser() &&
+        this.storage.getToken() ||
+        this.user.areYouGuest()) { return true; }
     return this.user.verifyToken()
       .then(async (res) => {
         if (!res) {
           await this.storage.clear();
-          if (this.storage.getId()) { return !res; }
           this.nav.navigateRoot('/login');
         }
         return res;

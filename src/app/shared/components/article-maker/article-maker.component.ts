@@ -24,23 +24,22 @@ export class ArticleMakerComponent implements AfterViewInit, OnDestroy {
   constructor(private route: ActivatedRoute,
               private compiler: Compiler,
               private injector: Injector,
-              private module: NgModuleRef<any>,
-              private router: Router) {}
+              private module: NgModuleRef<any>) {}
 
   ngAfterViewInit() {
     const tmpID = this.route.snapshot.params.id;
     if (tmpID) {
-      this.routerOb = this.route.params.subscribe(param => {
-        const id = this.router.url.substring(1) || '';
+      this.routerOb = this.route.params.subscribe(() => {
         const tmpCmp = Component({
           template: this.article.message,
-          styles: [`code { font-size: .7em; padding: 15px 20px 20px 20px;
+          styles: [`code { font-size: .7em; padding: 22px 15px 20px 15px;
                            border-radius: 5px; }
-                    .code-box { background: #1e1e1e; border-radius: 5px; }
-                    .btn { --background: transparent; --box-shadow: none;
-                           position: relative; left: 232px; top: 7px; font-size: 1.4em; }
-                    .lang { position: relative; left: 12px;
-                            color: #e05c0f; font-size: .8em; font-weight: bold; }
+                    .code-box { margin-top: -10px;}
+                    .copy { position: relative; background: #4c4e52; padding: 4px; }
+                    .btn { position: relative; right: 7px; top: 1px;
+                           font-size: 1.3em; }
+                    .lang { position: relative; left: 14px; top: 25px; z-index: 100;
+                            font-size: .8em; font-weight: bold; }
                     pre { margin: 0 }`]
         })(class TempComponent {
           public code: string[];

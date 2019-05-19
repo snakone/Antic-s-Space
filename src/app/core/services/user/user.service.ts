@@ -12,7 +12,7 @@ export class UserService {
   readonly API_USERS = APP_CONSTANTS.END_POINT + 'users';
   readonly API_TOKEN = APP_CONSTANTS.END_POINT + 'token';
 
-  private user: User;
+  public user: User;
   public token = '';
 
   constructor(private http: HttpService,
@@ -58,6 +58,20 @@ export class UserService {
 
   public setUser(user: User): void {
     this.user = user;
+  }
+
+  public setGuest(): void {
+    this.user = {
+      name: 'Guest',
+      email: 'Guest@AnticSpace.com',
+      account: 'Guest',
+      password: 'Guest'
+    };
+  }
+
+  public areYouGuest(): boolean {
+    if (!this.user) { return; }
+    return this.user.account === 'Guest' ? true : false;
   }
 
   public deleteUser(): Observable<UserResponse> {

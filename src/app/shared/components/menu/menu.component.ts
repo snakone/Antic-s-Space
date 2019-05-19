@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MENU } from '@app/shared/shared.data';
-import { User } from '@app/shared/interfaces/interfaces';
 import { UserService } from '@core/services/user/user.service';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-menu',
@@ -12,19 +12,14 @@ import { UserService } from '@core/services/user/user.service';
 export class MenuComponent implements OnInit {
 
   menu = MENU;
-  user: User;
 
-  constructor(private _user: UserService) { }
+  constructor(public _user: UserService,
+              private menuCtrl: MenuController) { }
 
-  ngOnInit() {
-    this.getUser();
-  }
+  ngOnInit() {}
 
-  getUser(): void {
-    this._user.loadUser()
-      .then(() => {
-        this.user = this._user.getUser();
-    });
+  close(): void {
+    this.menuCtrl.close();
   }
 
 }
