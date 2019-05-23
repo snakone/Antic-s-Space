@@ -33,9 +33,10 @@ export class ArticleMakerComponent implements AfterViewInit, OnDestroy {
         const tmpCmp = Component({
           template: this.article.message,
           styles: [`code { font-size: .7em; padding: 22px 15px 20px 15px;
-                           border-radius: 5px; }
+                           border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; }
                     .code-box { margin-top: -10px;}
-                    .copy { position: relative; background: #4c4e52; padding: 4px; }
+                    .copy { position: relative; background: #4c4e52; padding: 4px;
+                            border-top-right-radius: 5px; border-top-left-radius: 5px}
                     .btn { position: relative; right: 7px; top: 1px;
                            font-size: 1.3em; }
                     .lang { position: relative; left: 14px; top: 25px; z-index: 100;

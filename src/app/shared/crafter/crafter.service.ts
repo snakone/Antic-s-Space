@@ -55,6 +55,15 @@ export class CrafterService {
     return await modal.present();
   }
 
+  public async popOver(component: ComponentRef, data?: any): Promise<void> {
+    const popover = await this.popOverCtrl.create({
+      component: component,
+      translucent: true,
+      componentProps: data
+    });
+    return await popover.present();
+  }
+
   private translateMessage(msg: string): string {
     const message = this.translate.instant(msg);
     return message;

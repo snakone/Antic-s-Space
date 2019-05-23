@@ -11,18 +11,23 @@ import { NavController } from '@ionic/angular';
 
 export class ProfilePage implements OnInit {
 
-  constructor(private _user: UserService,
+  segment = 'Info';
+
+  constructor(public _user: UserService,
               private storage: StorageService,
               private nav: NavController) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   async logOut(remove: boolean): Promise<void> {
     remove ? this.storage.reset() :
     await this.storage.clear();
     this._user.logout();
     this.nav.navigateRoot('/login');
+  }
+
+  segmentChange(e: string): void {
+    console.log(e);
   }
 
 }

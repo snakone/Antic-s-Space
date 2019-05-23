@@ -13,6 +13,7 @@ import { EmojiSelectorComponent } from './emoji-selector/emoji-selector.componen
 import { MenuComponent } from './menu/menu.component';
 import { RouterModule } from '@angular/router';
 import { InputCommentComponent } from './input-comment/input-comment.component';
+import { HelpComponent } from './help/help.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { InputCommentComponent } from './input-comment/input-comment.component';
     PickAvatarComponent,
     PaginationComponent,
     EmojiSelectorComponent,
-    InputCommentComponent
+    InputCommentComponent,
+    HelpComponent
   ],
   imports: [
     CommonModule,
@@ -40,8 +42,10 @@ import { InputCommentComponent } from './input-comment/input-comment.component';
     PickAvatarComponent,
     PaginationComponent,
     EmojiSelectorComponent,
-    InputCommentComponent
-  ]
+    InputCommentComponent,
+    HelpComponent
+  ],
+  entryComponents: [HelpComponent]
 })
 
 export class ComponentsModule { }

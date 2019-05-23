@@ -12,14 +12,14 @@ import { InputCommentComponent } from '@app/shared/components/input-comment/inpu
 import { EmojiSelectorComponent } from '@app/shared/components/emoji-selector/emoji-selector.component';
 
 import { ArticlePage } from './article.page';
-import { HeaderComponent } from './components/header/header.component';
-import { BodyComponent } from './components/body/body.component';
+import { ArticleHeaderComponent } from './components/article-header/article-header.component';
+import { ArticleBodyComponent } from './components/article-body/article-body.component';
 import { ShareComponent } from './components/share/share.component';
 import { ArticleFooterComponent } from './components/article-footer/article-footer.component';
 import { FaceReactionComponent } from './components/face-reaction/face-reaction.component';
 import { ArticleCommentsComponent } from './components/article-comments/article-comments.component';
 import { LegendComponent } from './components/legend/legend.component';
-import { ArticleMakerComponent } from '../../shared/components/article-maker/article-maker.component';
+import { ArticleMakerComponent } from '@shared/components/article-maker/article-maker.component';
 
 const routes: Routes = [
   {
@@ -40,8 +40,8 @@ const routes: Routes = [
   ],
   declarations: [
     ArticlePage,
-    HeaderComponent,
-    BodyComponent,
+    ArticleHeaderComponent,
+    ArticleBodyComponent,
     ShareComponent,
     ArticleFooterComponent,
     FaceReactionComponent,

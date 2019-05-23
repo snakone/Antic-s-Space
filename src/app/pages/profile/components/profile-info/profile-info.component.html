@@ -1,0 +1,51 @@
+<div class="info animated fadeInUp fast">
+<ion-list>
+  <ion-item-divider>
+    User Data
+  </ion-item-divider>
+  <ion-item-sliding #sliding>
+    <ion-item detail>
+      <ion-icon slot="start" color="light" name="person"></ion-icon>
+      <ion-label>{{user.name}}</ion-label>
+    </ion-item>
+    <ion-item-options>
+      <ion-item-option (click)="editName()">
+        <ion-icon slot="icon-only" color="light" name="create"></ion-icon>
+      </ion-item-option>
+    </ion-item-options>
+  </ion-item-sliding>
+  <ion-item-sliding #sliding>
+    <ion-item detail>
+      <ion-icon slot="start" color="light" name="mail"></ion-icon>
+      <ion-label>{{user.email}}</ion-label>
+    </ion-item>
+    <ion-item-options>
+      <ion-item-option  (click)="editEmail()">
+        <ion-icon slot="icon-only" color="light" name="create"></ion-icon>
+      </ion-item-option>
+    </ion-item-options>
+  </ion-item-sliding>
+  <ion-item>
+    <ion-icon slot="start" color="light" name="key"></ion-icon>
+    <ion-label>{{user.account}}</ion-label>
+  </ion-item>
+  <ion-item-divider class="divider">
+    Interactions
+  </ion-item-divider>
+  <ion-item>
+    <ion-icon slot="start" color="light" name="mail-open"></ion-icon>
+    <ion-label>Comments</ion-label>
+    <ion-badge color="primary" slot="end">24</ion-badge>
+  </ion-item>
+  <ion-item>
+    <ion-icon slot="start" color="light" name="happy"></ion-icon>
+    <ion-label>Reactions</ion-label>
+    <ion-badge color="primary" slot="end">2</ion-badge>
+  </ion-item>
+  <ion-item>
+    <ion-icon slot="start" color="light" name="heart"></ion-icon>
+    <ion-label>Likes</ion-label>
+    <ion-badge color="primary" slot="end">5</ion-badge>
+  </ion-item>
+</ion-list>
+</div>

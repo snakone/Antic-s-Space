@@ -1,5 +1,7 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
 import { IonSlides } from '@ionic/angular';
+import { CrafterService } from '@shared/crafter/crafter.service';
+import { HelpComponent } from '@app/shared/components/help/help.component';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +15,11 @@ export class LoginPage implements OnInit {
   slidesOpts = { effect: 'flip', zoom: false };
   index: number;
 
-  constructor() { }
+  @HostListener('window:resize') onResize() {
+    if (this.slides) { setTimeout(() => this.slides.update(), 100); }
+  }
+
+  constructor(private crafter: CrafterService) { }
 
   ngOnInit() {
   }
@@ -30,6 +36,10 @@ export class LoginPage implements OnInit {
     this.slides.getActiveIndex().then(i => {
       this.index = i;
     });
+  }
+
+  async openHelp(): Promise<void> {
+    await this.crafter.popOver(HelpComponent);
   }
 
 }

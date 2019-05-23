@@ -35,7 +35,7 @@ export class AppComponent {
         this.menu.open().then(() => {
           this.menu.close().then(() => {
             this.splashScreen.hide();
-            this.showSplash = false;
+            timer(2000).subscribe(() => this.showSplash = false);
           });
         });
       } else {

@@ -11,13 +11,15 @@
       <p *ngIf="_user.user.account != 'Guest'">
         <span>Visit your</span>
         <ion-menu-toggle autoHide="false">
-          <span class="bold" routerLink="/profile"> Profile</span>
+          <span class="bold" routerLink="/profile" routerDirection="root"> Profile</span>
         </ion-menu-toggle>
       </p>
     </ion-label>
   </ion-item>
   <ion-menu-toggle autoHide="false" *ngFor="let i of menu">
-    <ion-item lines="none" [routerLink]="i.url" routerLinkActive="active">
+    <ion-item lines="none" [routerLink]="i.url"
+                            routerLinkActive="active"
+                            routerDirection="root">
       <ion-label>{{i.name}}</ion-label>
     </ion-item>
   </ion-menu-toggle>

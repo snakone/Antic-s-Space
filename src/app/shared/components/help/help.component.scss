@@ -1,0 +1,40 @@
+.help {
+  padding: 15px 20px;
+  font-size: .8em;
+  text-align: center;
+}
+
+p {
+  margin: 20px auto;
+}
+
+.social-share {
+  margin-right: -8px;
+  margin-bottom: -5px;
+  margin-top: 5px;
+
+  & img {
+    width: 40px;
+    height: 40px;
+    margin: 0 5px;
+    vertical-align: middle;
+  }
+
+  & .follow {
+    margin-right: 10px;
+    margin-top: 3px;
+    font-size: 1.2em;
+  }
+}
+
+ion-avatar {
+  display: block;
+  margin: 20px auto;
+  width: 75px;
+  height: 75px;
+}
+
+ion-button {
+  margin-top: 30px;
+  margin-bottom: 15px;
+}

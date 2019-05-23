@@ -1,11 +1,8 @@
 {
   "name": "antics-space",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "author": "Sergi Martínez",
   "homepage": "https://ionicframework.com/",
-  "config": {
-    "ionic_purge_unused_fonts": false
-  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -15,8 +12,6 @@
     "e2e": "ng e2e",
     "android:dev": "ionic cordova platform add android && ionic cordova build android",
     "android:prod": "ionic cordova platform add android && ionic cordova build android --prod",
-    "ios:dev": "ionic cordova platform add ios && ionic cordova build ios",
-    "ios:prod": "ionic cordova platform add ios && ionic cordova build ios --prod",
     "release": "ng build --prod --aot=false --build-optimizer=false"
   },
   "private": true,

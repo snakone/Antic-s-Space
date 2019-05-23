@@ -1,0 +1,24 @@
+<div class="profile-header" text-center>
+  <ion-icon slot="icon-only"
+            name="arrow-round-back"
+            color="light"
+            (click)="goBack()">
+  </ion-icon>
+  <img [src]="user.avatar | avatar"/>
+  <p>{{user.name}}</p>
+  <span>{{user.email}}</span>
+
+  <ion-segment (ionChange)="segmentChanged($event)"
+               value="Info"
+               mode="md">
+    <ion-segment-button value="Info">
+      <ion-label>Info</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="History">
+      <ion-label>History</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="Settings">
+      <ion-label>Settings</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+</div>

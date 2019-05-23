@@ -4,11 +4,11 @@ import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-article-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss'],
+  templateUrl: './article-header.component.html',
+  styleUrls: ['./article-header.component.scss'],
 })
 
-export class HeaderComponent implements OnInit {
+export class ArticleHeaderComponent implements OnInit {
 
   @Input() article: Article;
 

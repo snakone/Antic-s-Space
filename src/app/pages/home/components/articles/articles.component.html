@@ -1,11 +1,11 @@
-<div class="articles">
+<div class="articles animated fadeIn" *ngIf="articles.length > 0">
   <ion-grid class="animated fadeIn fast"
             (swipe)="swipe($event)"
             id="articles">
     <ion-row class="row" *ngFor="let a of articles |
-                     paginate: { id: 'articles_pag',
-                                 itemsPerPage: itemsPerPage, currentPage: page }"
-                     (click)="goToArticle(a._id)">
+                    paginate: { id: 'articles_pag',
+                                itemsPerPage: itemsPerPage, currentPage: page }"
+                    (click)="goToArticle(a._id)">
       <ion-col size="4" class="image">
         <img [src]="a.image || 'assets/img/slide1.jpg'"/>
       </ion-col>
@@ -22,5 +22,10 @@
   <app-pagination (index)="changeFrom($event)" id="articles_pag"></app-pagination>
 </div>
 
-<app-loader *ngIf="!articles"></app-loader>
+<div class="flex-box" *ngIf="articles.length === 0">
+  <ion-spinner name="lines" color="primary"></ion-spinner>
+</div>
+
+
+
 

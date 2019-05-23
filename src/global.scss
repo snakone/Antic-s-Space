@@ -29,3 +29,30 @@
     outline: none;
   }
 }
+
+.bold-only {
+  font-weight: bold;
+}
+
+.sc-ion-popover-md-h {
+  --width: 300px !important;
+}
+
+.javascript, .html, .css {
+  font-weight: bold;
+}
+
+.javascript {
+  color: rgb(247, 223, 30);
+}
+
+.html {
+  color: rgb(228, 77, 38);
+}
+
+.css {
+ color:rgb(31, 95, 170);
+}
+
+
+
