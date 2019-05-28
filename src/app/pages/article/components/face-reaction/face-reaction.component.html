@@ -3,7 +3,7 @@
 <ul class="chart">
   <li *ngFor="let e of emojis" class="animated fadeIn">
     <span [ngStyle]="{'height': e.height | percentage}"
-          [attr.title]="e.title"></span>
+          [attr.title]="e.title | translate"></span>
     <img [src]="e.image | emoji"/>
     <span class="perc"
           [ngClass]="{'low': heightToLow(e.height),

@@ -6,6 +6,8 @@ import { TranslateModule } from '@ngx-translate/core';
 import { LanguageModule } from '@app/core/language/language.module';
 
 import { HighlightModule } from 'ngx-highlightjs';
+import { ThemeService } from './theme/theme.service';
+import { ErrorHandlerService } from '@core/error-handler/error-handler.service';
 
 @NgModule({
   declarations: [],
@@ -15,7 +17,7 @@ import { HighlightModule } from 'ngx-highlightjs';
     NativeModule,
     TranslateModule,
     LanguageModule,
-    HighlightModule
+    HighlightModule,
   ],
   exports: [
     PipesModule,
@@ -24,7 +26,10 @@ import { HighlightModule } from 'ngx-highlightjs';
     LanguageModule,
     HighlightModule
   ],
-  providers: []
+  providers: [
+    ThemeService,
+    ErrorHandlerService
+  ]
 })
 
 export class SharedModule { }

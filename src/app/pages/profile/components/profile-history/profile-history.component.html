@@ -1,6 +1,26 @@
-<div class="history animated fadeInUp fast">
-  <p>
-    profile-history works!
-  </p>
-</div>
+<div class="history animated fadeIn">
+  <ion-list>
+    <div class="animated fast"
+        id="history-items"
+        (swipe)="swipe($event)">
+            <ion-item *ngFor="let h of history |
+                              paginate: { id: 'history',
+                                          itemsPerPage: itemsPerPage,
+                                          currentPage: page }">
+              <ion-label>
+                {{h.article}}
+                <p>Dec 1, 2017</p>
+              </ion-label>
+              <ion-icon slot="end"
+                        [color]="h.type | iconColor"
+                        [name]="h.type | iconType">
+              </ion-icon>
+            </ion-item>
+      </div>
+    </ion-list>
+  </div>
+
+<app-pagination (index)="changeFrom($event)" id="history"></app-pagination>
+
+
 

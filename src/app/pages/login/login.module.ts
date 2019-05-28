@@ -8,7 +8,7 @@ import { LoginPage } from './login.page';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { ComponentsModule } from '@app/shared/components/components.module';
-import { HelpComponent } from '@shared/components/help/help.component';
+import { SharedModule } from '@app/shared/shared.module';
 
 const routes: Routes = [
   {
@@ -24,6 +24,7 @@ const routes: Routes = [
     IonicModule,
     ReactiveFormsModule,
     ComponentsModule,
+    SharedModule,
     RouterModule.forChild(routes)
   ],
   declarations: [

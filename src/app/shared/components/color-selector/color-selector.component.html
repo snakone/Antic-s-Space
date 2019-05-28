@@ -1,0 +1,8 @@
+<div class="colors" text-center>
+  <h5>{{'color.pick' | translate}}</h5>
+  <div class="color"
+      [ngStyle]="{'background': c.color}"
+      *ngFor="let c of colors"
+      (click)="changeTheme(c.name)">
+  </div>
+</div>

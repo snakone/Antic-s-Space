@@ -1,22 +1,22 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ProfileBodyComponent } from './profile-body.component';
+import { ColorSelectorComponent } from './color-selector.component';
 
-describe('ProfileBodyComponent', () => {
-  let component: ProfileBodyComponent;
-  let fixture: ComponentFixture<ProfileBodyComponent>;
+describe('ColorSelectorComponent', () => {
+  let component: ColorSelectorComponent;
+  let fixture: ComponentFixture<ColorSelectorComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ProfileBodyComponent ],
+      declarations: [ ColorSelectorComponent ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ProfileBodyComponent);
+    fixture = TestBed.createComponent(ColorSelectorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

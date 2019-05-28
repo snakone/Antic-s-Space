@@ -2,9 +2,15 @@
   max-width: 412px;
   margin: 0 auto;
   padding: 10px;
+  padding-top: 5px;
+  padding-bottom: 0;
 }
 
-ion-label {
+ion-list {
+  margin-bottom: 0;
+}
+
+ion-label, ion-input {
   font-size: .8em !important;
 }
 
@@ -17,10 +23,26 @@ ion-item-divider {
   border-bottom: 0;
 }
 
+ion-buttons {
+  margin-left: 0 !important;
+  position: relative;
+  left: 10px;
+}
+
 ion-item-option {
   background: transparent;
 }
 
 .divider {
-  margin-top: 25px;
+  margin-top: 10px;
+}
+
+.edit {
+  font-size: 1.85em !important;
+  padding: 0;
+}
+
+.btn {
+  --padding-start: 1px;
+  --padding-end: 1px;
 }

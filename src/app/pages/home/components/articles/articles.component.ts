@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { ArticleService } from '@core/services/article/article.service';
-import { Article, ArticleResponse } from '@app/shared/interfaces/interfaces';
+import { Article } from '@app/shared/interfaces/interfaces';
 
 @Component({
   selector: 'app-articles',
@@ -11,25 +10,14 @@ import { Article, ArticleResponse } from '@app/shared/interfaces/interfaces';
 
 export class ArticlesComponent implements OnInit {
 
+  @Input() articles: Article[];
   page = 1;
-  articles: Article[] = [];
   itemsPerPage = 3;
 
-  constructor(private router: Router,
-              private _article: ArticleService) { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
-    this.getArticles();
    }
-
-  private getArticles(): void {
-    this._article.getArticles()
-      .subscribe((res: ArticleResponse) => {
-        if (res.ok) {
-          this.articles.push(...res.articles);
-        }
-    });
-  }
 
   goToArticle(id: string): void {
     this.router.navigateByUrl('/article/' + id);

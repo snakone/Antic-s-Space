@@ -42,7 +42,10 @@ export class JwtInterceptor implements HttpInterceptor {
           this.nav.navigateRoot('/login');
           return throwError(error);
         });
-      } else { return throwError(error); }
+        } else {
+          return throwError(error);
+        }
     })));
   }
+
 }

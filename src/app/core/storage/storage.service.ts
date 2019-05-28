@@ -36,6 +36,14 @@ export class StorageService {
     return this.data.id;
   }
 
+  public getTheme(): string {
+    return this.data.theme;
+  }
+
+  public getLanguage(): string {
+    return this.data.language;
+  }
+
   public getRemember(): boolean {
     return this.data.remember;
   }
@@ -44,12 +52,17 @@ export class StorageService {
   public setToken(token: string): void {
     if (!token) { return; }
     this.data.token = token;
-    this.save(STORAGE_CONSTANTS.TOKEN_KEY, token);
+    this.save();
   }
 
   public setId(id: string): void {
     this.data.id = id;
-    this.save('id', id);
+    this.save();
+  }
+
+  public setLanguage(lang: string) {
+    this.data.language = lang;
+    this.save();
   }
 
   // CLEAR

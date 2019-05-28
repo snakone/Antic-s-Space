@@ -33,7 +33,6 @@ img {
 .active {
   color: var(--ion-color-primary);
   font-weight: bold;
-  --background: var(--ion-color-light);
   margin-right: 20px;
   --border-radius: 5px;
 }
@@ -53,7 +52,11 @@ h4 {
 .user {
   margin-top: 8px;
   margin-bottom: 16px;
-  border-bottom: 2px solid var(--ion-color-primary);
+  border-bottom: 1px solid var(--ion-color-light);
   padding-bottom: 16px;
   margin-right: 16px;
+}
+
+.email {
+  margin: 8px auto;
 }

@@ -3,11 +3,11 @@
     <ion-row class="footer-header" text-center>
       <ion-col [ngClass]="header === 'comment' ? 'header-title' : 'header-uncheck'"
                (click)="header = 'comment'">
-        Comments
+        {{'comments' | translate}}
       </ion-col>
       <ion-col [ngClass]="header === 'reaction' ? 'header-title' : 'header-uncheck'"
                 (click)="header = 'reaction'">
-        Reactions
+        {{'reactions' | translate}}
       </ion-col>
     </ion-row>
   </ion-grid>

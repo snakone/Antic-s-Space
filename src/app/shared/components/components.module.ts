@@ -14,6 +14,7 @@ import { MenuComponent } from './menu/menu.component';
 import { RouterModule } from '@angular/router';
 import { InputCommentComponent } from './input-comment/input-comment.component';
 import { HelpComponent } from './help/help.component';
+import { ColorSelectorComponent } from './color-selector/color-selector.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { HelpComponent } from './help/help.component';
     PaginationComponent,
     EmojiSelectorComponent,
     InputCommentComponent,
-    HelpComponent
+    HelpComponent,
+    ColorSelectorComponent
   ],
   imports: [
     CommonModule,
@@ -43,9 +45,15 @@ import { HelpComponent } from './help/help.component';
     PaginationComponent,
     EmojiSelectorComponent,
     InputCommentComponent,
-    HelpComponent
+    HelpComponent,
+    ColorSelectorComponent
   ],
-  entryComponents: [HelpComponent]
+  entryComponents: [
+    HelpComponent,
+    EmojiSelectorComponent,
+    InputCommentComponent,
+    ColorSelectorComponent
+  ]
 })
 
 export class ComponentsModule { }

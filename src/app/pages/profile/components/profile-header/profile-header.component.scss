@@ -2,7 +2,7 @@
   position: relative;
   width: 100%;
   height: 225px;
-  background-image: url('assets/img/profile/profile_bg.png');
+  background-image: var(--ion-background);
   background-position: center;
   background-size: 100% 100%;
   max-width: 412px;
@@ -12,8 +12,8 @@
 ion-icon {
   position: absolute;
   right: 8px;
-  top: 6px;
-  font-size: 1.9em;
+  top: 8px;
+  font-size: 2em;
 }
 
 img {
@@ -25,6 +25,7 @@ img {
 p {
   margin: 5px auto;
   margin-bottom: 0;
+  font-size: 1.2em;
 }
 
 span {
@@ -51,6 +52,6 @@ ion-segment-button {
 }
 
 .sc-ion-segment-md-h {
-  --indicator-color: #E55418 !important;
+  --indicator-color: transparent !important;
   --ripple-color: transparent !important;
 }

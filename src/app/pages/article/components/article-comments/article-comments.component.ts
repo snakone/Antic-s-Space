@@ -31,7 +31,7 @@ export class ArticleCommentsComponent implements OnInit {
   }
 
   changeFrom(value: number): void {
-    const rows = document.getElementById('rows').classList;
+    const rows = document.getElementById('article-comments').classList;
     if (value - this.page >= 1) {
         rows.add('slideOutLeft');
         rows.remove('slideInRight', 'slideInLeft');

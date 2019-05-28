@@ -1,4 +1,28 @@
 .settings {
   max-width: 412px;
   margin: 0 auto;
+  padding: 10px;
+  padding-top: 5px;
+  padding-bottom: 0;
+}
+
+ion-list {
+  margin-bottom: 0;
+}
+
+ion-label, ion-select {
+  font-size: .8em !important;
+}
+
+ion-item-divider {
+  border-bottom: 0;
+}
+
+.logout {
+  margin-top: 25px;
+}
+
+.btn {
+  --background: transparent;
+  --box-shadow: none;
 }

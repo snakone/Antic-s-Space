@@ -33,20 +33,12 @@ export class ShareComponent implements OnInit {
     if (value === 'comment') { this.openComment(); }
   }
 
-  async openEmojis(ev?: any): Promise<void> {
-    const emojis = await this.pop.create({
-      component: EmojiSelectorComponent,
-      translucent: true
-    });
-    return await emojis.present();
+  openEmojis(ev?: any): void {
+    this.crafter.popOver(EmojiSelectorComponent);
   }
 
-  async openComment(ev?: any): Promise<void> {
-    const comment = await this.pop.create({
-      component: InputCommentComponent,
-      translucent: true
-    });
-    return await comment.present();
+  openComment(ev?: any): void {
+    this.crafter.popOver(InputCommentComponent);
   }
 
 }

@@ -1,4 +1,4 @@
-import { Comment } from './interfaces/interfaces';
+import { Comment, Item, Media, Share, Emoji, History } from './interfaces/interfaces';
 
 // MENU
 export const MENU: Item[] = [
@@ -6,11 +6,6 @@ export const MENU: Item[] = [
   { name: 'Articles', url: '/articles' },
   { name: 'Gaming', url: '/gaming' }
 ];
-
-interface Item {
-  name: string;
-  url: string;
-}
 
 // HOME SLIDERS
 export const mainSliderOpts = {
@@ -30,7 +25,7 @@ export const SOCIAL: Media[] = [
   { logo: 'assets/img/youtube.png', action: 'Subscribe', people: 5.422, kind: 'Subscribers' },
 ];
 
-export const SHARE: any[] = [
+export const SHARE: Share[] = [
   { name: 'facebook', image: 'assets/img/share/facebook.png' },
   { name: 'twitter', image: 'assets/img/share/twitter.png' },
   { name: 'google', image: 'assets/img/share/google+.png' },
@@ -38,19 +33,6 @@ export const SHARE: any[] = [
   { name: 'comment', image: 'assets/img/share/comment.png' },
   { name: 'emoji', image: 'assets/img/share/emoji.png' }
 ];
-
-export interface Media {
-  logo: string;
-  action: string;
-  kind: string;
-  people?: number;
-}
-
-export interface Emoji {
-  title: string;
-  height: string;
-  image: string;
-}
 
 export const EMOJIS: Emoji[] = [
   { title: 'Love', height: '5', image: 'in-love.png' },
@@ -123,4 +105,49 @@ export const COMMENTS: Comment[] = [
     comment: 'Awesome theme. Must buy really worth it. Love it!'
   }
 ];
+
+// HISTORY
+export const HISTORY: History[] = [
+  {
+    article: 'How to get the perfect travel shot',
+    type: 'Like'
+  },
+  {
+    article: 'How to get the perfect travel shot',
+    type: 'Comment'
+  },
+  {
+    article: 'How to get the perfect travel shot',
+    type: 'Reaction'
+  },
+  {
+    article: 'How to get the perfect travel shot',
+    type: 'Like'
+  },
+  {
+    article: 'How to get the perfect travel shot',
+    type: 'Like'
+  },
+  {
+    article: 'How to get the perfect travel shot',
+    type: 'Comment'
+  },
+  {
+    article: 'How to get the perfect travel shot',
+    type: 'Like'
+  },
+  {
+    article: 'How to get the perfect travel shot',
+    type: 'Reaction'
+  },
+  {
+    article: 'How to get the perfect travel shot',
+    type: 'Reaction'
+  },
+  {
+    article: 'How to get the perfect travel shot',
+    type: 'Like'
+  },
+];
+
 

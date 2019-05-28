@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
@@ -13,6 +13,7 @@ import { ProfileSegmentsComponent } from './components/profile-segments/profile-
 import { ProfileInfoComponent } from './components/profile-info/profile-info.component';
 import { ProfileHistoryComponent } from './components/profile-history/profile-history.component';
 import { ProfileSettingsComponent } from './components/profile-settings/profile-settings.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 const routes: Routes = [
   {
@@ -28,12 +29,13 @@ const routes: Routes = [
     IonicModule,
     ComponentsModule,
     SharedModule,
+    ReactiveFormsModule,
+    NgxPaginationModule,
     RouterModule.forChild(routes)
   ],
   declarations: [
     ProfilePage,
     ProfileHeaderComponent,
-    ProfileSegmentsComponent,
     ProfileInfoComponent,
     ProfileHistoryComponent,
     ProfileSettingsComponent

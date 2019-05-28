@@ -1,0 +1,52 @@
+:root {
+  .default {
+     /** primary **/
+  --ion-color-primary: #e05c0f;
+  --ion-color-primary-rgb: 56, 128, 255;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 224, 92, 15;
+  --ion-color-primary-shade: #d4540a;
+  --ion-color-primary-tint: #dd7132;
+  --ion-background: url('https://s3.eu-west-3.amazonaws.com/antic-space/profile/profile_orange.png');
+  }
+
+  .pink {
+  --ion-color-primary: #e91e63;
+  --ion-color-primary-rgb: 233,30,99;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255,255,255;
+  --ion-color-primary-shade: #cd1a57;
+  --ion-color-primary-tint: #eb3573;
+  --ion-background: url('https://s3.eu-west-3.amazonaws.com/antic-space/profile/profile_pink.png');
+  }
+
+  .blue {
+  --ion-color-primary: #3880ff;
+  --ion-color-primary-rgb: 56,128,255;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255,255,255;
+  --ion-color-primary-shade: #3171e0;
+  --ion-color-primary-tint: #4c8dff;
+  --ion-background: url('https://s3.eu-west-3.amazonaws.com/antic-space/profile/profile_blue.png');
+  }
+
+  .red {
+  --ion-color-primary: #b00020;
+  --ion-color-primary-rgb: 176,0,32;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255,255,255;
+  --ion-color-primary-shade: #9b001c;
+  --ion-color-primary-tint: #b81a36;
+  --ion-background: url('https://s3.eu-west-3.amazonaws.com/antic-space/profile/profile_red.png');
+  }
+
+  .cyan {
+  --ion-color-primary: #03dac6;
+  --ion-color-primary-rgb: 3,218,198;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 0,0,0;
+  --ion-color-primary-shade: #03c0ae;
+  --ion-color-primary-tint: #1cdecc;
+  --ion-background: url('https://s3.eu-west-3.amazonaws.com/antic-space/profile/profile_cyan.png');
+  }
+}

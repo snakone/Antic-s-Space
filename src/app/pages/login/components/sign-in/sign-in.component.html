@@ -1,9 +1,9 @@
 <div class="signin">
-  <h3>Welcome to</h3>
+  <h3>{{'welcome.to' | translate}}</h3>
   <h1 class="antic">Antic<ion-text color="light">'</ion-text>s
     <ion-text color="light">Space</ion-text>
   </h1>
-  <h4>Login to your account</h4>
+  <h4>{{'login.account' | translate}}</h4>
 
   <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
   <ion-list>
@@ -16,7 +16,7 @@
       </ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating">Password</ion-label>
+      <ion-label position="floating">{{'password' | translate}}</ion-label>
       <ion-input name="password"
                  type="password"
                  formControlName="password"
@@ -24,7 +24,7 @@
       </ion-input>
     </ion-item>
     <ion-item lines="none">
-      <ion-label position="floating">Remember?</ion-label>
+      <ion-label position="floating">{{'remember' | translate}}?</ion-label>
         <ion-checkbox color="light"
                       [(ngModel)]="remember"
                       slot="end"
@@ -38,11 +38,16 @@
               shape="round"
               mode="md"
               [disabled]="signInForm.invalid">
-              Login
+              {{'login' | translate}}
   </ion-button>
   </form>
-  <h4>No Account? <span class="bold" (click)="goToSignUp()">Register</span>!</h4>
-  <h4>No time to waste? Enter as a
-    <span class="bold" (click)="enterAsGuest()">Guest</span>
+  <h4>{{'no.account' | translate}}?
+    <span class="bold"
+          (click)="goToSignUp()"
+          [innerHTML]="'register' | translate">
+    </span>!
+  </h4>
+  <h4>{{'no.time' | translate}}
+    <span class="bold" (click)="enterAsGuest()">{{'guest' | translate}}</span>
   </h4>
 </div>

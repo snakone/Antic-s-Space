@@ -1,10 +1,15 @@
 <app-header></app-header>
 
 <ion-content text-center>
+  <ion-refresher slot="fixed"
+                [disabled]="!refresh"
+                (ionRefresh)="doRefresh($event)">
+  <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
   <app-main-slider></app-main-slider>
   <app-small-slider></app-small-slider>
   <app-trending></app-trending>
   <app-latest></app-latest>
-  <app-articles></app-articles>
+  <app-articles [articles]="articles"></app-articles>
 </ion-content>
 

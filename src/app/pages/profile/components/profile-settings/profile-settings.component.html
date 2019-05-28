@@ -1,6 +1,54 @@
-<div class="settings animated fadeInUp">
-  <p>
-    profile-settings works!
-  </p>
+<div class="settings animated fadeIn">
+  <ion-list>
+    <ion-item-divider>
+      {{'settings' | translate}}
+    </ion-item-divider>
+    <ion-item>
+      <ion-label>{{'language' | translate}}</ion-label>
+      <ion-select #lang
+                  (ionChange)="changeLanguage(lang.value)"
+                  mode="md"
+                  interface="action-sheet">
+        <ion-select-option value="en" [selected]="language === 'en'">{{'english' | translate}}</ion-select-option>
+        <ion-select-option value="es" [selected]="language === 'es'">{{'spanish' | translate}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>{{'remember.login' | translate}}?</ion-label>
+      <ion-select #login
+                  (ionChange)="rememberLogin(login.value)"
+                  mode="md"
+                  interface="action-sheet">
+        <ion-select-option value="yes" [selected]="remember === true">{{'yes' | translate}}</ion-select-option>
+        <ion-select-option value="no" [selected]="remember === false">No</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>{{'theme' | translate}}</ion-label>
+      <ion-button slot="end" class="btn" (click)="openSelectTheme()">
+        <ion-icon slot="icon-only" name="color-palette"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-item-divider>
+      <ion-text class="bold-only" color="danger">{{'danger.zone' | translate}}</ion-text>
+    </ion-item-divider>
+    <ion-item>
+      <ion-label>{{'delete.account' | translate}}</ion-label>
+      <ion-button slot="end" class="btn">
+        <ion-icon slot="icon-only" name="trash"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+  <ion-button type="submit"
+              expand="full"
+              color="primary"
+              shape="round"
+              mode="md"
+              class="logout"
+              (click)="logout()">
+              {{'logout' | translate}}
+  </ion-button>
 </div>
 

@@ -1,14 +1,13 @@
 <div class="signup">
-  <h3>Register a</h3>
-  <h1 class="antic">Free
-    <ion-text color="light">Account</ion-text>
+  <h3>{{'register.a' | translate}}</h3>
+  <h1 class="antic" [innerHTML]="'free.account' | translate">
   </h1>
   <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
   <app-pick-avatar (avatar)="avatar = $event">
   </app-pick-avatar>
   <ion-list>
     <ion-item>
-        <ion-label position="floating">Name</ion-label>
+        <ion-label position="floating">{{'name' | translate}}</ion-label>
           <ion-input name="name" type="text" mode="md" formControlName="name">
         </ion-input>
       </ion-item>
@@ -18,13 +17,13 @@
       </ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating">Password</ion-label>
+      <ion-label position="floating">{{'password' | translate}}</ion-label>
         <ion-input name="password" type="password" mode="md" formControlName="password"
                   [ngClass]="{'valid': !matchError}">
       </ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating">Repeat Password</ion-label>
+      <ion-label position="floating">{{'repeat.password' | translate}}</ion-label>
         <ion-input name="password2" type="password" mode="md" formControlName="password2"
                     [ngClass]="matchError === true ? 'invalid' : 'valid'">
       </ion-input>
@@ -36,7 +35,7 @@
               shape="round"
               [disabled]="signUpForm.invalid"
               mode="md">
-              CREATE
+              {{'create' | translate}}
   </ion-button>
   </form>
 </div>
