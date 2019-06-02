@@ -3,7 +3,7 @@
   max-width: 412px;
   margin: 25px auto;
   margin-bottom: 0;
-  height: 454px;
+  height: 455px;
 
   &-title {
     background: var(--ion-color-primary);
@@ -21,8 +21,8 @@
 
   &-author {
     font-size: .7em;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 8px;
+    margin-bottom: 8px;
   }
 
   &-message {
@@ -30,6 +30,10 @@
     font-size: .8em;
     margin-bottom: 20px;
   }
+}
+
+.article-title {
+  margin-top: 20px;
 }
 
 ion-col {
@@ -79,7 +83,6 @@ h5 {
   display: block;
   width: 103%;
   height: 225px;
-  background-image: url('assets/img/slide1.jpg');
   background-size: 100% 100%;
   background-position: center;
   margin-left: -5px;
@@ -87,4 +90,11 @@ h5 {
 
 p {
   margin-bottom: 20px;
+}
+
+.flex-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 410px;
 }

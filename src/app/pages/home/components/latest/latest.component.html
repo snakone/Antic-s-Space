@@ -7,37 +7,42 @@
       <ion-col class="latest-select">
           <ion-item>
             <ion-select slot="end"
-                        interface="popover"
-                        placeholder="All"
-                        mode="ios">
-              <ion-select-option value="brown">Brown</ion-select-option>
-              <ion-select-option value="green">Green</ion-select-option>
+                        interface="alert"
+                        [placeholder]="'category' | translate"
+                        mode="ios"
+                        (ionChange)="search($event)">
+              <ion-select-option *ngFor="let c of categories"
+                                  [value]="c">{{c | translate}}
+              </ion-select-option>
             </ion-select>
           </ion-item>
       </ion-col>
     </ion-row>
-    <ion-row>
+    <ion-row *ngIf="article">
       <ion-col text-left>
-        <div class="picture">
-          <h5>LIFESTYLE</h5>
+        <div class="picture"
+             [style]="article.cover | sanitizer: 'style'"
+             (click)="goToArticle(article._id)">
+          <h5>{{article.category | uppercase}}</h5>
         </div>
-        <p>
+        <p class="article-title">
           <strong>
-              We never seem to have time for the things
-              we want to do. Here's how to change that.
+            {{article.title}}
           </strong>
         </p>
         <span class="latest-author">
-          <strong>Ryan Johnson</strong> - Dec 1, 2017
+          <strong>{{article.author}}</strong> - {{article.created}}
           <ion-badge color="primary" mode="md">13</ion-badge>
           <ion-icon name="chatboxes" color="primary"></ion-icon>
         </span>
-        <p class="latest-message">
-          I just don't have enough time for everything I want
-          to do in life, I screamed at my friend at the end of yet
-          another long tiring day where I...
-          <span class="bold">See more...</span>
-        </p>
+        <div class="latest-message"
+           [innerHTML]="article.message | truncate">
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="!article">
+      <ion-col class="flex-box">
+        <h4>{{'no.articles' | translate}}</h4>
       </ion-col>
     </ion-row>
   </ion-grid>

@@ -15,6 +15,7 @@ import { RouterModule } from '@angular/router';
 import { InputCommentComponent } from './input-comment/input-comment.component';
 import { HelpComponent } from './help/help.component';
 import { ColorSelectorComponent } from './color-selector/color-selector.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { ColorSelectorComponent } from './color-selector/color-selector.componen
     IonicModule,
     SharedModule,
     RouterModule,
+    FormsModule,
     NgxPaginationModule
   ],
   exports: [

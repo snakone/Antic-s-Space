@@ -6,7 +6,7 @@ import { InjectionToken } from '@angular/core';
 const DEV = 'http://localhost:3000/';
 const PRE = 'http://192.168.1.97:3000/';
 const PROD = 'https://antic-space.herokuapp.com/';
-const APP_VERSION = '0.0.7-dev';
+const APP_VERSION = '0.0.8-dev';
 
 export interface ModuleConfig {
   NAVIGATION?: any;
@@ -21,8 +21,8 @@ export interface AppConfig extends ModuleConfig {
 
 export const APP_CONSTANTS: AppConfig = {
   TITLE: 'Antic\'s Space',
-  DEFAULT_LANGUAGE: 'en',
-  END_POINT: PROD,
+  DEFAULT_LANGUAGE: 'es',
+  END_POINT: DEV,
   APP_VERSION,
   NAVIGATION: {
     EMPTY: '',

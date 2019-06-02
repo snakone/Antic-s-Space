@@ -3,11 +3,17 @@
   max-width: 412px;
   margin: 0px auto;
   height: auto;
-  margin-top: 25px;
+  margin-top: 20px;
+  color: var(--ion-color-light) !important;
+  background: var(--ion-color-dark-shade);
 
   &-header {
     margin-bottom: 0;
   }
+}
+
+ion-grid {
+  padding-top: 27px;
 }
 
 .header {

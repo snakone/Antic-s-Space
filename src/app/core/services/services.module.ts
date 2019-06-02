@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { HttpService,
          ArticleService,
          UserService,
-         AuthService } from './services.index';
+         AuthService,
+         CommentService } from './services.index';
 
 @NgModule({
   declarations: [],
@@ -11,7 +12,8 @@ import { HttpService,
     HttpService,
     ArticleService,
     UserService,
-    AuthService
+    AuthService,
+    CommentService
   ]
 })
 

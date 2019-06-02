@@ -20,6 +20,7 @@ import { FaceReactionComponent } from './components/face-reaction/face-reaction.
 import { ArticleCommentsComponent } from './components/article-comments/article-comments.component';
 import { LegendComponent } from './components/legend/legend.component';
 import { ArticleMakerComponent } from '@shared/components/article-maker/article-maker.component';
+import { ArticleRelatedComponent } from './components/article-related/article-related.component';
 
 const routes: Routes = [
   {
@@ -47,7 +48,8 @@ const routes: Routes = [
     FaceReactionComponent,
     ArticleCommentsComponent,
     LegendComponent,
-    ArticleMakerComponent
+    ArticleMakerComponent,
+    ArticleRelatedComponent
   ],
   entryComponents: [
     EmojiSelectorComponent,

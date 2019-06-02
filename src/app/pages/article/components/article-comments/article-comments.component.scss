@@ -1,5 +1,5 @@
 .grid {
-  height: 360px;
+  height: auto;
   margin-bottom: 5px;
 }
 
@@ -28,6 +28,7 @@ ion-avatar {
 .comments-date {
   font-size: .7em;
   color: var(--ion-color-medium);
+  font-weight: bold;
 }
 
 h5 {
@@ -55,4 +56,12 @@ h5 {
   h5 {
     font-size: .8em;
   }
+}
+
+.no-comments {
+  height: 150px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
 }

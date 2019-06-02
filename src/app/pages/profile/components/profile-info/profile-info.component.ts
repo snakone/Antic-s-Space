@@ -65,6 +65,7 @@ export class ProfileInfoComponent implements OnInit {
     if (value === 'name') { this.editingName = false; } else if
        (value === 'email') { this.editingEmail = false; }
   }
+
   updateUser(): void {
     if (this.editUserForm.invalid) { return; }
     this.user.name = this.editUserForm.value.name;

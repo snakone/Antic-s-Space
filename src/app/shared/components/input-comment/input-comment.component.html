@@ -1,7 +1,14 @@
-<div class="comment" text-center>
-  <h5>{{'your.comment' | translate}}</h5>
-  <ion-icon name="mail" slot="icon-only"></ion-icon>
-  <ion-textarea [placeholder]="'leave.comment' | translate"
-                required>
-  </ion-textarea>
+<div class="comment">
+    <ion-item>
+      <ion-textarea maxlength="107"
+                    [(ngModel)]="comment"
+                    [placeholder]="'leave.comment' | translate"
+                    required>
+      </ion-textarea>
+      <ion-icon (click)="addCommnent()"
+                 name="mail"
+                 slot="end"
+                 color="light">
+      </ion-icon>
+    </ion-item>
 </div>

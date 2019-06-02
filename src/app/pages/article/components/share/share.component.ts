@@ -18,8 +18,7 @@ export class ShareComponent implements OnInit {
   @Input() article: Article;
   icons = SHARE;
 
-  constructor(private pop: PopoverController,
-              private _user: UserService,
+  constructor(private _user: UserService,
               private crafter: CrafterService) { }
 
   ngOnInit() { }
@@ -34,11 +33,11 @@ export class ShareComponent implements OnInit {
   }
 
   openEmojis(ev?: any): void {
-    this.crafter.popOver(EmojiSelectorComponent);
+    this.crafter.popOver(EmojiSelectorComponent, { id: this.article._id});
   }
 
   openComment(ev?: any): void {
-    this.crafter.popOver(InputCommentComponent);
+    this.crafter.popOver(InputCommentComponent, { id: this.article._id});
   }
 
 }

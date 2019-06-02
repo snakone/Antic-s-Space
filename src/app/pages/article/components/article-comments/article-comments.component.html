@@ -1,6 +1,7 @@
 <ion-grid class="animated fadeIn fast grid"
           id="article-comments"
-          (swipe)="swipe($event)">
+          (swipe)="swipe($event)"
+          *ngIf="comments">
   <ion-row class="list"
           *ngFor="let c of comments |
                   paginate: { id: 'article_comment',
@@ -8,7 +9,7 @@
                               currentPage: page }">
     <ion-col size="2" class="flex-col">
       <ion-avatar>
-        <img src="assets/img/avatars/avatar-1.png"/>
+        <img [src]="c.user.avatar | avatar"/>
       </ion-avatar>
     </ion-col>
     <ion-col size="10" text-left class="article-comment">
@@ -19,6 +20,20 @@
       <p class="comment">{{c.comment}}</p>
     </ion-col>
   </ion-row>
+  <ion-row *ngIf="comments.length === 0" class="no-comments">
+    <ion-col>
+      No Comments
+    </ion-col>
+  </ion-row>
 </ion-grid>
+<div *ngIf="comments">
+  <app-pagination (index)="changeFrom($event)"
+                  *ngIf="comments.length > 0"
+                  id="article_comment">
+  </app-pagination>
+</div>
 
-<app-pagination (index)="changeFrom($event)" id="article_comment"></app-pagination>
+
+<div class="no-comments" *ngIf="!comments">
+  <ion-spinner name="lines" color="primary"></ion-spinner>
+</div>

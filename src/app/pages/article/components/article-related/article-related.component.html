@@ -1,0 +1,11 @@
+<ion-list>
+  <ion-item-divider>
+    {{'related.articles' | translate}}
+  </ion-item-divider>
+  <ion-item detail *ngFor="let r of relateds">
+    <ion-label>{{r.title}}</ion-label>
+  </ion-item>
+  <ion-item *ngIf="relateds.length === 0">
+    <ion-label>{{'no.related' | translate}}</ion-label>
+  </ion-item>
+</ion-list>

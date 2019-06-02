@@ -4,6 +4,7 @@ import { ArticleService } from '@core/services/article/article.service';
 import { Article } from '@app/shared/interfaces/interfaces';
 import { switchMap, map } from 'rxjs/operators';
 import { ArticleResponse } from '@shared/interfaces/interfaces';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-article',
@@ -16,7 +17,8 @@ export class ArticlePage implements OnInit {
   article: Article;
 
   constructor(private route: ActivatedRoute,
-              private _article: ArticleService) { }
+              private _article: ArticleService,
+              private nav: NavController) { }
 
   ngOnInit() {
     this.getArticle();
@@ -29,6 +31,7 @@ export class ArticlePage implements OnInit {
     .subscribe((res: ArticleResponse) => {
       if (res.ok) {
         this.article = res.article[0];
+        if (!this.article) { this.nav.navigateRoot('/home'); }
       }
     });
   }

@@ -3,10 +3,12 @@
 }
 
 ion-textarea {
-  padding: 14px 20px;
+  padding: 14px 0;
+  margin: 0;
   --padding-top: 16px !important;
   --padding-bottom: 0 !important;
   --padding-start: 0 !important;
+  font-size: .9em;
 }
 
 h5 {
@@ -15,9 +17,7 @@ h5 {
 }
 
 ion-icon {
-  display: inline-block;
-  margin-left: 25px;
+  margin-left: 20px;
   position: relative;
-  top: 5px;
-  font-size: 1.5em;
+  left: 5px;
 }

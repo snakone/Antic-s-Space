@@ -1,7 +1,7 @@
 .legend {
-  position: absolute;
+  position: relative;
   left: 30px;
-  margin-top: -191px;
+  margin-top: 24px;
 }
 
 ion-label {
@@ -9,4 +9,5 @@ ion-label {
   position: relative;
   left: 6px;
   top: -4px;
+  font-weight: bold;
 }

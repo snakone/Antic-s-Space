@@ -9,8 +9,8 @@ export interface Article {
   created?: string;
   message?: string;
   comments?: number;
-  code?: string[];
-  images?: string[];
+  cover?: string;
+  code?: Code[];
 }
 
 export interface ArticleResponse {
@@ -39,9 +39,22 @@ export interface UserResponse {
 export interface Comment {
   _id?: string;
   author: string;
-  created: string;
+  created?: string;
   comment: string;
   user?: User;
+  article?: string;
+}
+
+export interface CommentResponse {
+  ok: boolean;
+  message: string;
+  comment?: Comment;
+  comments?: Comment[];
+}
+
+export interface Code {
+  code: string;
+  lang: string;
 }
 
 export interface Media {

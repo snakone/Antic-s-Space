@@ -1,6 +1,6 @@
-<div class="header">
+<div class="header" [ngStyle]="{'background-image': 'url(' + article.cover + ')'}">
   <ion-icon name="arrow-round-back"
-            color="dark"
+            color="primary"
             (click)="goBack()">
   </ion-icon>
   <h5>{{article.category | uppercase}}</h5>

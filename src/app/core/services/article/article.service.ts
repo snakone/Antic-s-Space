@@ -3,6 +3,7 @@ import { APP_CONSTANTS } from '@app/app.config';
 import { HttpService } from '../http/http.service';
 import { ArticleResponse } from '@shared/interfaces/interfaces';
 import { Observable } from 'rxjs';
+import { HttpParams } from '@angular/common/http';
 
 @Injectable()
 
@@ -20,6 +21,10 @@ export class ArticleService {
 
   public getArticleById(id: string): Observable<ArticleResponse> {
     return this.http.get(this.API_ARTICLES + '/' + id);
+  }
+
+  public getArticlesByCategory(category: string): Observable<ArticleResponse> {
+    return this.http.get(APP_CONSTANTS.END_POINT + 'category' + '/' + category);
   }
 
 }

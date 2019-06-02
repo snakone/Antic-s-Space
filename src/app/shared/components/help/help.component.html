@@ -1,24 +1,8 @@
 <div class="help">
-  <p>
-    Hello there, my name is <span class="bold-only">Sergi Martínez</span>
-    and it's a pleasure that you are here.
-  </p>
-  <p>
-    This application gathers all the content about myself, experiences as a
-    <span class="bold-only">Software Developer</span> as might as a <span class="bold-only">Person</span>.
-  </p>
-  <p>
-    This content includes <span class="bold-only">Programming Language</span> examples,
-    featuring
-    <span class="javascript">Javascript</span>,
-    <span class="html">HTML</span>,
-    <span class="css">CSS</span>, tutorials and any other modern web technology related.
-  </p>
-  <p>Create an <span class="bold-only">Account</span> if you want to interact with others,
-    <span class="bold-only">comment</span> and <span class="bold-only">react</span> to articles
-    are for registred members only. Enter as a <span class="bold-only">Guest</span> to read
-    as many articles as you want.
-  </p>
+  <p [innerHTML]="'hello.there' | translate"></p>
+  <p [innerHTML]="'app.gather' | translate"></p>
+  <p [innerHTML]="'app.content' | translate"></p>
+  <p [innerHTML]="'create.account' | translate"></p>
   <p>{{'thanks.app' | translate}}</p>
 
   <div class="social-share">

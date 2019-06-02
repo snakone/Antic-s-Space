@@ -11,7 +11,7 @@
 @import '~@ionic/angular/css/flex-utils.css';
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 @import './theme/partials/index/partials.scss';
-@import '../node_modules/highlight.js/styles/atom-one-dark.css';
+@import '../node_modules/highlight.js/styles/vs2015.css';
 
 .in-item {
   max-width: 100% !important;
@@ -38,25 +38,65 @@
   --width: 300px !important;
 }
 
-.javascript, .html, .css {
+.Javascript, .HTML, .CSS {
   font-weight: bold;
 }
 
-.javascript {
+.Javascript {
   color: rgb(247, 223, 30);
 }
 
-.html {
+.HTML {
   color: rgb(228, 77, 38);
 }
 
-.css {
+.CSS {
  color:rgb(31, 95, 170);
+}
+
+.angular {
+  color: red;
+  font-weight: bold;
+}
+
+.ionic {
+  color: #1b6dda;
+  font-weight: bold;
 }
 
 .light {
   color: var(--ion-color-light) !important;
 }
 
+.alert-radio-group.sc-ion-alert-ios {
+  background: var(--ion-color-dark) !important;
+}
+
+// .alert-head.sc-ion-alert-ios,
+// .alert-message.sc-ion-alert-ios {
+//   background: var(--ion-color-primary) !important;
+// }
+
+// .alert-button.sc-ion-alert-ios {
+//   color: var(--ion-color-light) !important;
+// }
+
+[aria-checked="true"] {
+  font-weight: bold;
+}
+
+hr {
+  background: var(--ion-color-light);
+  margin: 25px auto;
+  width: 90%;
+}
+
+ion-note {
+  font-size: 1em;
+ }
+
+ ion-spinner {
+  transform: scale(1.5);
+}
 
 

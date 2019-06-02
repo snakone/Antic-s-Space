@@ -26,8 +26,4 @@ export class ProfilePage implements OnInit {
     this.nav.navigateRoot('/login');
   }
 
-  segmentChange(e: string): void {
-    console.log(e);
-  }
-
 }

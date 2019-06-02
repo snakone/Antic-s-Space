@@ -18,17 +18,33 @@ export const smallSliderOpts = {
   spaceBetween: 5
 };
 
-// SOCIAL ICONS
-export const SOCIAL: Media[] = [
-  { logo: 'assets/img/facebook.png', action: 'Like', people: 21.244, kind: 'Fans' },
-  { logo: 'assets/img/twitter.png', action: 'Follow', people: 9.877, kind: 'Followers' },
-  { logo: 'assets/img/youtube.png', action: 'Subscribe', people: 5.422, kind: 'Subscribers' },
+// CATEGORIES
+export const CATEGORIES: string[] = [
+  'All',
+  'Code',
+  'Video',
+  'Gaming',
+  'Lifestyle',
+  'Interview',
+  'Review',
+  'Antic'
 ];
 
+// LANGUAGES
+export const LANGUAGES: string[] = [
+  'HTML',
+  'CSS',
+  'SCSS',
+  'Javascript',
+  'Typescript',
+  'Nodejs',
+  'NPM'
+];
+
+// SOCIAL ICONS
 export const SHARE: Share[] = [
   { name: 'facebook', image: 'assets/img/share/facebook.png' },
   { name: 'twitter', image: 'assets/img/share/twitter.png' },
-  { name: 'google', image: 'assets/img/share/google+.png' },
   { name: 'share', image: 'assets/img/share/share.png' },
   { name: 'comment', image: 'assets/img/share/comment.png' },
   { name: 'emoji', image: 'assets/img/share/emoji.png' }
@@ -40,7 +56,12 @@ export const EMOJIS: Emoji[] = [
   { title: 'Wow', height: '50', image: 'surprised.png' },
   { title: 'Sad', height: '100', image: 'embarrassed.png' },
   { title: 'Angry', height: '25', image: 'angry.png' },
-]
+];
+
+// MAIN ARTICLES
+export const MAIN: string[] = [
+  '5cefd7f4275e0e24b43a78d4'
+];
 
 // COMMENTS
 export const COMMENTS: Comment[] = [

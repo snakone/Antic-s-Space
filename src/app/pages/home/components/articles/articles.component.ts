@@ -17,7 +17,8 @@ export class ArticlesComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
-   }
+    this.articles.shift();
+  }
 
   goToArticle(id: string): void {
     this.router.navigateByUrl('/article/' + id);

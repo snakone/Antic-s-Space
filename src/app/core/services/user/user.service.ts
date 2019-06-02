@@ -4,7 +4,6 @@ import { APP_CONSTANTS } from '@app/app.config';
 import { Observable } from 'rxjs';
 import { StorageService } from '@app/core/storage/storage.service';
 import { HttpService } from '../http/http.service';
-import { map } from 'rxjs/operators';
 
 @Injectable()
 
@@ -42,10 +41,7 @@ export class UserService {
   }
 
   public getUserById(id: string): Observable<UserResponse> {
-    return this.http.get(this.API_USERS + `/${id}`)
-      .pipe(map((res: UserResponse) => {
-        return res;
-      }));
+    return this.http.get(this.API_USERS + `/${id}`);
   }
 
   public updateUser(user: User): Observable<UserResponse> {

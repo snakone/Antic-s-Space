@@ -1,14 +1,14 @@
 .history {
   max-width: 412px;
   margin: 0 auto;
-  margin-bottom: 3px;
+  margin-bottom: 15px;
   height: 330px;
   padding: 10px;
   padding-top: 5px;
 }
 
 ion-list {
-  margin-top: 10px;
+  margin-bottom: 0;
 }
 
 ion-item {
@@ -22,7 +22,6 @@ ion-icon {
 
 ion-item-divider {
   border-bottom: 0;
-  margin-bottom: 10px;
 }
 
 ion-label {

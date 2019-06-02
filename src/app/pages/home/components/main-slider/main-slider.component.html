@@ -1,13 +1,14 @@
 <ion-slides #slider [options]="options">
-  <ion-slide class="slide">
+  <ion-slide *ngFor="let article of articles"
+             class="slide"
+             [style]="article.cover | sanitizer:'style'"
+             (click)="goToArticle(article._id)">
     <div class="content">
-      <h5>TRAVEL</h5>
-      <p>How to get the perfect travel shot</p>
+      <h5>{{article.category | uppercase}}</h5>
+      <p>{{article.title}}</p>
       <span class="content-author">
-        <strong>Ryan Johnson</strong> - Dec 1, 2017
+        <strong>{{article.author}}</strong> - {{article.created}}
       </span>
     </div>
   </ion-slide>
-  <ion-slide class="slide">2</ion-slide>
-  <ion-slide class="slide">3</ion-slide>
 </ion-slides>

@@ -7,7 +7,7 @@
                                 itemsPerPage: itemsPerPage, currentPage: page }"
                     (click)="goToArticle(a._id)">
       <ion-col size="4" class="image">
-        <img [src]="a.image || 'assets/img/slide1.jpg'"/>
+        <img [src]="a.cover"/>
       </ion-col>
       <ion-col size="8" class="article">
         <span class="article-title">
@@ -22,8 +22,12 @@
   <app-pagination (index)="changeFrom($event)" id="articles_pag"></app-pagination>
 </div>
 
-<div class="flex-box" *ngIf="articles.length === 0">
+<div class="flex-box" *ngIf="!articles">
   <ion-spinner name="lines" color="primary"></ion-spinner>
+</div>
+
+<div class="flex-box-empty" *ngIf="articles.length === 0">
+  <hr>
 </div>
 
 

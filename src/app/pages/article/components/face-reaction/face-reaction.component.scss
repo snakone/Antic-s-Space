@@ -4,9 +4,9 @@
     width: 100%;
     max-width: 412px;
     margin: 0 auto;
-    margin-top: 206px;
-    margin-bottom: 50px;
-    margin-left: -22px;
+    margin-top: 141px;
+    margin-bottom: 35px;
+    margin-left: -21px;
 
     li {
       position: relative;
@@ -18,7 +18,7 @@
     span {
       margin: 1em;
       display: block;
-      background: rgba(#fff, .75);
+      background: var(--ion-color-primary);
       padding-left: 4px;
 
       &:before {
@@ -31,7 +31,7 @@
         display: block;
         text-align: center;
         content:attr(title);
-        color: var(--ion-color-light);
+        font-weight: bold;
         word-wrap: break-word;
       }
   }

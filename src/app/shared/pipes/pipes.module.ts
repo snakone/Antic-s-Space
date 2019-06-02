@@ -4,7 +4,8 @@ import { EmojiPipe } from './emoji/emoji.pipe';
 import { PercentagePipe } from './percentage/percentage.pipe';
 import { IconTypePipe } from './icon-type/icon-type.pipe';
 import { IconColorPipe } from './icon-color/icon-color.pipe';
-import { HtmlSanitizerPipe } from './html-sanitizer/html-sanitizer.pipe';
+import { SanitizerPipe } from './sanitizer/sanitizer.pipe';
+import { TruncatePipe } from './truncate/truncate.pipe';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { HtmlSanitizerPipe } from './html-sanitizer/html-sanitizer.pipe';
     PercentagePipe,
     IconTypePipe,
     IconColorPipe,
-    HtmlSanitizerPipe
+    SanitizerPipe,
+    TruncatePipe
   ],
   imports: [],
   exports: [
@@ -21,7 +23,9 @@ import { HtmlSanitizerPipe } from './html-sanitizer/html-sanitizer.pipe';
     EmojiPipe,
     PercentagePipe,
     IconTypePipe,
-    IconColorPipe
+    IconColorPipe,
+    SanitizerPipe,
+    TruncatePipe
   ]
 })
 

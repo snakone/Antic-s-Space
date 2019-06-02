@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Article } from '@app/shared/interfaces/interfaces';
+import { Article, Comment } from '@app/shared/interfaces/interfaces';
 import { COMMENTS } from '@app/shared/shared.data';
+import { CommentService } from '@core/services/comment/comment.service';
+import { CommentResponse } from '@shared/interfaces/interfaces';
 
 @Component({
   selector: 'app-article-comments',
@@ -13,11 +15,31 @@ export class ArticleCommentsComponent implements OnInit {
   @Input() article: Article;
   page = 1;
   itemsPerPage = 3;
-  comments = COMMENTS;
+  comments: Comment[];
 
-  constructor() { }
+  constructor(private commentService: CommentService) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.getComments();
+    this.listenToComments();
+   }
+
+  getComments(): void {
+    this.commentService.getCommentsByArticle(this.article._id)
+      .subscribe((res: CommentResponse) => {
+        this.comments = [];
+        this.comments.unshift(...res.comments);
+    });
+  }
+
+  private listenToComments(): void {
+    this.commentService.recieved
+      .subscribe((res: boolean) => {
+        if (res) {
+          this.getComments();
+        }
+      });
+  }
 
   swipe(event: any): void {
     if (event.deltaX < 0) {

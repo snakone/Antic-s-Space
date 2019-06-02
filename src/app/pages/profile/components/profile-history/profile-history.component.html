@@ -1,5 +1,8 @@
 <div class="history animated fadeIn">
   <ion-list>
+    <ion-item-divider>
+      {{'you.reacted' | translate}}
+    </ion-item-divider>
     <div class="animated fast"
         id="history-items"
         (swipe)="swipe($event)">
@@ -7,14 +10,15 @@
                               paginate: { id: 'history',
                                           itemsPerPage: itemsPerPage,
                                           currentPage: page }">
+
+              <ion-icon slot="start"
+                        [color]="h.type | iconColor"
+                        [name]="h.type | iconType">
+              </ion-icon>
               <ion-label>
                 {{h.article}}
                 <p>Dec 1, 2017</p>
               </ion-label>
-              <ion-icon slot="end"
-                        [color]="h.type | iconColor"
-                        [name]="h.type | iconType">
-              </ion-icon>
             </ion-item>
       </div>
     </ion-list>

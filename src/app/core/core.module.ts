@@ -18,6 +18,7 @@ import { JwtInterceptor } from './services/http/jwt.interceptor';
 import { HighlightModule } from 'ngx-highlightjs';
 import javascript from 'highlight.js/lib/languages/javascript';
 import typescript from 'highlight.js/lib/languages/typescript';
+import scss from 'highlight.js/lib/languages/scss';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, CORE_MODULE_CONSTANTS.TRANSLATE_CONFIG.I18N_PATH,
@@ -27,7 +28,8 @@ export function createTranslateLoader(http: HttpClient) {
 export function hljsLanguages() {
   return [
     {name: 'typescript', func: typescript},
-    {name: 'javascript', func: javascript}
+    {name: 'javascript', func: javascript},
+    {name: 'scss', func: scss}
   ];
 }
 

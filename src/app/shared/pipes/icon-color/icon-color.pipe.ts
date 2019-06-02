@@ -12,7 +12,7 @@ export class IconColorPipe implements PipeTransform {
     } else if (value === 'Comment') {
       return 'light';
     } else {
-      return 'success';
+      return 'warning';
     }
   }
 
