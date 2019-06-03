@@ -1,0 +1,23 @@
+ion-item-divider {
+  border-bottom: 0;
+  font-size: 1em;
+  margin: 0 auto 5px -15px;
+}
+
+ion-label {
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+ion-item {
+  font-size: .9em;
+  --padding-start: 8px;
+}
+
+.previous {
+  margin-top: -5px;
+}
+
+.next {
+  margin-right: 8px;
+}

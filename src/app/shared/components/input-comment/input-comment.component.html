@@ -1,14 +1,19 @@
 <div class="comment">
     <ion-item>
       <ion-textarea maxlength="107"
+                    minlength="3"
                     [(ngModel)]="comment"
                     [placeholder]="'leave.comment' | translate"
                     required>
       </ion-textarea>
-      <ion-icon (click)="addCommnent()"
-                 name="mail"
-                 slot="end"
-                 color="light">
-      </ion-icon>
+      <ion-buttons>
+        <ion-button (click)="addCommnent()"
+                    [disabled]="comment.length <= 4 || comment.length >= 107">
+            <ion-icon name="mail"
+                      slot="end"
+                      color="light">
+            </ion-icon>
+          </ion-button>
+      </ion-buttons>
     </ion-item>
 </div>

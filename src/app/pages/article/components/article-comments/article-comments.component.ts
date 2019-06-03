@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Article, Comment } from '@app/shared/interfaces/interfaces';
-import { COMMENTS } from '@app/shared/shared.data';
 import { CommentService } from '@core/services/comment/comment.service';
 import { CommentResponse } from '@shared/interfaces/interfaces';
 
@@ -27,8 +26,10 @@ export class ArticleCommentsComponent implements OnInit {
   getComments(): void {
     this.commentService.getCommentsByArticle(this.article._id)
       .subscribe((res: CommentResponse) => {
-        this.comments = [];
-        this.comments.unshift(...res.comments);
+        if (res.ok) {
+          this.comments = [];
+          this.comments.unshift(...res.comments);
+        }
     });
   }
 

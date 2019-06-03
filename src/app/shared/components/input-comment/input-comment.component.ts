@@ -14,7 +14,7 @@ import { CrafterService } from '../../crafter/crafter.service';
 
 export class InputCommentComponent implements OnInit {
 
-  comment: string;
+  comment = '';
 
   constructor(private userService: UserService,
               private navParams: NavParams,
@@ -41,7 +41,7 @@ export class InputCommentComponent implements OnInit {
     });
   }
 
-  getUser(): User {
+  private getUser(): User {
     return this.userService.getUser();
   }
 

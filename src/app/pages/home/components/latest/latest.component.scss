@@ -26,9 +26,15 @@
   }
 
   &-message {
-    margin-top: 20px;
+    margin-top: 10px;
     font-size: .8em;
-    margin-bottom: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    line-height: 16px;     /* fallback */
+    max-height: 63px;      /* fallback */
+    -webkit-line-clamp: 3; /* number of lines to show */
+    -webkit-box-orient: vertical;
   }
 }
 
@@ -53,17 +59,18 @@ ion-select {
 
 ion-badge {
   position: absolute;
-  right: 17px;
+  right: 23.5px;
   margin-top: -3px;
   z-index: 50;
-  font-size: .8em;
+  font-size: 1em;
+  letter-spacing: 1px;
 }
 
 ion-icon {
   position: absolute;
-  right: 5px;
+  right: 12px;
   margin-top: -8px;
-  font-size: 35px;
+  font-size: 40px;
   z-index: 0;
 }
 
@@ -97,4 +104,8 @@ p {
   align-items: center;
   justify-content: center;
   height: 410px;
+}
+
+.zero {
+  right: 26px;
 }

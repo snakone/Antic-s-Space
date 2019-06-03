@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ArticleService } from '@app/core/services/services.index';
 import { ArticleResponse, Article } from '@app/shared/interfaces/interfaces';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-article-related',
@@ -11,9 +12,11 @@ import { ArticleResponse, Article } from '@app/shared/interfaces/interfaces';
 export class ArticleRelatedComponent implements OnInit {
 
   @Input() category: string;
+  @Input() article: Article;
   relateds: Article[] = [];
 
-  constructor(private articleService: ArticleService) { }
+  constructor(private articleService: ArticleService,
+              private router: Router) { }
 
   ngOnInit() {
     this.getRelatedArticles();
@@ -22,9 +25,16 @@ export class ArticleRelatedComponent implements OnInit {
   private getRelatedArticles(): void {
     this.articleService.getArticlesByCategory(this.category)
       .subscribe((res: ArticleResponse) => {
-        res.articles.shift();
-        this.relateds.push(...res.articles);
+        res.articles.map((x: Article) => {
+          if (x._id !== this.article._id) {
+            this.relateds.push(x);
+          }
+        });
     });
+  }
+
+  goToRelatedArticle(id: string): void {
+    this.router.navigateByUrl('/article/' + id);
   }
 
 }

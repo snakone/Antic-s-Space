@@ -1,0 +1,12 @@
+<div class="emojis" text-center>
+  <h5>{{'pick.reaction' | translate}}</h5>
+  <ion-buttons>
+    <ion-button *ngFor="let r of reactions"
+                 class="ion-activatable"
+                 (click)="doReact(r.title)">
+      <img [src]="r.image | emoji"/>
+      <ion-ripple-effect type="bounded"></ion-ripple-effect>
+    </ion-button>
+  </ion-buttons>
+</div>
+

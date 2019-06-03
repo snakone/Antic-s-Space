@@ -1,4 +1,4 @@
-import { Comment, Item, Media, Share, Emoji, History } from './interfaces/interfaces';
+import { Comment, Item, Share, Emoji, History } from './interfaces/interfaces';
 
 // MENU
 export const MENU: Item[] = [
@@ -47,15 +47,15 @@ export const SHARE: Share[] = [
   { name: 'twitter', image: 'assets/img/share/twitter.png' },
   { name: 'share', image: 'assets/img/share/share.png' },
   { name: 'comment', image: 'assets/img/share/comment.png' },
-  { name: 'emoji', image: 'assets/img/share/emoji.png' }
+  { name: 'reaction', image: 'assets/img/share/emoji.png' }
 ];
 
-export const EMOJIS: Emoji[] = [
-  { title: 'Love', height: '5', image: 'in-love.png' },
-  { title: 'Laugh', height: '70', image: 'laughing.png' },
-  { title: 'Wow', height: '50', image: 'surprised.png' },
-  { title: 'Sad', height: '100', image: 'embarrassed.png' },
-  { title: 'Angry', height: '25', image: 'angry.png' },
+export const REACTIONS: Emoji[] = [
+  { title: 'Love', height: 0, image: 'in-love.png' },
+  { title: 'Laugh', height: 0, image: 'laughing.png' },
+  { title: 'Wow', height: 0, image: 'surprised.png' },
+  { title: 'Sad', height: 0, image: 'embarrassed.png' },
+  { title: 'Angry', height: 0, image: 'angry.png' },
 ];
 
 // MAIN ARTICLES

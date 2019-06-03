@@ -9,7 +9,6 @@ import { IonicModule } from '@ionic/angular';
 import { SharedModule } from '@app/shared/shared.module';
 import { ComponentsModule } from '@app/shared/components/components.module';
 import { InputCommentComponent } from '@app/shared/components/input-comment/input-comment.component';
-import { EmojiSelectorComponent } from '@app/shared/components/emoji-selector/emoji-selector.component';
 
 import { ArticlePage } from './article.page';
 import { ArticleHeaderComponent } from './components/article-header/article-header.component';
@@ -21,6 +20,8 @@ import { ArticleCommentsComponent } from './components/article-comments/article-
 import { LegendComponent } from './components/legend/legend.component';
 import { ArticleMakerComponent } from '@shared/components/article-maker/article-maker.component';
 import { ArticleRelatedComponent } from './components/article-related/article-related.component';
+import { ArticleNextComponent } from './components/article-next/article-next.component';
+import { ReactionSelectorComponent } from '@app/shared/components/reaction-selector/reaction-selector.component';
 
 const routes: Routes = [
   {
@@ -49,10 +50,11 @@ const routes: Routes = [
     ArticleCommentsComponent,
     LegendComponent,
     ArticleMakerComponent,
-    ArticleRelatedComponent
+    ArticleRelatedComponent,
+    ArticleNextComponent
   ],
   entryComponents: [
-    EmojiSelectorComponent,
+    ReactionSelectorComponent,
     InputCommentComponent
   ]
 })

@@ -9,7 +9,7 @@
           [ngClass]="{'low': heightToLow(e.height),
                       'medium': heightToMedium(e.height),
                       'high': heightToHigh(e.height)}">
-            {{e.height | percentage}}
+            {{(e.height | number: '1.0-1') + '%' }}
     </span>
   </li>
 </ul>

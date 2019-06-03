@@ -1,8 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Article } from '@app/shared/interfaces/interfaces';
 import { SHARE } from '@app/shared/shared.data';
-import { EmojiSelectorComponent } from '@app/shared/components/emoji-selector/emoji-selector.component';
-import { PopoverController } from '@ionic/angular';
+import { ReactionSelectorComponent } from '@app/shared/components/reaction-selector/reaction-selector.component';
 import { InputCommentComponent } from '@app/shared/components/input-comment/input-comment.component';
 import { UserService } from '@core/services/user/user.service';
 import { CrafterService } from '@shared/crafter/crafter.service';
@@ -24,19 +23,19 @@ export class ShareComponent implements OnInit {
   ngOnInit() { }
 
   share(value: string): void {
-    if (this._user.areYouGuest() && (value === 'emoji' || value === 'comment')) {
+    if (this._user.areYouGuest() && (value === 'reaction' || value === 'comment')) {
       this.crafter.alert('Only for Users with Account');
       return;
     }
-    if (value === 'emoji') { this.openEmojis(); }
+    if (value === 'reaction') { this.openReactions(); }
     if (value === 'comment') { this.openComment(); }
   }
 
-  openEmojis(ev?: any): void {
-    this.crafter.popOver(EmojiSelectorComponent, { id: this.article._id});
+  private openReactions(ev?: any): void {
+    this.crafter.popOver(ReactionSelectorComponent, { id: this.article._id});
   }
 
-  openComment(ev?: any): void {
+  private openComment(ev?: any): void {
     this.crafter.popOver(InputCommentComponent, { id: this.article._id});
   }
 

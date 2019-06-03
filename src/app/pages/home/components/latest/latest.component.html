@@ -32,11 +32,14 @@
         </p>
         <span class="latest-author">
           <strong>{{article.author}}</strong> - {{article.created}}
-          <ion-badge color="primary" mode="md">13</ion-badge>
+          <ion-badge color="primary"
+                     [ngClass]="{'zero': total < 10}"
+                     mode="md">{{total}}
+          </ion-badge>
           <ion-icon name="chatboxes" color="primary"></ion-icon>
         </span>
         <div class="latest-message"
-           [innerHTML]="article.message | truncate">
+           [innerHTML]="article.message | sanitizer:'html'">
         </div>
       </ion-col>
     </ion-row>

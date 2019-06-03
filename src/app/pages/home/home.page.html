@@ -9,7 +9,10 @@
   <app-main-slider [articles]="main"></app-main-slider>
   <app-small-slider></app-small-slider>
   <app-trending></app-trending>
-  <app-latest [article]="latest" (selectCategory)="changeCategory($event)"></app-latest>
+  <app-latest [article]="latest"
+              *ngIf="latest"
+              (selectCategory)="changeCategory($event)">
+  </app-latest>
   <app-articles [articles]="articles"></app-articles>
 </ion-content>
 

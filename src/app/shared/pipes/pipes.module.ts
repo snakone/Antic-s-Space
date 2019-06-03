@@ -5,7 +5,6 @@ import { PercentagePipe } from './percentage/percentage.pipe';
 import { IconTypePipe } from './icon-type/icon-type.pipe';
 import { IconColorPipe } from './icon-color/icon-color.pipe';
 import { SanitizerPipe } from './sanitizer/sanitizer.pipe';
-import { TruncatePipe } from './truncate/truncate.pipe';
 
 @NgModule({
   declarations: [
@@ -14,8 +13,7 @@ import { TruncatePipe } from './truncate/truncate.pipe';
     PercentagePipe,
     IconTypePipe,
     IconColorPipe,
-    SanitizerPipe,
-    TruncatePipe
+    SanitizerPipe
   ],
   imports: [],
   exports: [
@@ -24,8 +22,7 @@ import { TruncatePipe } from './truncate/truncate.pipe';
     PercentagePipe,
     IconTypePipe,
     IconColorPipe,
-    SanitizerPipe,
-    TruncatePipe
+    SanitizerPipe
   ]
 })
 
