@@ -1,7 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { Article, Comment } from '@app/shared/interfaces/interfaces';
 import { CommentService } from '@core/services/comment/comment.service';
 import { CommentResponse } from '@shared/interfaces/interfaces';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-article-comments',
@@ -9,19 +10,24 @@ import { CommentResponse } from '@shared/interfaces/interfaces';
   styleUrls: ['./article-comments.component.scss'],
 })
 
-export class ArticleCommentsComponent implements OnInit {
+export class ArticleCommentsComponent implements OnInit, OnDestroy {
 
   @Input() article: Article;
   page = 1;
   itemsPerPage = 3;
   comments: Comment[];
+  subscription: Subscription;
 
   constructor(private commentService: CommentService) { }
 
   ngOnInit() {
     this.getComments();
     this.listenToComments();
-   }
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
 
   getComments(): void {
     this.commentService.getCommentsByArticle(this.article._id)
@@ -34,7 +40,7 @@ export class ArticleCommentsComponent implements OnInit {
   }
 
   private listenToComments(): void {
-    this.commentService.recieved
+    this.subscription = this.commentService.recieved
       .subscribe((res: boolean) => {
         if (res) {
           this.getComments();

@@ -1,5 +1,5 @@
 .footer {
-  max-width: 412px;
+  max-width: 100%;
   margin: 0 16px;
   height: 75px;
   padding: 5px;
@@ -24,4 +24,10 @@ ion-icon {
   color: lightcoral;
   position: relative;
   top: 2px;
+}
+
+@media (max-width: 359px) {
+  p {
+    font-size: .8em;
+  }
 }

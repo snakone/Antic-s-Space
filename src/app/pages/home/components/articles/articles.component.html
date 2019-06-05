@@ -2,12 +2,12 @@
   <ion-grid class="animated fadeIn fast"
             (swipe)="swipe($event)"
             id="articles">
-    <ion-row class="row" *ngFor="let a of articles |
-                    paginate: { id: 'articles_pag',
-                                itemsPerPage: itemsPerPage, currentPage: page }"
-                    (click)="goToArticle(a._id)">
+    <ion-row class="row" *ngFor="let a of articles | paginate: {
+                                                     id: 'articles_pag',
+                                                     itemsPerPage: itemsPerPage,
+                                                     currentPage: page }">
       <ion-col size="4" class="image">
-        <img [src]="a.cover"/>
+        <img [src]="a.cover" (click)="goToArticle(a._id)"/>
       </ion-col>
       <ion-col size="8" class="article">
         <span class="article-title">

@@ -13,6 +13,22 @@
 @import './theme/partials/index/partials.scss';
 @import '../node_modules/highlight.js/styles/vs2015.css';
 
+html, body {
+  max-width: 1010px;
+  margin: 0 auto;
+  height: 100%;
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+ion-popover {
+  div.popover-content {
+      top: 50% !important;
+      left: 50% !important;
+      transform: translate(-50%, -50%) !important;
+  }
+}
+
 .in-item {
   max-width: 100% !important;
 }

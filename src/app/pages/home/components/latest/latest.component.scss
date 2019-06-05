@@ -1,6 +1,6 @@
 .latest {
   padding: 5px;
-  max-width: 412px;
+  max-width: 100%;
   margin: 25px auto;
   margin-bottom: 0;
   height: 455px;
@@ -35,6 +35,20 @@
     max-height: 63px;      /* fallback */
     -webkit-line-clamp: 3; /* number of lines to show */
     -webkit-box-orient: vertical;
+  }
+}
+
+@media(min-width: 900px) {
+  .latest-message {
+    display: block;
+    max-height: 76px;
+  }
+}
+
+@media (max-width: 767px) and (min-width: 463px) {
+  .latest-message {
+    display: block;
+    max-height: 76px;
   }
 }
 

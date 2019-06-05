@@ -5,6 +5,7 @@ import { ArticleService } from '@core/services/article/article.service';
 import { ArticleResponse, CommentResponse } from '@shared/interfaces/interfaces';
 import { Router } from '@angular/router';
 import { CommentService } from '@core/services/comment/comment.service';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-latest',
@@ -21,7 +22,7 @@ export class LatestComponent implements OnInit {
 
   constructor(private articleService: ArticleService,
               private commentService: CommentService,
-              private router: Router) { }
+              private nav: NavController) { }
 
   ngOnInit() {
     this.getTotalComments();
@@ -42,7 +43,7 @@ export class LatestComponent implements OnInit {
   }
 
   goToArticle(id: string): void {
-    this.router.navigateByUrl('/article/' + id);
+    this.nav.navigateForward('/article/' + id);
   }
 
   getTotalComments(): void {

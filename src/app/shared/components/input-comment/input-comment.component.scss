@@ -11,14 +11,18 @@ ion-textarea {
   font-size: .9em;
 }
 
+ion-item {
+ --inner-padding-end: 0 !important;
+ --inner-padding-start: 0 !important;
+}
+
 ion-icon {
-  margin-left: 20px;
   position: relative;
-  left: -3px;
+  left: -5px;
   font-size: 1.8em !important;
 }
 
 ion-buttons {
   position: relative;
-  left: 12px;
+  margin-right: 12px;
 }

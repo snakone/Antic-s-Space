@@ -58,7 +58,6 @@ export class CrafterService {
   public async popOver(component: ComponentRef, data?: any): Promise<void> {
     const popover = await this.popOverCtrl.create({
       component: component,
-      translucent: true,
       componentProps: data
     });
     return await popover.present();

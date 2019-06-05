@@ -31,7 +31,7 @@ ion-avatar {
   font-weight: bold;
 }
 
-h5 {
+.comment-author {
   margin-top: 8px;
   margin-bottom: 2px;
   font-weight: bold;
@@ -53,9 +53,17 @@ h5 {
     font-size: .6em;
   }
 
-  h5 {
+  .comment-author {
     font-size: .8em;
   }
+}
+
+.spinner {
+  height: 394px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
 }
 
 .no-comments {

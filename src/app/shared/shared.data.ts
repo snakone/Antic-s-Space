@@ -1,4 +1,4 @@
-import { Comment, Item, Share, Emoji, History } from './interfaces/interfaces';
+import { Item, Share, Emoji, History, Color } from './interfaces/interfaces';
 
 // MENU
 export const MENU: Item[] = [
@@ -9,14 +9,46 @@ export const MENU: Item[] = [
 
 // HOME SLIDERS
 export const mainSliderOpts = {
-  slidesPerView: 1,
-  spaceBetween: 5
+  slidesPerView: 1.3,
+  spaceBetween: 5,
+  breakpoints: {
+    975: { slidesPerView: 1.5 },
+    925: { slidesPerView: 1.3 },
+    850: { slidesPerView: 1 },
+    767: { slidesPerView: 1.3 },
+    625: { slidesPerView: 1.5 },
+    535: { slidesPerView: 1 }
+  }
 };
 
 export const smallSliderOpts = {
-  slidesPerView: 1.3,
-  spaceBetween: 5
+  slidesPerView: 2.3,
+  spaceBetween: 5,
+  breakpoints: {
+    975: { slidesPerView: 2.1 },
+    925: { slidesPerView: 2.3 },
+    875: { slidesPerView: 1.6 },
+    850: { slidesPerView: 1.3 },
+    767: { slidesPerView: 2.3 },
+    625: { slidesPerView: 1.8 },
+    535: { slidesPerView: 1.6 },
+    500: { slidesPerView: 1.3 }
+  }
 };
+
+export const SCROLLBAR = `<style>
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.3);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0 0 3px var(--ion-color-primary);
+}</style>
+`;
 
 // CATEGORIES
 export const CATEGORIES: string[] = [
@@ -63,68 +95,16 @@ export const MAIN: string[] = [
   '5cefd7f4275e0e24b43a78d4'
 ];
 
-// COMMENTS
-export const COMMENTS: Comment[] = [
-  {
-    _id: '1',
-    author: 'Harry George',
-    created: 'Dec 1, 2017 at 11.25 pm',
-    comment: 'Awesome theme. Must buy really worth it. Love it!'
-  },
-  {
-    _id: '2',
-    author: 'Sergi Martinez',
-    created: 'Dec 1, 2017 at 11.25 pm',
-    comment: 'Awesome theme. Must buy really worth it. Love it!'
-  },
-  {
-    _id: '3',
-    author: 'Harry George',
-    created: 'Dec 1, 2017 at 11.25 pm',
-    comment: 'Awesome theme. Must buy really worth it. Love it!'
-  },
-  {
-    _id: '4',
-    author: 'Harry George',
-    created: 'Dec 1, 2017 at 11.25 pm',
-    comment: 'Awesome theme. Must buy really worth it. Love it!'
-  },
-  {
-    _id: '5',
-    author: 'Harry George',
-    created: 'Dec 1, 2017 at 11.25 pm',
-    comment: 'Awesome theme. Must buy really worth it. Love it!'
-  },
-  {
-    _id: '6',
-    author: 'Harry George',
-    created: 'Dec 1, 2017 at 11.25 pm',
-    comment: 'Awesome theme. Must buy really worth it. Love it!'
-  },
-  {
-    _id: '7',
-    author: 'Harry George',
-    created: 'Dec 1, 2017 at 11.25 pm',
-    comment: 'Awesome theme. Must buy really worth it. Love it!'
-  },
-  {
-    _id: '8',
-    author: 'Harry George',
-    created: 'Dec 1, 2017 at 11.25 pm',
-    comment: 'Awesome theme. Must buy really worth it. Love it!'
-  },
-  {
-    _id: '9',
-    author: 'Harry George',
-    created: 'Dec 1, 2017 at 11.25 pm',
-    comment: 'Awesome theme. Must buy really worth it. Love it!'
-  },
-  {
-    _id: '10',
-    author: 'Harry George',
-    created: 'Dec 1, 2017 at 11.25 pm',
-    comment: 'Awesome theme. Must buy really worth it. Love it!'
-  }
+// COLORS
+export const COLORS: Color[] = [
+  { name: 'default', color: '#e05c0f' },
+  { name: 'pink', color: '#e91e63' },
+  { name: 'blue', color: '#3880ff' },
+  { name: 'red', color: '#b00020' },
+  { name: 'cyan', color: '#03dac6' },
+  { name: 'green', color: '#10dc60' },
+  { name: 'yellow', color: '#ffd300' },
+  { name: 'violet', color: '#7044ff' },
 ];
 
 // HISTORY

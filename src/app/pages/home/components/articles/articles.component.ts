@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { Article } from '@app/shared/interfaces/interfaces';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-articles',
@@ -14,14 +15,14 @@ export class ArticlesComponent implements OnInit {
   page = 1;
   itemsPerPage = 3;
 
-  constructor(private router: Router) { }
+  constructor(private nav: NavController) { }
 
   ngOnInit() {
     this.articles.shift();
   }
 
   goToArticle(id: string): void {
-    this.router.navigateByUrl('/article/' + id);
+    this.nav.navigateRoot('/article/' + id);
   }
 
   swipe(event: any): void {

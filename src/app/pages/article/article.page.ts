@@ -4,7 +4,8 @@ import { ArticleService } from '@core/services/article/article.service';
 import { Article } from '@app/shared/interfaces/interfaces';
 import { switchMap, map } from 'rxjs/operators';
 import { ArticleResponse } from '@shared/interfaces/interfaces';
-import { NavController } from '@ionic/angular';
+import { NavController, Platform } from '@ionic/angular';
+import { SCROLLBAR } from '@app/shared/shared.data';
 
 @Component({
   selector: 'app-article',
@@ -15,13 +16,19 @@ import { NavController } from '@ionic/angular';
 export class ArticlePage implements OnInit {
 
   article: Article;
+  scrollbar = false;
 
   constructor(private route: ActivatedRoute,
               private _article: ArticleService,
-              private nav: NavController) { }
+              private nav: NavController,
+              private platform: Platform) { }
 
   ngOnInit() {
     this.getArticle();
+  }
+
+  ionViewWillEnter(): void {
+    this.changeScrollBar();
   }
 
   private getArticle() {
@@ -34,6 +41,13 @@ export class ArticlePage implements OnInit {
         if (!this.article) { this.nav.navigateRoot('/home'); }
       }
     });
+  }
+
+  private changeScrollBar(): void {
+    if (!this.platform.is('mobileweb') && !this.platform.is('cordova')) {
+      const content = document.getElementById('article');
+      content.shadowRoot.innerHTML += SCROLLBAR;
+    }
   }
 
 }

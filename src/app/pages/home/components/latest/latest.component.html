@@ -18,7 +18,7 @@
           </ion-item>
       </ion-col>
     </ion-row>
-    <ion-row *ngIf="article">
+    <ion-row *ngIf="article.created">
       <ion-col text-left>
         <div class="picture"
              [style]="article.cover | sanitizer: 'style'"
@@ -43,7 +43,7 @@
         </div>
       </ion-col>
     </ion-row>
-    <ion-row *ngIf="!article">
+    <ion-row *ngIf="!article.created">
       <ion-col class="flex-box">
         <h4>{{'no.articles' | translate}}</h4>
       </ion-col>

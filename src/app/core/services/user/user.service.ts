@@ -13,7 +13,6 @@ export class UserService {
   readonly API_TOKEN = APP_CONSTANTS.END_POINT + 'token';
 
   public user: User;
-  public token = '';
 
   constructor(private http: HttpService,
               private storage: StorageService) {
@@ -67,6 +66,10 @@ export class UserService {
       account: 'Guest',
       password: 'Guest'
     };
+  }
+
+  public areYouOnline(): boolean {
+    return this.storage.getToken() ? true : false;
   }
 
   public areYouGuest(): boolean {

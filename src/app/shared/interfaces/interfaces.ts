@@ -101,6 +101,11 @@ export interface History {
   type: string;
 }
 
+export interface Color {
+  name: string;
+  color: string;
+}
+
 export interface HttpError {
   name: string;
   status: number;

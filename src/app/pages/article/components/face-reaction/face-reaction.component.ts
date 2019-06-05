@@ -1,7 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { REACTIONS } from '@app/shared/shared.data';
 import { Article, Reaction, ReactionResponse, Counter, Emoji } from '@app/shared/interfaces/interfaces';
 import { ReactionService } from '@app/core/services/reaction/reaction.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-face-reaction',
@@ -9,18 +10,23 @@ import { ReactionService } from '@app/core/services/reaction/reaction.service';
   styleUrls: ['./face-reaction.component.scss'],
 })
 
-export class FaceReactionComponent implements OnInit {
+export class FaceReactionComponent implements OnInit, OnDestroy {
 
   @Input() article: Article;
   emojis: Emoji[] = REACTIONS;
   reactions: Reaction[];
   counter: Counter;
+  subscription: Subscription;
 
   constructor(private reactionService: ReactionService) { }
 
   ngOnInit() {
     this.getReactions();
     this.listenToReactions();
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 
   getReactions(): void {
@@ -35,7 +41,7 @@ export class FaceReactionComponent implements OnInit {
   }
 
   private listenToReactions(): void {
-    this.reactionService.recieved
+    this.subscription = this.reactionService.recieved
       .subscribe((res: boolean) => {
         if (res) {
           this.getReactions();
@@ -45,7 +51,7 @@ export class FaceReactionComponent implements OnInit {
 
   private makeCounter(reactions: Reaction[]): void {
     this.counter = new Counter();
-    reactions.map(x => {
+    reactions.forEach(x => {
       switch (x.reaction) {
         case 'Love': this.counter.love++; break;
         case 'Laugh': this.counter.laugh++; break;
@@ -61,6 +67,7 @@ export class FaceReactionComponent implements OnInit {
     const total = counter.getTotal();
     this.emojis.forEach((x: Emoji) => {
       x.height = (counter[x.title.toLowerCase()] * 100) / total;
+      if (!x.height) { x.height = 0; }
     });
   }
 

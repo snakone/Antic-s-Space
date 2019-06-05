@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ArticleService } from '@app/core/services/article/article.service';
 import { ArticleResponse, Article } from '@app/shared/interfaces/interfaces';
 import { MAIN } from '@app/shared/shared.data';
+import { SCROLLBAR } from '../../shared/shared.data';
+import { Platform } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -12,14 +14,21 @@ import { MAIN } from '@app/shared/shared.data';
 export class HomePage implements OnInit {
 
   articles: Article[] = [];
-  refresh = true;
   main: Article[] = [];
   latest: Article;
 
-  constructor(private _article: ArticleService) {}
+  refresh = true;
+  scrollbar = false;
+
+  constructor(private _article: ArticleService,
+              private platform: Platform) {}
 
   ngOnInit(): void {
     this.getArticles();
+  }
+
+  ionViewWillEnter(): void {
+    this.changeScrollBar();
   }
 
   private getArticles(): void {
@@ -55,9 +64,21 @@ export class HomePage implements OnInit {
   }
 
   changeCategory(articles: Article[]) {
+    if (articles.length === 0) {
+      this.latest = {};
+      this.articles = [];
+      return;
+    }
     this.latest = articles[0];
     articles.shift();
     this.articles = articles;
+  }
+
+  changeScrollBar(): void {
+    if (!this.platform.is('mobileweb') && !this.platform.is('cordova')) {
+      const content = document.getElementById('home');
+      content.shadowRoot.innerHTML += SCROLLBAR;
+    }
   }
 
 }

@@ -1,6 +1,6 @@
 <app-header></app-header>
 
-<ion-content text-center>
+<ion-content text-center id="home">
   <ion-refresher slot="fixed"
                 [disabled]="!refresh"
                 (ionRefresh)="doRefresh($event)">
@@ -15,4 +15,6 @@
   </app-latest>
   <app-articles [articles]="articles"></app-articles>
 </ion-content>
+
+<app-loader *ngIf="!latest || !articles"></app-loader>
 
