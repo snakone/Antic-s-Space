@@ -1,4 +1,4 @@
-<div class="header" [ngStyle]="{'background-image': 'url(' + article.cover + ')'}">
+<div class="header" [style]="article.cover | sanitizer:'style'">
   <ion-icon name="arrow-round-back"
             color="primary"
             (click)="goBack()">

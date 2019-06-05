@@ -1,6 +1,6 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import { Comment, CommentResponse } from '@app/shared/interfaces/interfaces';
-import { Observable, Subject } from 'rxjs';
+import { Observable } from 'rxjs';
 import { HttpService } from '../http/http.service';
 import { APP_CONSTANTS } from '@app/app.config';
 
@@ -12,7 +12,7 @@ export class CommentService {
   recieved: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   constructor(private http: HttpService) {
-    console.log('CommentsService');
+    console.log('CommentService');
   }
 
   public getCommentsByArticle(id: string): Observable<CommentResponse> {

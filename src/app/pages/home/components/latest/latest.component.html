@@ -18,7 +18,7 @@
           </ion-item>
       </ion-col>
     </ion-row>
-    <ion-row *ngIf="article">
+    <ion-row *ngIf="article.created">
       <ion-col text-left>
         <div class="picture"
              [style]="article.cover | sanitizer: 'style'"
@@ -32,15 +32,18 @@
         </p>
         <span class="latest-author">
           <strong>{{article.author}}</strong> - {{article.created}}
-          <ion-badge color="primary" mode="md">13</ion-badge>
+          <ion-badge color="primary"
+                     [ngClass]="{'zero': total < 10}"
+                     mode="md">{{total}}
+          </ion-badge>
           <ion-icon name="chatboxes" color="primary"></ion-icon>
         </span>
         <div class="latest-message"
-           [innerHTML]="article.message | truncate">
+           [innerHTML]="article.message | sanitizer:'html'">
         </div>
       </ion-col>
     </ion-row>
-    <ion-row *ngIf="!article">
+    <ion-row *ngIf="!article.created">
       <ion-col class="flex-box">
         <h4>{{'no.articles' | translate}}</h4>
       </ion-col>

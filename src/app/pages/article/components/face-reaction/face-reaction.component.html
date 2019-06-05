@@ -1,15 +1,21 @@
-<app-article-legend></app-article-legend>
+<div *ngIf="reactions">
+    <app-article-legend></app-article-legend>
+    <ul class="chart">
+      <li *ngFor="let e of emojis" class="animated fadeIn">
+        <span [ngStyle]="{'height': e.height | percentage}"
+              [attr.title]="e.title | translate"></span>
+        <img [src]="e.image | emoji"/>
+        <span class="perc"
+              [ngClass]="{'low': heightToLow(e.height),
+                          'medium': heightToMedium(e.height),
+                          'high': heightToHigh(e.height)}">
+                {{(e.height | number: '1.0-1') + '%' }}
+        </span>
+      </li>
+    </ul>
+</div>
 
-<ul class="chart">
-  <li *ngFor="let e of emojis" class="animated fadeIn">
-    <span [ngStyle]="{'height': e.height | percentage}"
-          [attr.title]="e.title | translate"></span>
-    <img [src]="e.image | emoji"/>
-    <span class="perc"
-          [ngClass]="{'low': heightToLow(e.height),
-                      'medium': heightToMedium(e.height),
-                      'high': heightToHigh(e.height)}">
-            {{e.height | percentage}}
-    </span>
-  </li>
-</ul>
+<div class="no-reactions" *ngIf="!reactions">
+  <ion-spinner name="lines" color="primary"></ion-spinner>
+</div>
+

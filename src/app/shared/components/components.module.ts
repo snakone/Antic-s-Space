@@ -9,7 +9,7 @@ import { LoaderComponent } from './loader/loader.component';
 import { PickAvatarComponent } from './pick-avatar/pick-avatar.component';
 import { PaginationComponent } from './pagination/pagination.component';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { EmojiSelectorComponent } from './emoji-selector/emoji-selector.component';
+import { ReactionSelectorComponent } from './reaction-selector/reaction-selector.component';
 import { MenuComponent } from './menu/menu.component';
 import { RouterModule } from '@angular/router';
 import { InputCommentComponent } from './input-comment/input-comment.component';
@@ -25,7 +25,7 @@ import { FormsModule } from '@angular/forms';
     LoaderComponent,
     PickAvatarComponent,
     PaginationComponent,
-    EmojiSelectorComponent,
+    ReactionSelectorComponent,
     InputCommentComponent,
     HelpComponent,
     ColorSelectorComponent
@@ -45,14 +45,14 @@ import { FormsModule } from '@angular/forms';
     LoaderComponent,
     PickAvatarComponent,
     PaginationComponent,
-    EmojiSelectorComponent,
+    ReactionSelectorComponent,
     InputCommentComponent,
     HelpComponent,
     ColorSelectorComponent
   ],
   entryComponents: [
     HelpComponent,
-    EmojiSelectorComponent,
+    ReactionSelectorComponent,
     InputCommentComponent,
     ColorSelectorComponent
   ]

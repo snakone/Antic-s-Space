@@ -11,13 +11,18 @@ ion-textarea {
   font-size: .9em;
 }
 
-h5 {
-  margin-top: 10px;
-  display: inline-block;
+ion-item {
+ --inner-padding-end: 0 !important;
+ --inner-padding-start: 0 !important;
 }
 
 ion-icon {
-  margin-left: 20px;
   position: relative;
-  left: 5px;
+  left: -5px;
+  font-size: 1.8em !important;
+}
+
+ion-buttons {
+  position: relative;
+  margin-right: 12px;
 }

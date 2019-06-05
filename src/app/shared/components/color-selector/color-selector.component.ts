@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { COLORS } from './colors.data';
 import { ThemeService } from '../../theme/theme.service';
 import { CrafterService } from '../../crafter/crafter.service';
+import { COLORS } from '@app/shared/shared.data';
 
 @Component({
   selector: 'app-color-selector',

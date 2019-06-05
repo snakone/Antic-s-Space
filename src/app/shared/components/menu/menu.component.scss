@@ -24,7 +24,7 @@ img {
   z-index: 100;
 }
 
-@media (min-width:769px) {
+@media (min-width:768px) {
  .close {
    display: none;
  }
@@ -59,4 +59,14 @@ h4 {
 
 .email {
   margin: 8px auto;
+}
+
+@media (max-width: 359px) {
+  h4 {
+    font-size: .9em;
+  }
+
+  p {
+    font-size: .6em;
+  }
 }

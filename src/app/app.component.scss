@@ -1,13 +1,19 @@
 ion-menu {
   --max-width: 360px;
+  --min-width: 100%;
   --width: 100%;
 }
 
-@media (min-width: 769px) {
-  .split-pane-md.split-pane-visible > .split-pane-side {
-    max-width: 360px !important;
-  }
+.split-pane-md.split-pane-visible > .split-pane-side {
+  max-width: 360px !important;
 }
+
+ion-router-outlet {
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+
 
 
 

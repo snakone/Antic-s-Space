@@ -1,10 +1,11 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 import { Article } from '@app/shared/interfaces/interfaces';
 import { CATEGORIES } from '@app/shared/shared.data';
 import { ArticleService } from '@core/services/article/article.service';
-import { ArticleResponse } from '@shared/interfaces/interfaces';
+import { ArticleResponse, CommentResponse } from '@shared/interfaces/interfaces';
 import { Router } from '@angular/router';
-
+import { CommentService } from '@core/services/comment/comment.service';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-latest',
@@ -17,24 +18,41 @@ export class LatestComponent implements OnInit {
   @Input() article: Article;
   @Output() selectCategory: EventEmitter<Article[]> = new EventEmitter<Article[]>();
   categories = CATEGORIES;
+  total = 0;
 
   constructor(private articleService: ArticleService,
-              private router: Router) { }
+              private commentService: CommentService,
+              private nav: NavController) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.getTotalComments();
+   }
 
   search(event: CustomEvent): void {
     if (event.detail.value === 'All') {
       this.articleService.getArticles()
-      .subscribe((res: ArticleResponse) => this.selectCategory.emit(res.articles));
+        .subscribe((res: ArticleResponse) => {
+          if (res.ok) { this.selectCategory.emit(res.articles); }
+      });
     } else {
       this.articleService.getArticlesByCategory(event.detail.value)
-      .subscribe((res: ArticleResponse) => this.selectCategory.emit(res.articles));
+        .subscribe((res: ArticleResponse) => {
+          if (res.ok) { this.selectCategory.emit(res.articles); }
+      });
     }
   }
 
   goToArticle(id: string): void {
-    this.router.navigateByUrl('/article/' + id);
+    this.nav.navigateForward('/article/' + id);
+  }
+
+  getTotalComments(): void {
+    this.commentService.getCommentsByArticle(this.article._id)
+      .subscribe((res: CommentResponse) => {
+        if (res.ok) {
+          this.total = res.comments.length;
+      }
+    });
   }
 
 }

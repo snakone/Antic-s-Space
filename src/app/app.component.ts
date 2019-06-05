@@ -8,6 +8,7 @@ import { APP_CONSTANTS } from '@app/app.config';
 import { timer } from 'rxjs';
 import { ThemeService } from '@shared/theme/theme.service';
 import { StorageService } from './core/storage/storage.service';
+import { UserService } from './core/services/user/user.service';
 
 @Component({
   selector: 'app-root',
@@ -27,7 +28,8 @@ export class AppComponent {
     private translate: TranslateService,
     private menu: MenuController,
     private storage: StorageService,
-    private theme: ThemeService
+    private theme: ThemeService,
+    public user: UserService
   ) {
     this.initializeApp();
   }
@@ -50,9 +52,9 @@ export class AppComponent {
     this.translate.setDefaultLang(APP_CONSTANTS.DEFAULT_LANGUAGE);
     this.translate.use(APP_CONSTANTS.DEFAULT_LANGUAGE);
 
-    if (this.storage.getTheme()) {
-      this.theme.addBodyClass(this.storage.getTheme());
-    }
+    this.storage.getTheme() ?
+    this.theme.addBodyClass(this.storage.getTheme()) :
+    this.theme.setDefault();
 
     if (this.storage.getLanguage()) {
       this.translate.use(this.storage.getLanguage());

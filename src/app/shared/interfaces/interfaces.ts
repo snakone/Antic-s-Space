@@ -52,6 +52,22 @@ export interface CommentResponse {
   comments?: Comment[];
 }
 
+export interface Reaction {
+  _id?: string;
+  author: string;
+  created?: string;
+  reaction: string;
+  user?: User;
+  article?: string;
+}
+
+export interface ReactionResponse {
+  ok: boolean;
+  message: string;
+  reaction?: Reaction;
+  reactions?: Reaction[];
+}
+
 export interface Code {
   code: string;
   lang: string;
@@ -66,7 +82,7 @@ export interface Media {
 
 export interface Emoji {
   title: string;
-  height: string;
+  height: number;
   image: string;
 }
 
@@ -85,6 +101,11 @@ export interface History {
   type: string;
 }
 
+export interface Color {
+  name: string;
+  color: string;
+}
+
 export interface HttpError {
   name: string;
   status: number;
@@ -92,6 +113,8 @@ export interface HttpError {
   url: string;
   author?: string;
 }
+
+// CLASSES
 
 export class AppStorage {
   id?: string;
@@ -110,4 +133,22 @@ export class AppStorage {
     this.language = language;
   }
 
+}
+
+export class Counter {
+  constructor(public love: number = 0,
+              public laugh: number = 0,
+              public wow: number = 0,
+              public sad: number = 0,
+              public angry: number = 0) {
+    this.love = love;
+    this.laugh = laugh;
+    this.wow = wow;
+    this.sad = sad;
+    this.angry = angry;
+  }
+
+  getTotal(): number {
+    return this.love + this.laugh + this.wow + this.sad + this.angry;
+  }
 }

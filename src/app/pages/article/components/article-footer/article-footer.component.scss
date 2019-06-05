@@ -1,8 +1,9 @@
 .footer {
   padding: 5px;
-  max-width: 412px;
+  max-width: 100%;
   margin: 0px auto;
   height: auto;
+  min-height: 250px;
   margin-top: 20px;
   color: var(--ion-color-light) !important;
   background: var(--ion-color-dark-shade);

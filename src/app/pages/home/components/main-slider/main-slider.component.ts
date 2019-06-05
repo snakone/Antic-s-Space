@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, HostListener, Input } from '@angular/core';
-import { IonSlides } from '@ionic/angular';
+import { IonSlides, NavController } from '@ionic/angular';
 import { mainSliderOpts } from '@shared/shared.data';
 import { Article } from '@app/shared/interfaces/interfaces';
 import { Router } from '@angular/router';
@@ -16,7 +16,7 @@ export class MainSliderComponent implements OnInit {
   @Input() articles: Article[];
   options = mainSliderOpts;
 
-  constructor(private router: Router) { }
+  constructor(private nav: NavController) { }
 
   ngOnInit() { }
 
@@ -29,7 +29,7 @@ export class MainSliderComponent implements OnInit {
   }
 
   goToArticle(id: string): void {
-    this.router.navigateByUrl('/article/' + id);
+    this.nav.navigateRoot('/article/' + id);
   }
 
 }

@@ -1,5 +1,7 @@
 <ion-app>
-  <ion-split-pane when="md" contentId="main">
+  <ion-split-pane when="md"
+                  contentId="main"
+                  [disabled]="!user.areYouOnline()">
       <ion-menu side="start"
                 menuId="menu"
                 contentId="main"

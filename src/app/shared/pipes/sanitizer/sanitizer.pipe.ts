@@ -14,6 +14,8 @@ export class SanitizerPipe implements PipeTransform {
     if (args === 'style') {
       const style = `background-image: url('${value}')`;
       return this.sanitizer.bypassSecurityTrustStyle(style);
+    } else if (args === 'html') {
+      return this.sanitizer.bypassSecurityTrustHtml(value);
     }
   }
 

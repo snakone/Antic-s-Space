@@ -3,7 +3,6 @@ import { APP_CONSTANTS } from '@app/app.config';
 import { HttpService } from '../http/http.service';
 import { ArticleResponse } from '@shared/interfaces/interfaces';
 import { Observable } from 'rxjs';
-import { HttpParams } from '@angular/common/http';
 
 @Injectable()
 

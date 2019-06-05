@@ -3,7 +3,8 @@ import { HttpService,
          ArticleService,
          UserService,
          AuthService,
-         CommentService } from './services.index';
+         CommentService,
+         ReactionService } from './services.index';
 
 @NgModule({
   declarations: [],
@@ -13,7 +14,8 @@ import { HttpService,
     ArticleService,
     UserService,
     AuthService,
-    CommentService
+    CommentService,
+    ReactionService
   ]
 })
 

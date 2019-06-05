@@ -5,5 +5,8 @@
   </p>
   <app-article-share [article]="article"></app-article-share>
   <app-article-maker [article]="article"></app-article-maker>
-  <app-article-related [category]="article.category"></app-article-related>
+  <app-article-related [category]="article.category"
+                       [article]="article">
+  </app-article-related>
+  <app-article-next></app-article-next>
 </div>
