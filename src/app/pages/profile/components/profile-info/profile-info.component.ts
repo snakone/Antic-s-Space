@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
-import { User } from '@app/shared/interfaces/interfaces';
+import { User, UserInfoResponse, UserInfo } from '@app/shared/interfaces/interfaces';
 import { IonItemSliding, IonInput } from '@ionic/angular';
 import { UserService } from '@app/core/services/user/user.service';
 import { UserResponse } from '@shared/interfaces/interfaces';
@@ -16,6 +16,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class ProfileInfoComponent implements OnInit {
 
   @Input() user: User;
+  @Input() info: UserInfo;
   @ViewChild('slidingName') slidingName: IonItemSliding;
   @ViewChild('slidingEmail') slidingEmail: IonItemSliding;
   @ViewChild('name') name: IonInput;
@@ -23,6 +24,8 @@ export class ProfileInfoComponent implements OnInit {
   editingName = false;
   editingEmail = false;
   editUserForm: FormGroup;
+  comments: number;
+  reactions: number;
   namePattern = '^[A-Za-z0-9 _]*[A-Za-z0-9][0-9A-Za-zÀ-ÿ][A-Za-z0-9 _]*$';
 
   constructor(private _user: UserService,
@@ -76,9 +79,9 @@ export class ProfileInfoComponent implements OnInit {
           this.storage.setToken(res.token);
           this.editingName = false;
           this.editingEmail = false;
-          this.crafter.alert('User updated!');
+          this.crafter.alert('user.updated');
         } else {
-          this.crafter.alert('error updating');
+          this.crafter.alert('error.updating');
         }
     });
   }

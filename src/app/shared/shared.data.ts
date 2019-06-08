@@ -36,20 +36,6 @@ export const smallSliderOpts = {
   }
 };
 
-export const SCROLLBAR = `<style>
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.3);
-  border-radius: 5px;
-}
-::-webkit-scrollbar-thumb {
-  border-radius: 5px;
-  -webkit-box-shadow: inset 0 0 3px var(--ion-color-primary);
-}</style>
-`;
-
 // CATEGORIES
 export const CATEGORIES: string[] = [
   'All',
@@ -62,15 +48,8 @@ export const CATEGORIES: string[] = [
   'Antic'
 ];
 
-// LANGUAGES
-export const LANGUAGES: string[] = [
-  'HTML',
-  'CSS',
-  'SCSS',
-  'Javascript',
-  'Typescript',
-  'Nodejs',
-  'NPM'
+export const TENDENCIES: string[] = [
+  ''
 ];
 
 // SOCIAL ICONS
@@ -92,7 +71,8 @@ export const REACTIONS: Emoji[] = [
 
 // MAIN ARTICLES
 export const MAIN: string[] = [
-  '5cefd7f4275e0e24b43a78d4'
+  '5cefd7f4275e0e24b43a78d4',
+  '5cf7e10d216db727d8398888'
 ];
 
 // COLORS
@@ -110,44 +90,28 @@ export const COLORS: Color[] = [
 // HISTORY
 export const HISTORY: History[] = [
   {
-    article: 'How to get the perfect travel shot',
-    type: 'Like'
-  },
-  {
-    article: 'How to get the perfect travel shot',
+    title: 'How to get the perfect travel shot',
     type: 'Comment'
   },
   {
-    article: 'How to get the perfect travel shot',
+    title: 'How to get the perfect travel shot',
     type: 'Reaction'
   },
   {
-    article: 'How to get the perfect travel shot',
-    type: 'Like'
-  },
-  {
-    article: 'How to get the perfect travel shot',
-    type: 'Like'
-  },
-  {
-    article: 'How to get the perfect travel shot',
+    title: 'How to get the perfect travel shot',
     type: 'Comment'
   },
   {
-    article: 'How to get the perfect travel shot',
-    type: 'Like'
-  },
-  {
-    article: 'How to get the perfect travel shot',
+    title: 'How to get the perfect travel shot',
     type: 'Reaction'
   },
   {
-    article: 'How to get the perfect travel shot',
+    title: 'How to get the perfect travel shot',
     type: 'Reaction'
   },
   {
-    article: 'How to get the perfect travel shot',
-    type: 'Like'
+    title: 'How to get the perfect travel shot',
+    type: 'Comment'
   },
 ];
 

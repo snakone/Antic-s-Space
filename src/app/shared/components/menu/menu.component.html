@@ -12,7 +12,7 @@
       <p *ngIf="_user.user.account != 'Guest'">
         <span>{{'visit.your' | translate}}</span>
         <ion-menu-toggle autoHide="false">
-          <span class="bold" routerLink="/profile" routerDirection="root">
+          <span class="bold" routerLink="/profile" routerDirection="forward">
             {{'profile' | translate}}</span>
         </ion-menu-toggle>
       </p>

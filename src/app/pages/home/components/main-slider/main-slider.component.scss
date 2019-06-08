@@ -9,10 +9,14 @@ ion-slides {
 
 ion-slide {
   text-align: left;
+
+    &:hover {
+    cursor: pointer;
+  }
 }
 
 .slide {
-  background-size: 100% 100%;
+  background-size: cover;
   height: 225px;
 }
 

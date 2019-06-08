@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { APP_CONSTANTS } from '@app/app.config';
 import { HttpService } from '../http/http.service';
-import { ArticleResponse } from '@shared/interfaces/interfaces';
+import { ArticleResponse, NextPrevResponse } from '@shared/interfaces/interfaces';
 import { Observable } from 'rxjs';
 
 @Injectable()
@@ -24,6 +24,10 @@ export class ArticleService {
 
   public getArticlesByCategory(category: string): Observable<ArticleResponse> {
     return this.http.get(APP_CONSTANTS.END_POINT + 'category' + '/' + category);
+  }
+
+  public getNextPrev(id: string): Observable<NextPrevResponse> {
+    return this.http.get(APP_CONSTANTS.END_POINT + 'article/' + id);
   }
 
 }

@@ -1,7 +1,7 @@
 import { STORAGE_CONSTANTS } from '@app/core/storage/storage.config';
 import { APP_CONSTANTS } from '../../app.config';
 
-export interface Article {
+  export interface Article {
   _id?: string;
   title?: string;
   category?: string;
@@ -36,13 +36,25 @@ export interface UserResponse {
   token?: string;
 }
 
+export interface UserInfo {
+  comments?: number;
+  reactions?: number;
+}
+
+export interface UserInfoResponse {
+  ok: boolean;
+  message: string;
+  comments?: number;
+  reactions?: number;
+}
+
 export interface Comment {
   _id?: string;
   author: string;
   created?: string;
   comment: string;
   user?: User;
-  article?: string;
+  article?: Article;
 }
 
 export interface CommentResponse {
@@ -58,7 +70,7 @@ export interface Reaction {
   created?: string;
   reaction: string;
   user?: User;
-  article?: string;
+  article?: Article;
 }
 
 export interface ReactionResponse {
@@ -68,9 +80,29 @@ export interface ReactionResponse {
   reactions?: Reaction[];
 }
 
+export interface NextPrevResponse {
+  ok: boolean;
+  message: string;
+  next?: Article;
+  prev?: Article;
+}
+
+export interface History {
+  title: string;
+  created?: string;
+  type: string;
+}
+
+export interface HistoryResponse {
+  ok: boolean;
+  message: string;
+  history: History[];
+}
+
 export interface Code {
   code: string;
   lang: string;
+  tooltip: boolean;
 }
 
 export interface Media {
@@ -94,11 +126,6 @@ export interface Item {
 export interface Share {
   name: string;
   image: string;
-}
-
-export interface History {
-  article: string;
-  type: string;
 }
 
 export interface Color {

@@ -21,13 +21,14 @@ export class InputCommentComponent implements OnInit {
               private commentService: CommentService,
               private crafter: CrafterService) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
   addCommnent(): void {
     const comment: Comment = {
       author: this.getUser().name,
       comment: this.comment,
-      article: this.navParams.get('id'),
+      article: this.navParams.get('article'),
       user: this.getUser()
     };
 
@@ -35,7 +36,7 @@ export class InputCommentComponent implements OnInit {
       .subscribe((res: CommentResponse) => {
         if (res.ok) {
           this.crafter.close();
-          this.crafter.alert('Comment recieved!');
+          this.crafter.alert('comment.recieved');
           this.commentService.commentRecieved();
         }
     });

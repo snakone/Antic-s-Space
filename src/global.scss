@@ -54,12 +54,17 @@ ion-popover {
   --width: 300px !important;
 }
 
-.Javascript, .HTML, .CSS {
+.Javascript, .Typescript, .HTML, .CSS, .SCSS, .Nodejs {
   font-weight: bold;
+  text-shadow: 2px 2px 0 var(--ion-color-dark);
 }
 
 .Javascript {
   color: rgb(247, 223, 30);
+}
+
+.Typescript {
+  color: rgb(30, 117, 247);
 }
 
 .HTML {
@@ -70,13 +75,36 @@ ion-popover {
  color:rgb(31, 95, 170);
 }
 
-.angular {
+.SCSS {
+  color: rgb(155, 27, 116);
+}
+
+.Nodejs {
+  color: rgb(64, 233, 64);
+}
+
+.angular, .NPM {
   color: red;
   font-weight: bold;
 }
 
+.NPM {
+  -webkit-text-stroke: 1px var(--ion-color-light);
+  text-shadow: 2px 2px 0 var(--ion-color-danger),
+}
+
 .ionic {
   color: #1b6dda;
+  font-weight: bold;
+}
+
+.react {
+  color: rgb(18, 136, 233);
+  font-weight: bold;
+}
+
+.vue {
+  color: rgb(3, 97, 3);
   font-weight: bold;
 }
 
@@ -114,5 +142,19 @@ ion-note {
  ion-spinner {
   transform: scale(1.5);
 }
+
+@-webkit-keyframes autofill {
+  to {
+      color: #f4f5f8;
+      background: transparent;
+  }
+}
+
+input:-webkit-autofill {
+  -webkit-animation-name: autofill;
+  -webkit-animation-fill-mode: both;
+}
+
+
 
 

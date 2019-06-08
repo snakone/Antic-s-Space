@@ -6,14 +6,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 export class IconTypePipe implements PipeTransform {
 
-  transform(value: string, args?: any): string {
-    if (value === 'Like') {
-      return 'heart';
-    } else if (value === 'Comment') {
-      return 'mail-open';
-    } else {
-      return 'happy';
-    }
+  transform(value: string): string {
+    return value === 'comment' ? 'mail-open' : 'happy';
   }
 
 }

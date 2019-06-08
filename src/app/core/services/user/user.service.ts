@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { User, UserResponse } from '@app/shared/interfaces/interfaces';
+import { User, UserResponse, UserInfoResponse } from '@app/shared/interfaces/interfaces';
 import { APP_CONSTANTS } from '@app/app.config';
 import { Observable } from 'rxjs';
 import { StorageService } from '@app/core/storage/storage.service';
@@ -20,8 +20,14 @@ export class UserService {
    }
 
    public getUser(): User {
-    if (!this.user) { this.verifyToken(); }
-    return { ...this.user };
+     if (!this.user) {
+       this.verifyToken()
+         .then((res: boolean) => {
+           if (res) { return this.user; }
+         });
+     } else {
+       return this.user;
+     }
   }
 
   public loadUser(): Promise<void> {
@@ -41,6 +47,10 @@ export class UserService {
 
   public getUserById(id: string): Observable<UserResponse> {
     return this.http.get(this.API_USERS + `/${id}`);
+  }
+
+  public getUserInfoById(id: string): Observable<UserInfoResponse> {
+    return this.http.get(this.API_USERS + `/info/${id}`);
   }
 
   public updateUser(user: User): Observable<UserResponse> {
@@ -69,7 +79,7 @@ export class UserService {
   }
 
   public areYouOnline(): boolean {
-    return this.storage.getToken() ? true : false;
+    return this.storage.getToken() || this.areYouGuest() ? true : false;
   }
 
   public areYouGuest(): boolean {

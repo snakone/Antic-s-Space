@@ -14,6 +14,10 @@ ion-icon {
   right: 8px;
   top: 8px;
   font-size: 2em;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 img {
@@ -54,4 +58,10 @@ ion-segment-button {
 .sc-ion-segment-md-h {
   --indicator-color: transparent !important;
   --ripple-color: transparent !important;
+}
+
+@media (min-height: 650px) {
+  .profile-header {
+    margin-bottom: 15px;
+  }
 }

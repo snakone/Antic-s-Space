@@ -7,6 +7,10 @@ ion-item-divider {
 ion-item {
   font-size: .9em;
   --padding-start: 8px;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 ion-label {

@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ArticleService } from '@core/services/article/article.service';
+import { Article, NextPrevResponse } from '@app/shared/interfaces/interfaces';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-article-next',
@@ -8,8 +11,29 @@ import { Component, OnInit } from '@angular/core';
 
 export class ArticleNextComponent implements OnInit {
 
-  constructor() { }
+  @Input() article: Article;
+  prev: Article;
+  next: Article;
 
-  ngOnInit() {}
+  constructor(private articleService: ArticleService,
+  private nav: NavController) { }
+
+  ngOnInit() {
+    this.getNextPrev();
+  }
+
+  getNextPrev(): void {
+    this.articleService.getNextPrev(this.article._id)
+      .subscribe((res: NextPrevResponse) => {
+        if (res.ok) {
+          this.prev = res.prev[0];
+          this.next = res.next[0];
+        }
+    });
+  }
+
+  goNext(id: string) {
+    this.nav.navigateForward('/article/' + id);
+  }
 
 }

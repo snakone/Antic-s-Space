@@ -1,5 +1,5 @@
 import { Injectable, EventEmitter } from '@angular/core';
-import { Reaction, ReactionResponse } from '@app/shared/interfaces/interfaces';
+import { Reaction, ReactionResponse, Article } from '@app/shared/interfaces/interfaces';
 import { Observable } from 'rxjs';
 import { HttpService } from '../http/http.service';
 import { APP_CONSTANTS } from '@app/app.config';

@@ -1,6 +1,16 @@
-<ion-content *ngIf="_user.user">
-  <app-profile-header (segment)="segment = $event" [user]="_user.user"></app-profile-header>
-  <app-profile-info *ngIf="segment === 'Info'" [user]="_user.user"></app-profile-info>
-  <app-profile-history *ngIf="segment === 'History'" [user]="_user.user"></app-profile-history>
-  <app-profile-settings *ngIf="segment === 'Settings'" [user]="_user.user"></app-profile-settings>
+<ion-content *ngIf="user">
+  <app-profile-header (segment)="segment = $event"
+                      [user]="user">
+  </app-profile-header>
+  <app-profile-info *ngIf="segment === 'Info'"
+                     [user]="user"
+                     [info]="info">
+  </app-profile-info>
+  <app-profile-history *ngIf="segment === 'History'"
+                        [user]="user"
+                        [history]="history">
+  </app-profile-history>
+  <app-profile-settings *ngIf="segment === 'Settings'"
+                        [user]="user">
+  </app-profile-settings>
 </ion-content>

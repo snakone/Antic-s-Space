@@ -31,12 +31,12 @@ export class ShareComponent implements OnInit {
     if (value === 'comment') { this.openComment(); }
   }
 
-  private openReactions(ev?: any): void {
-    this.crafter.popOver(ReactionSelectorComponent, { id: this.article._id});
+  private openComment(ev?: any): void {
+    this.crafter.popOver(InputCommentComponent, { article: this.article});
   }
 
-  private openComment(ev?: any): void {
-    this.crafter.popOver(InputCommentComponent, { id: this.article._id});
+  private openReactions(ev?: any): void {
+    this.crafter.popOver(ReactionSelectorComponent, { article: this.article});
   }
 
 }

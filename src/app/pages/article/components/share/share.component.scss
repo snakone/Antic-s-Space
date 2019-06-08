@@ -7,6 +7,11 @@ img {
   width: 27px;
   margin: 0 10px;
   margin-left: 0;
+
+  &:hover {
+    cursor: pointer;
+    filter: brightness(1.1);
+  }
 }
 
 ion-grid {
@@ -19,4 +24,9 @@ h5 {
 
 .m-left {
   margin-left: 15px;
+}
+
+.last {
+  position: absolute;
+  right: 25px;
 }

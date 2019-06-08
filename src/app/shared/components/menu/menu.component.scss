@@ -43,6 +43,10 @@ p {
 
 span {
   color: var(--ion-color-light);
+
+  &.bold:hover {
+    cursor: pointer;
+  }
 }
 
 h4 {

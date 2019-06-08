@@ -40,7 +40,6 @@
   "create": "Create",
   "user.data": "User Data",
   "interactions": "Interactions",
-  "likes": "Likes",
   "settings": "Settings",
   "language": "Language",
   "remember.login": "Remember Login",
@@ -67,9 +66,17 @@
   "hello.there": "Hello there, my name is <span class='bold'>Sergi Martínez, it's a plesure that your are here for sure.",
   "app.gather": "This application gathers content about myself in one place, experiences as a <span class='bold'>Software Developer</span> as might as a person.",
   "app.content": "This content includes <span class='bold'>Programming Language</span> examples, featuring <span class='Javascript'>Javascript</span>, <span class='HTML'>HTML</span>, <span class='CSS'>CSS</span>, tutorials and any other modern web technology related. In addition to content of any other type.",
-  "create.account": "Create an <span class='bold'>Account</span> if you want to interact with others, <span class='bold'>Comment</span> and <span class='bold'>React</span> to articles are for registered members only. Enter as <span class='bold'>Guest</span> to read as many articles as you want.",
+  "create.account": "Create an <span class='bold'>Account</span> if you want to interact with other people, <span class='bold'>Comment</span> and <span class='bold'>React</span> to articles are for registered members only. Enter as <span class='bold'>Guest</span> to read as many articles as you want.",
   "thanks.app": "Thanks for using this App.",
   "you.reacted": "You reacted to...",
   "related.articles": "Related Articles",
-  "no.related": "No Related Articles"
+  "no.related": "No Related Articles",
+  "previous.article": "Previous Article",
+  "next.article":"Next Article",
+  "no.comments": "No Comments",
+  "comment.recieved": "Comment recieved!",
+  "reaction.recieved": "Reaction recieved!",
+  "user.updated": "User updated!",
+  "error.updating": "Error updating!",
+  "no.history": "No History registered"
 }

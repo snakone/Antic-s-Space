@@ -1,12 +1,12 @@
 <app-header></app-header>
 
-<ion-content text-center id="home">
+<ion-content text-center *ngIf="articles || latest">
   <ion-refresher slot="fixed"
                 [disabled]="!refresh"
                 (ionRefresh)="doRefresh($event)">
   <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
-  <app-main-slider [articles]="main"></app-main-slider>
+  <app-main-slider *ngIf="main" [articles]="main"></app-main-slider>
   <app-small-slider></app-small-slider>
   <app-trending></app-trending>
   <app-latest [article]="latest"
@@ -16,5 +16,5 @@
   <app-articles [articles]="articles"></app-articles>
 </ion-content>
 
-<app-loader *ngIf="!latest || !articles"></app-loader>
+<app-loader *ngIf="!latest"></app-loader>
 

@@ -25,6 +25,7 @@ export class MenuComponent implements OnInit {
 
   exit(): void {
     this.menuCtrl.close();
+    this._user.logout();
     this.nav.navigateRoot('/login');
   }
 

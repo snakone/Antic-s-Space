@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { User } from '@app/shared/interfaces/interfaces';
-import { HISTORY } from '@app/shared/shared.data';
+import { UserService } from '@core/services/user/user.service';
+import { HistoryService } from '@app/core/services/history/history.service';
+import { History, HistoryResponse } from '@shared/interfaces/interfaces';
 
 @Component({
   selector: 'app-profile-history',
@@ -11,9 +13,9 @@ import { HISTORY } from '@app/shared/shared.data';
 export class ProfileHistoryComponent implements OnInit {
 
   @Input() user: User;
+  @Input() history: History[];
   page = 1;
   itemsPerPage = 4;
-  history = HISTORY;
 
   constructor() { }
 
