@@ -78,5 +78,8 @@
   "reaction.recieved": "Reaction recieved!",
   "user.updated": "User updated!",
   "error.updating": "Error updating!",
-  "no.history": "No History registered"
+  "no.history": "No History registered",
+  "only.users": "Only registered Users",
+  "avoid.smart": "A clever person solves a problem. <br>A wise person avoids it",
+  "kill.theory": "Late or sooner, theory is murdered by experience."
 }

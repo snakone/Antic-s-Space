@@ -7,7 +7,7 @@
   <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
   <app-main-slider *ngIf="main" [articles]="main"></app-main-slider>
-  <app-small-slider></app-small-slider>
+  <app-small-slider *ngIf="secondary" [articles]="secondary"></app-small-slider>
   <app-trending></app-trending>
   <app-latest [article]="latest"
               *ngIf="latest"

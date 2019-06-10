@@ -79,5 +79,8 @@
   "reaction.recieved": "¡Reacción recibida!",
   "user.updated": "¡Usuario actualizado!",
   "error.updating": "¡Error al actualizar!",
-  "no.history": "No hay Historial registrado"
+  "no.history": "No hay Historial registrado",
+  "only.users": "Sólo Usuarios registrados",
+  "avoid.smart": "Una persona inteligente resuelve un problema.<br> Una persona sabia lo evita.",
+  "kill.theory": "La teoría es asesinada tarde o temprano por la experiencia."
 }

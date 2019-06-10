@@ -49,7 +49,8 @@ export const CATEGORIES: string[] = [
 ];
 
 export const TENDENCIES: string[] = [
-  ''
+  'avoid.smart',
+  'kill.theory'
 ];
 
 // SOCIAL ICONS
@@ -73,6 +74,12 @@ export const REACTIONS: Emoji[] = [
 export const MAIN: string[] = [
   '5cefd7f4275e0e24b43a78d4',
   '5cf7e10d216db727d8398888'
+];
+
+// SECONDARY ARTICLES
+export const SECONDARY: string[] = [
+  '5cfc7c3b4146ce00171f078b',
+  '5cfd4d66b3a8850017b65263'
 ];
 
 // COLORS

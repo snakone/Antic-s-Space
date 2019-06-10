@@ -4,7 +4,7 @@
              [style]="article.cover | sanitizer:'style'"
              (click)="goToArticle(article._id)">
     <div class="content">
-      <h5>{{article.category | uppercase}}</h5>
+      <h5>{{(article.category | translate) | uppercase}}</h5>
       <p>{{article.title}}</p>
       <span class="content-author">
         <strong>{{article.author}}</strong> - {{article.created}}

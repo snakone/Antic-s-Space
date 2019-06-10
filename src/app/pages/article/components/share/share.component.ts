@@ -24,7 +24,7 @@ export class ShareComponent implements OnInit {
 
   share(value: string): void {
     if (this._user.areYouGuest() && (value === 'reaction' || value === 'comment')) {
-      this.crafter.alert('Only for Users with Account');
+      this.crafter.alert('only.users');
       return;
     }
     if (value === 'reaction') { this.openReactions(); }

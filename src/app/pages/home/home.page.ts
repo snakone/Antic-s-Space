@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ArticleService } from '@app/core/services/article/article.service';
 import { ArticleResponse, Article } from '@app/shared/interfaces/interfaces';
-import { MAIN } from '@app/shared/shared.data';
+import { MAIN, SECONDARY } from '@app/shared/shared.data';
 
 @Component({
   selector: 'app-home',
@@ -14,6 +14,7 @@ export class HomePage implements OnInit {
   articles: Article[] = [];
   latest: Article;
   main: Article[] = [];
+  secondary: Article[] = [];
   refresh = true;
 
   constructor(private _article: ArticleService) {}
@@ -23,10 +24,12 @@ export class HomePage implements OnInit {
   }
 
   private getArticles(): void {
+    this.articles = [];
     this._article.getArticles()
       .subscribe((res: ArticleResponse) => {
         if (res.ok) {
           this.getMainArticles(res.articles);
+          this.getSecondaryArticles(res.articles);
           this.latest = res.articles[0];
           res.articles.shift();
           this.articles.push(...res.articles);
@@ -36,7 +39,7 @@ export class HomePage implements OnInit {
 
   doRefresh(event: any): void {
     this.refresh = false;
-    this.articles = [];
+    this.resetArticles();
     this.getArticles();
     setTimeout(() => {
       this.refresh = true;
@@ -54,6 +57,16 @@ export class HomePage implements OnInit {
     });
   }
 
+  private getSecondaryArticles(articles: Article[]) {
+    articles.map(x => {
+      SECONDARY.forEach((id) => {
+        if (x._id === id) {
+          this.secondary.unshift(x);
+        }
+      });
+    });
+  }
+
   changeCategory(articles: Article[]) {
     if (articles.length === 0) {
       this.latest = {};
@@ -63,6 +76,13 @@ export class HomePage implements OnInit {
     this.latest = articles[0];
     articles.shift();
     this.articles = articles;
+  }
+
+  private resetArticles(): void {
+    this.articles = [];
+    this.latest = {};
+    this.main = [];
+    this.secondary = [];
   }
 
 }

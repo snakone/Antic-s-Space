@@ -23,7 +23,7 @@
         <div class="picture"
              [style]="article.cover | sanitizer: 'style'"
              (click)="goToArticle(article._id)">
-          <h5>{{article.category | uppercase}}</h5>
+          <h5>{{(article.category | translate) | uppercase}}</h5>
         </div>
         <p class="article-title">
           <strong>

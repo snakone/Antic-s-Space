@@ -17,10 +17,11 @@ export class UserService {
   constructor(private http: HttpService,
               private storage: StorageService) {
     console.log('UserService');
+    this.setGuest();
    }
 
-   public getUser(): User {
-     if (!this.user) {
+  public getUser(): User {
+     if (!this.user || this.areYouGuest()) {
        this.verifyToken()
          .then((res: boolean) => {
            if (res) { return this.user; }
@@ -41,7 +42,9 @@ export class UserService {
               resolve();
             }
         });
-      } else { rej(); }
+      } else {
+        rej();
+      }
     });
   }
 
@@ -70,20 +73,24 @@ export class UserService {
   }
 
   public setGuest(): void {
-    this.user = {
-      name: 'Guest',
-      email: 'Guest@AnticSpace.com',
-      account: 'Guest',
-      password: 'Guest'
-    };
+    if (!this.user) {
+      this.user = {
+        name: 'Guest',
+        email: 'Guest@AnticSpace.com',
+        account: 'Guest',
+        password: 'Guest'
+      };
+    }
   }
 
   public areYouOnline(): boolean {
-    return this.storage.getToken() || this.areYouGuest() ? true : false;
+    return this.user ? true : false;
   }
 
   public areYouGuest(): boolean {
-    if (!this.user) { return; }
+    if (!this.user) {
+      return false;
+    }
     return this.user.account === 'Guest' ? true : false;
   }
 
@@ -96,7 +103,9 @@ export class UserService {
   }
 
   public verifyToken(): Promise<boolean> {
-    if (!this.storage.getToken()) { return Promise.resolve(false); }
+    if (!this.storage.getToken()) {
+      return Promise.resolve(false);
+    }
     return new Promise<boolean>((resolve, rej) => {
       this.http.get(this.API_TOKEN)
         .subscribe((res: UserResponse) => {
