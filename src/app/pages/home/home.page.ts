@@ -47,27 +47,23 @@ export class HomePage implements OnInit {
     }, 1000);
   }
 
-  private getMainArticles(articles: Article[]) {
-    articles.map(x => {
-      MAIN.forEach((id) => {
-        if (x._id === id) {
-          this.main.unshift(x);
-        }
+  private getMainArticles(articles: Article[]): void {
+    articles.map((x: Article) => {
+      MAIN.forEach((id: string) => {
+        if (x._id === id) { this.main.unshift(x); }
       });
     });
   }
 
-  private getSecondaryArticles(articles: Article[]) {
-    articles.map(x => {
-      SECONDARY.forEach((id) => {
-        if (x._id === id) {
-          this.secondary.unshift(x);
-        }
+  private getSecondaryArticles(articles: Article[]): void {
+    articles.map((x: Article) => {
+      SECONDARY.forEach((id: string) => {
+        if (x._id === id) { this.secondary.unshift(x); }
       });
     });
   }
 
-  changeCategory(articles: Article[]) {
+  changeCategory(articles: Article[]): void {
     if (articles.length === 0) {
       this.latest = {};
       this.articles = [];

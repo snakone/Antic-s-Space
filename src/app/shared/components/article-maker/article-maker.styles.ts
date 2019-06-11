@@ -59,7 +59,7 @@ export const ARTICLE_STYLES = `
   }
 
   .image {
-    margin: 20px auto;
+    margin: 15px auto;
   }
 
   .favorites {

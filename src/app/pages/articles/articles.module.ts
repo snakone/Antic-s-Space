@@ -7,6 +7,9 @@ import { IonicModule } from '@ionic/angular';
 
 import { ArticlesPage } from './articles.page';
 import { ComponentsModule } from '@app/shared/components/components.module';
+import { SegmentsComponent } from './components/segments/segments.component';
+import { ArticlesSlideComponent } from './components/articles-slide/articles-slide.component';
+import { SharedModule } from '@app/shared/shared.module';
 
 const routes: Routes = [
   {
@@ -21,8 +24,14 @@ const routes: Routes = [
     FormsModule,
     IonicModule,
     ComponentsModule,
+    SharedModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [ArticlesPage]
+  declarations: [
+    ArticlesPage,
+    SegmentsComponent,
+    ArticlesSlideComponent
+  ]
 })
+
 export class ArticlesPageModule {}

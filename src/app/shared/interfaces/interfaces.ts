@@ -87,6 +87,11 @@ export interface NextPrevResponse {
   prev?: Article;
 }
 
+export interface Category {
+  name: string;
+  icon: string;
+}
+
 export interface History {
   title: string;
   created?: string;

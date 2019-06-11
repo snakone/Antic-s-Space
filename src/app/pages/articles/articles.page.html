@@ -1,4 +1,9 @@
 <app-header></app-header>
 
 <ion-content>
+  <app-main-slider *ngIf="main" [articles]="main"></app-main-slider>
+  <app-segments></app-segments>
+  <app-articles-slide *ngIf="articles.length > 0 && converted"
+                      [articles]="articles">
+  </app-articles-slide>
 </ion-content>

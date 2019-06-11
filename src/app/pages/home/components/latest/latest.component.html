@@ -12,7 +12,7 @@
                         mode="ios"
                         (ionChange)="search($event)">
               <ion-select-option *ngFor="let c of categories"
-                                  [value]="c">{{c | translate}}
+                                  [value]="c.name">{{c.name | translate}}
               </ion-select-option>
             </ion-select>
           </ion-item>

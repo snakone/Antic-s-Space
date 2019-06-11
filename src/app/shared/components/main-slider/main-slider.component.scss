@@ -47,3 +47,15 @@ p {
   margin-bottom: 5px;
   text-shadow: 1px 2px 1px #474747, 1px 2px 2px #000000;
 }
+
+@media (min-width: 975px) {
+  p {
+    padding-right: 155px;
+  }
+}
+
+@media (max-width: 400px) {
+  p {
+    padding-right: 50px;
+  }
+}

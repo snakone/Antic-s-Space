@@ -1,4 +1,4 @@
-import { Item, Share, Emoji, History, Color } from './interfaces/interfaces';
+import { Item, Share, Emoji, Color, Category } from './interfaces/interfaces';
 
 // MENU
 export const MENU: Item[] = [
@@ -37,15 +37,15 @@ export const smallSliderOpts = {
 };
 
 // CATEGORIES
-export const CATEGORIES: string[] = [
-  'All',
-  'Code',
-  'Video',
-  'Gaming',
-  'Lifestyle',
-  'Interview',
-  'Review',
-  'Antic'
+export const CATEGORIES: Category[] = [
+  { name: 'All', icon: 'apps' },
+  { name: 'Code', icon: 'code' },
+  { name: 'Video', icon: 'videocam' },
+  { name: 'Gaming', icon: 'logo-game-controller-b' },
+  { name: 'Lifestyle', icon: 'pulse' },
+  { name: 'Interview', icon: 'clipboard' },
+  { name: 'Review', icon: 'search' },
+  { name: 'Antic', icon: 'finger-print' }
 ];
 
 export const TENDENCIES: string[] = [
@@ -93,33 +93,4 @@ export const COLORS: Color[] = [
   { name: 'yellow', color: '#ffd300' },
   { name: 'violet', color: '#7044ff' },
 ];
-
-// HISTORY
-export const HISTORY: History[] = [
-  {
-    title: 'How to get the perfect travel shot',
-    type: 'Comment'
-  },
-  {
-    title: 'How to get the perfect travel shot',
-    type: 'Reaction'
-  },
-  {
-    title: 'How to get the perfect travel shot',
-    type: 'Comment'
-  },
-  {
-    title: 'How to get the perfect travel shot',
-    type: 'Reaction'
-  },
-  {
-    title: 'How to get the perfect travel shot',
-    type: 'Reaction'
-  },
-  {
-    title: 'How to get the perfect travel shot',
-    type: 'Comment'
-  },
-];
-
 

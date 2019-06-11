@@ -21,6 +21,10 @@ html, body {
   user-select: text;
 }
 
+.segment-button-checked ion-icon {
+  color: var(--ion-color-light) !important;
+}
+
 ion-popover {
   div.popover-content {
       top: 50% !important;
@@ -143,6 +147,13 @@ ion-note {
   transform: scale(1.5);
 }
 
+@keyframes autofill {
+  to {
+    color: #f4f5f8;
+    background: transparent;
+  }
+}
+
 @-webkit-keyframes autofill {
   to {
       color: #f4f5f8;
@@ -151,6 +162,8 @@ ion-note {
 }
 
 input:-webkit-autofill {
+  animation-name: autofill;
+  animation-fill-mode: both;
   -webkit-animation-name: autofill;
   -webkit-animation-fill-mode: both;
 }
