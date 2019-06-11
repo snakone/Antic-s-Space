@@ -8,8 +8,6 @@ import { HomePage } from './home.page';
 import { SharedModule } from '@shared/shared.module';
 import { ComponentsModule } from '@shared/components/components.module';
 
-import { MainSliderComponent } from './components/main-slider/main-slider.component';
-import { SmallSliderComponent } from './components/small-slider/small-slider.component';
 import { LatestComponent } from './components/latest/latest.component';
 import { ArticlesComponent } from './components/articles/articles.component';
 import { TrendingComponent } from './components/trending/trending.component';
@@ -31,8 +29,6 @@ import { TrendingComponent } from './components/trending/trending.component';
   ],
   declarations: [
     HomePage,
-    MainSliderComponent,
-    SmallSliderComponent,
     TrendingComponent,
     LatestComponent,
     ArticlesComponent

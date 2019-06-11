@@ -24,19 +24,19 @@ export class ShareComponent implements OnInit {
 
   share(value: string): void {
     if (this._user.areYouGuest() && (value === 'reaction' || value === 'comment')) {
-      this.crafter.alert('Only for Users with Account');
+      this.crafter.alert('only.users');
       return;
     }
     if (value === 'reaction') { this.openReactions(); }
     if (value === 'comment') { this.openComment(); }
   }
 
-  private openReactions(ev?: any): void {
-    this.crafter.popOver(ReactionSelectorComponent, { id: this.article._id});
+  private openComment(ev?: any): void {
+    this.crafter.popOver(InputCommentComponent, { article: this.article});
   }
 
-  private openComment(ev?: any): void {
-    this.crafter.popOver(InputCommentComponent, { id: this.article._id});
+  private openReactions(ev?: any): void {
+    this.crafter.popOver(ReactionSelectorComponent, { article: this.article});
   }
 
 }

@@ -1,4 +1,4 @@
-import { Item, Share, Emoji, History, Color } from './interfaces/interfaces';
+import { Item, Share, Emoji, Color, Category } from './interfaces/interfaces';
 
 // MENU
 export const MENU: Item[] = [
@@ -36,41 +36,21 @@ export const smallSliderOpts = {
   }
 };
 
-export const SCROLLBAR = `<style>
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.3);
-  border-radius: 5px;
-}
-::-webkit-scrollbar-thumb {
-  border-radius: 5px;
-  -webkit-box-shadow: inset 0 0 3px var(--ion-color-primary);
-}</style>
-`;
-
 // CATEGORIES
-export const CATEGORIES: string[] = [
-  'All',
-  'Code',
-  'Video',
-  'Gaming',
-  'Lifestyle',
-  'Interview',
-  'Review',
-  'Antic'
+export const CATEGORIES: Category[] = [
+  { name: 'All', icon: 'apps' },
+  { name: 'Code', icon: 'code' },
+  { name: 'Video', icon: 'videocam' },
+  { name: 'Gaming', icon: 'logo-game-controller-b' },
+  { name: 'Lifestyle', icon: 'pulse' },
+  { name: 'Interview', icon: 'clipboard' },
+  { name: 'Review', icon: 'search' },
+  { name: 'Antic', icon: 'finger-print' }
 ];
 
-// LANGUAGES
-export const LANGUAGES: string[] = [
-  'HTML',
-  'CSS',
-  'SCSS',
-  'Javascript',
-  'Typescript',
-  'Nodejs',
-  'NPM'
+export const TENDENCIES: string[] = [
+  'avoid.smart',
+  'kill.theory'
 ];
 
 // SOCIAL ICONS
@@ -92,7 +72,14 @@ export const REACTIONS: Emoji[] = [
 
 // MAIN ARTICLES
 export const MAIN: string[] = [
-  '5cefd7f4275e0e24b43a78d4'
+  '5cefd7f4275e0e24b43a78d4',
+  '5cf7e10d216db727d8398888'
+];
+
+// SECONDARY ARTICLES
+export const SECONDARY: string[] = [
+  '5cfc7c3b4146ce00171f078b',
+  '5cfd4d66b3a8850017b65263'
 ];
 
 // COLORS
@@ -106,49 +93,4 @@ export const COLORS: Color[] = [
   { name: 'yellow', color: '#ffd300' },
   { name: 'violet', color: '#7044ff' },
 ];
-
-// HISTORY
-export const HISTORY: History[] = [
-  {
-    article: 'How to get the perfect travel shot',
-    type: 'Like'
-  },
-  {
-    article: 'How to get the perfect travel shot',
-    type: 'Comment'
-  },
-  {
-    article: 'How to get the perfect travel shot',
-    type: 'Reaction'
-  },
-  {
-    article: 'How to get the perfect travel shot',
-    type: 'Like'
-  },
-  {
-    article: 'How to get the perfect travel shot',
-    type: 'Like'
-  },
-  {
-    article: 'How to get the perfect travel shot',
-    type: 'Comment'
-  },
-  {
-    article: 'How to get the perfect travel shot',
-    type: 'Like'
-  },
-  {
-    article: 'How to get the perfect travel shot',
-    type: 'Reaction'
-  },
-  {
-    article: 'How to get the perfect travel shot',
-    type: 'Reaction'
-  },
-  {
-    article: 'How to get the perfect travel shot',
-    type: 'Like'
-  },
-];
-
 

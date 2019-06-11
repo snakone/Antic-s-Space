@@ -18,7 +18,7 @@ export class ProfileHeaderComponent implements OnInit {
   ngOnInit() {}
 
   goBack(): void {
-    this.nav.navigateBack('/');
+    this.nav.navigateBack('/home');
   }
 
   segmentChanged(event: CustomEvent): void {

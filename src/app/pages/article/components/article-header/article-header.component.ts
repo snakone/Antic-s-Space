@@ -17,7 +17,7 @@ export class ArticleHeaderComponent implements OnInit {
   ngOnInit() {}
 
   goBack(): void {
-    this.nav.navigateBack('/');
+    this.nav.navigateBack('/home');
   }
 
 }

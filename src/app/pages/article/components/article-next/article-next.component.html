@@ -1,21 +1,26 @@
 <hr>
 <ion-list>
-  <ion-item-divider class="previous">
-    < Previous Article
-  </ion-item-divider>
-  <ion-item lines="none">
-    <ion-label class="ion-text-wrap">
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-    </ion-label>
-  </ion-item>
-
-  <ion-item-divider>
-    <ion-label text-right>Next Article ></ion-label>
-  </ion-item-divider>
-  <ion-item lines="none"
-            class="next">
-            <ion-label text-right class="ion-text-wrap">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-            </ion-label>
-  </ion-item>
+  <div *ngIf="prev">
+    <ion-item-divider class="previous">
+      < {{'previous.article' | translate}}
+    </ion-item-divider>
+    <ion-item lines="none"
+              (click)="goNext(prev._id)">
+      <ion-label class="ion-text-wrap">
+        {{prev.title}}
+      </ion-label>
+    </ion-item>
+  </div>
+  <div *ngIf="next">
+    <ion-item-divider>
+      <ion-label text-right>{{'next.article' | translate}} ></ion-label>
+    </ion-item-divider>
+    <ion-item lines="none"
+              class="next"
+              (click)="goNext(next._id)">
+              <ion-label text-right class="ion-text-wrap">
+                {{next.title}}
+              </ion-label>
+    </ion-item>
+  </div>
 </ion-list>

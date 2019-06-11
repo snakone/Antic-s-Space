@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { User, UserResponse } from '@app/shared/interfaces/interfaces';
+import { User, UserResponse, UserInfoResponse } from '@app/shared/interfaces/interfaces';
 import { APP_CONSTANTS } from '@app/app.config';
 import { Observable } from 'rxjs';
 import { StorageService } from '@app/core/storage/storage.service';
@@ -17,11 +17,18 @@ export class UserService {
   constructor(private http: HttpService,
               private storage: StorageService) {
     console.log('UserService');
+    this.setGuest();
    }
 
-   public getUser(): User {
-    if (!this.user) { this.verifyToken(); }
-    return { ...this.user };
+  public getUser(): User {
+     if (!this.user || this.areYouGuest()) {
+       this.verifyToken()
+         .then((res: boolean) => {
+           if (res) { return this.user; }
+         });
+     } else {
+       return this.user;
+     }
   }
 
   public loadUser(): Promise<void> {
@@ -35,12 +42,18 @@ export class UserService {
               resolve();
             }
         });
-      } else { rej(); }
+      } else {
+        rej();
+      }
     });
   }
 
   public getUserById(id: string): Observable<UserResponse> {
     return this.http.get(this.API_USERS + `/${id}`);
+  }
+
+  public getUserInfoById(id: string): Observable<UserInfoResponse> {
+    return this.http.get(this.API_USERS + `/info/${id}`);
   }
 
   public updateUser(user: User): Observable<UserResponse> {
@@ -60,20 +73,24 @@ export class UserService {
   }
 
   public setGuest(): void {
-    this.user = {
-      name: 'Guest',
-      email: 'Guest@AnticSpace.com',
-      account: 'Guest',
-      password: 'Guest'
-    };
+    if (!this.user) {
+      this.user = {
+        name: 'Guest',
+        email: 'Guest@AnticSpace.com',
+        account: 'Guest',
+        password: 'Guest'
+      };
+    }
   }
 
   public areYouOnline(): boolean {
-    return this.storage.getToken() ? true : false;
+    return this.user ? true : false;
   }
 
   public areYouGuest(): boolean {
-    if (!this.user) { return; }
+    if (!this.user) {
+      return false;
+    }
     return this.user.account === 'Guest' ? true : false;
   }
 
@@ -86,7 +103,9 @@ export class UserService {
   }
 
   public verifyToken(): Promise<boolean> {
-    if (!this.storage.getToken()) { return Promise.resolve(false); }
+    if (!this.storage.getToken()) {
+      return Promise.resolve(false);
+    }
     return new Promise<boolean>((resolve, rej) => {
       this.http.get(this.API_TOKEN)
         .subscribe((res: UserResponse) => {

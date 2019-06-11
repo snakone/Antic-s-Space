@@ -5,3 +5,4 @@ export { AuthService } from './auth/auth.service';
 export { StorageService } from '../storage/storage.service';
 export { CommentService } from './comment/comment.service';
 export { ReactionService } from './reaction/reaction.service';
+export { HistoryService } from './history/history.service';

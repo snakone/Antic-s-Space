@@ -1,11 +1,12 @@
 import { Component, OnDestroy, ViewChild, AfterViewInit, Injector, NgModuleRef,
          ViewContainerRef, NgModule, Compiler, Input } from '@angular/core';
-import { ActivatedRoute, RouterModule, Router } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { SharedModule } from '@app/shared/shared.module';
 import { Subscription } from 'rxjs';
 import { Article, Code } from '@app/shared/interfaces/interfaces';
 import { IonicModule } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
+import { ARTICLE_STYLES } from './article-maker.styles';
 
 declare var ClipboardJS: any;
 
@@ -33,21 +34,15 @@ export class ArticleMakerComponent implements AfterViewInit, OnDestroy {
       this.routerOb = this.route.params.subscribe(() => {
         const tmpCmp = Component({
           template: this.article.message,
-          styles: [`code { font-size: .7em; padding: 22px 15px 22px 15px;
-                           border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; }
-                    .code-box { margin-top: -15px; margin-bottom: 20px; }
-                    .copy { position: relative; background: #4c4e52; padding: 4px;
-                            border-top-right-radius: 5px; border-top-left-radius: 5px }
-                    .btn { position: relative; right: 7px; top: 1px;
-                           font-size: 1.3em; }
-                    .code-box span { position: relative; left: 14px; top: 25px; z-index: 100;
-                            font-size: .8em; font-weight: bold; }
-                    pre { margin: 0 } .code-img { max-width: 100%; display: block; margin: 10px auto; }
-                    p, strong { font-size: .8em; }
-                    ion-item { --padding-start: 0 !important; font-size: .9em }
-                    ion-list { margin-bottom: 20px; }`]
+          styles: [ARTICLE_STYLES]
         })(class TempComponent {
           public code: Code[];
+          showTooltip(code: Code): void {
+             code.tooltip = true;
+            setTimeout(() => {
+              code.tooltip = false;
+            }, 2000);
+          }
         });
         const tmpModule = NgModule({
           declarations: [tmpCmp],

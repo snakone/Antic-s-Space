@@ -72,20 +72,20 @@
       <ion-item-divider class="divider">
         {{'interactions' | translate}}
       </ion-item-divider>
-      <ion-item>
-        <ion-icon slot="start" color="light" name="mail-open"></ion-icon>
-        <ion-label>{{'comments' | translate}}</ion-label>
-        <ion-badge color="primary" slot="end">24</ion-badge>
-      </ion-item>
-      <ion-item>
-        <ion-icon slot="start" color="light" name="happy"></ion-icon>
-        <ion-label>{{'reactions' | translate}}</ion-label>
-        <ion-badge color="primary" slot="end">2</ion-badge>
-      </ion-item>
-      <ion-item>
-        <ion-icon slot="start" color="light" name="heart"></ion-icon>
-        <ion-label>{{'likes' | translate}}</ion-label>
-        <ion-badge color="primary" slot="end">5</ion-badge>
-      </ion-item>
+      <div *ngIf="info">
+        <ion-item>
+          <ion-icon slot="start" color="light" name="mail-open"></ion-icon>
+          <ion-label>{{'comments' | translate}}</ion-label>
+          <ion-badge color="primary" slot="end">{{info.comments}}</ion-badge>
+        </ion-item>
+        <ion-item>
+          <ion-icon slot="start" color="light" name="happy"></ion-icon>
+          <ion-label>{{'reactions' | translate}}</ion-label>
+          <ion-badge color="primary" slot="end">{{info.reactions}}</ion-badge>
+        </ion-item>
+      </div>
+      <div *ngIf="!info">
+        <ion-spinner name="lines" color="primary"></ion-spinner>
+      </div>
   </ion-list>
 </div>

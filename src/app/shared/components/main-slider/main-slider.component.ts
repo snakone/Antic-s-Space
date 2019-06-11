@@ -29,7 +29,7 @@ export class MainSliderComponent implements OnInit {
   }
 
   goToArticle(id: string): void {
-    this.nav.navigateRoot('/article/' + id);
+    this.nav.navigateForward('/article/' + id);
   }
 
 }

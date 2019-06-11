@@ -15,11 +15,14 @@ ion-slides {
 
 ion-slide {
   text-align: left;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
-.slideS {
-  background-image: url('assets/img/slide1.jpg');
-  background-size: 100% 100%;
+.slides {
+  background-size: cover;
   height: 125px;
   margin-top: 5px;
 }
@@ -36,7 +39,13 @@ h5 {
 p {
   font-weight: 900;
   text-shadow: 1px 2px 1px #474747, 1px 2px 2px #000000;
-  padding-right: 75px;
+  padding-right: 50px;
   margin-bottom: 10px;
   margin-top: 0;
+}
+
+@media (max-width: 359px) {
+  p {
+    padding-right: 55px;
+  }
 }

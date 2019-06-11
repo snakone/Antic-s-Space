@@ -5,6 +5,7 @@ import { PercentagePipe } from './percentage/percentage.pipe';
 import { IconTypePipe } from './icon-type/icon-type.pipe';
 import { IconColorPipe } from './icon-color/icon-color.pipe';
 import { SanitizerPipe } from './sanitizer/sanitizer.pipe';
+import { LangsPipe } from './langs/langs.pipe';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { SanitizerPipe } from './sanitizer/sanitizer.pipe';
     PercentagePipe,
     IconTypePipe,
     IconColorPipe,
-    SanitizerPipe
+    SanitizerPipe,
+    LangsPipe
   ],
   imports: [],
   exports: [
@@ -22,7 +24,8 @@ import { SanitizerPipe } from './sanitizer/sanitizer.pipe';
     PercentagePipe,
     IconTypePipe,
     IconColorPipe,
-    SanitizerPipe
+    SanitizerPipe,
+    LangsPipe
   ]
 })
 

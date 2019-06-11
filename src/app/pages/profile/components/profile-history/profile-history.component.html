@@ -1,5 +1,5 @@
 <div class="history animated fadeIn">
-  <ion-list>
+  <ion-list *ngIf="history.length > 0">
     <ion-item-divider>
       {{'you.reacted' | translate}}
     </ion-item-divider>
@@ -16,15 +16,24 @@
                         [name]="h.type | iconType">
               </ion-icon>
               <ion-label>
-                {{h.article}}
-                <p>Dec 1, 2017</p>
+                {{h.title}}
+                <p>{{h.created}}</p>
               </ion-label>
             </ion-item>
       </div>
     </ion-list>
+    <div *ngIf="history.length === 0" class="no-history">
+      <h5>{{'no.history' | translate}}</h5>
+    </div>
+    <div *ngIf="!history">
+      <ion-spinner name="lines" color="primary"></ion-spinner>
+    </div>
   </div>
 
-<app-pagination (index)="changeFrom($event)" id="history"></app-pagination>
+<app-pagination *ngIf="history.length > 0"
+                (index)="changeFrom($event)"
+                id="history">
+</app-pagination>
 
 
 

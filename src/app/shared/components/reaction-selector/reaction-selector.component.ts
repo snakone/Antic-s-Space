@@ -27,7 +27,7 @@ export class ReactionSelectorComponent implements OnInit {
     const reaction: Reaction = {
       author: this.getUser().name,
       reaction: title,
-      article: this.navParams.get('id'),
+      article: this.navParams.get('article'),
       user: this.getUser()
     };
 
@@ -35,7 +35,7 @@ export class ReactionSelectorComponent implements OnInit {
     .subscribe((res: ReactionResponse) => {
       if (res.ok) {
         this.crafter.close();
-        this.crafter.alert('Reaction recieved!');
+        this.crafter.alert('reaction.recieved');
         this.reactionService.reactionRecieved();
       }
   });

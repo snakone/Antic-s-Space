@@ -1,6 +1,7 @@
-import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
-import { IonSlides } from '@ionic/angular';
+import { Component, OnInit, ViewChild, HostListener, Input } from '@angular/core';
+import { IonSlides, NavController } from '@ionic/angular';
 import { smallSliderOpts } from '@shared/shared.data';
+import { Article } from '@app/shared/interfaces/interfaces';
 
 @Component({
   selector: 'app-small-slider',
@@ -11,9 +12,10 @@ import { smallSliderOpts } from '@shared/shared.data';
 export class SmallSliderComponent implements OnInit {
 
   @ViewChild(IonSlides) slides: IonSlides;
+  @Input() articles: Article[];
   options = smallSliderOpts;
 
-  constructor() { }
+  constructor(private nav: NavController) { }
 
   ngOnInit() { }
 
@@ -23,6 +25,10 @@ export class SmallSliderComponent implements OnInit {
 
   ionViewDidEnter(): void {
     this.onResize();
+  }
+
+  goToArticle(id: string): void {
+    this.nav.navigateForward('/article/' + id);
   }
 
 }

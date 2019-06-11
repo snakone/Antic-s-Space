@@ -1,14 +1,21 @@
 .comment {
   padding: 10px;
+  margin: 5px auto;
 }
 
 ion-textarea {
   padding: 14px 0;
   margin: 0;
   --padding-top: 16px !important;
-  --padding-bottom: 0 !important;
+  --padding-bottom: 5px !important;
   --padding-start: 0 !important;
+  --padding-end: 10px !important;
   font-size: .9em;
+  --border-width: 0 !important;
+}
+
+.ion-textarea::-webkit-scrollbar {
+  display: none;
 }
 
 ion-item {
@@ -24,5 +31,8 @@ ion-icon {
 
 ion-buttons {
   position: relative;
-  margin-right: 12px;
+  margin-right: 0;
+  margin-left: 6px;
+  top: -4px;
+  padding-left: 4px;
 }

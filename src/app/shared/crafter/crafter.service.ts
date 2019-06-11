@@ -29,7 +29,7 @@ export class CrafterService {
   public async alert(message: string): Promise<void> {
     const alert = await this.alertCtrl.create({
       header: 'Antic\'s Space',
-      message,
+      message: this.translateMessage(message),
       buttons: ['OK']
     });
     await alert.present();

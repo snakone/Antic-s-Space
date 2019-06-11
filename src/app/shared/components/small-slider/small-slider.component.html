@@ -1,0 +1,11 @@
+<ion-slides #slider [options]="options">
+  <ion-slide class="slides"
+            *ngFor="let article of articles"
+             [style]="article.cover | sanitizer:'style'"
+             (click)="goToArticle(article._id)">
+    <div class="content-small">
+      <h5>{{(article.category | translate) | uppercase}}</h5>
+      <p>{{article.title}}</p>
+    </div>
+  </ion-slide>
+</ion-slides>

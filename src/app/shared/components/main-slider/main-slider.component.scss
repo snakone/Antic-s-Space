@@ -9,10 +9,14 @@ ion-slides {
 
 ion-slide {
   text-align: left;
+
+    &:hover {
+    cursor: pointer;
+  }
 }
 
 .slide {
-  background-size: 100% 100%;
+  background-size: cover;
   height: 225px;
 }
 
@@ -42,4 +46,16 @@ p {
   margin-top: 10px;
   margin-bottom: 5px;
   text-shadow: 1px 2px 1px #474747, 1px 2px 2px #000000;
+}
+
+@media (min-width: 975px) {
+  p {
+    padding-right: 155px;
+  }
+}
+
+@media (max-width: 400px) {
+  p {
+    padding-right: 50px;
+  }
 }

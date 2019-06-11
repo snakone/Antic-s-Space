@@ -8,7 +8,6 @@ import { IonicModule } from '@ionic/angular';
 
 import { SharedModule } from '@app/shared/shared.module';
 import { ComponentsModule } from '@app/shared/components/components.module';
-import { InputCommentComponent } from '@app/shared/components/input-comment/input-comment.component';
 
 import { ArticlePage } from './article.page';
 import { ArticleHeaderComponent } from './components/article-header/article-header.component';
@@ -21,7 +20,6 @@ import { LegendComponent } from './components/legend/legend.component';
 import { ArticleMakerComponent } from '@shared/components/article-maker/article-maker.component';
 import { ArticleRelatedComponent } from './components/article-related/article-related.component';
 import { ArticleNextComponent } from './components/article-next/article-next.component';
-import { ReactionSelectorComponent } from '@app/shared/components/reaction-selector/reaction-selector.component';
 
 const routes: Routes = [
   {
@@ -53,9 +51,7 @@ const routes: Routes = [
     ArticleRelatedComponent,
     ArticleNextComponent
   ],
-  entryComponents: [
-    ReactionSelectorComponent,
-    InputCommentComponent
-  ]
+  entryComponents: []
 })
+
 export class ArticlePageModule {}

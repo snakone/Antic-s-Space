@@ -6,14 +6,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 export class IconColorPipe implements PipeTransform {
 
-  transform(value: string, args?: any): string {
-    if (value === 'Like') {
-      return 'danger';
-    } else if (value === 'Comment') {
-      return 'light';
-    } else {
-      return 'warning';
-    }
+  transform(value: string): string {
+    return value === 'comment' ? 'light' : 'warning';
   }
 
 }

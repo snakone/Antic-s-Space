@@ -1,9 +1,7 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ArticleService } from '@app/core/services/article/article.service';
 import { ArticleResponse, Article } from '@app/shared/interfaces/interfaces';
-import { MAIN } from '@app/shared/shared.data';
-import { SCROLLBAR } from '../../shared/shared.data';
-import { Platform } from '@ionic/angular';
+import { MAIN, SECONDARY } from '@app/shared/shared.data';
 
 @Component({
   selector: 'app-home',
@@ -14,28 +12,24 @@ import { Platform } from '@ionic/angular';
 export class HomePage implements OnInit {
 
   articles: Article[] = [];
-  main: Article[] = [];
   latest: Article;
-
+  main: Article[] = [];
+  secondary: Article[] = [];
   refresh = true;
-  scrollbar = false;
 
-  constructor(private _article: ArticleService,
-              private platform: Platform) {}
+  constructor(private _article: ArticleService) {}
 
   ngOnInit(): void {
     this.getArticles();
   }
 
-  ionViewWillEnter(): void {
-    this.changeScrollBar();
-  }
-
   private getArticles(): void {
+    this.articles = [];
     this._article.getArticles()
       .subscribe((res: ArticleResponse) => {
         if (res.ok) {
           this.getMainArticles(res.articles);
+          this.getSecondaryArticles(res.articles);
           this.latest = res.articles[0];
           res.articles.shift();
           this.articles.push(...res.articles);
@@ -45,7 +39,7 @@ export class HomePage implements OnInit {
 
   doRefresh(event: any): void {
     this.refresh = false;
-    this.articles = [];
+    this.resetArticles();
     this.getArticles();
     setTimeout(() => {
       this.refresh = true;
@@ -53,17 +47,23 @@ export class HomePage implements OnInit {
     }, 1000);
   }
 
-  private getMainArticles(articles: Article[]) {
-    articles.map(x => {
-      MAIN.forEach((id) => {
-        if (x._id === id) {
-          this.main.unshift(x);
-        }
+  private getMainArticles(articles: Article[]): void {
+    articles.map((x: Article) => {
+      MAIN.forEach((id: string) => {
+        if (x._id === id) { this.main.unshift(x); }
       });
     });
   }
 
-  changeCategory(articles: Article[]) {
+  private getSecondaryArticles(articles: Article[]): void {
+    articles.map((x: Article) => {
+      SECONDARY.forEach((id: string) => {
+        if (x._id === id) { this.secondary.unshift(x); }
+      });
+    });
+  }
+
+  changeCategory(articles: Article[]): void {
     if (articles.length === 0) {
       this.latest = {};
       this.articles = [];
@@ -74,11 +74,11 @@ export class HomePage implements OnInit {
     this.articles = articles;
   }
 
-  changeScrollBar(): void {
-    if (!this.platform.is('mobileweb') && !this.platform.is('cordova')) {
-      const content = document.getElementById('home');
-      content.shadowRoot.innerHTML += SCROLLBAR;
-    }
+  private resetArticles(): void {
+    this.articles = [];
+    this.latest = {};
+    this.main = [];
+    this.secondary = [];
   }
 
 }

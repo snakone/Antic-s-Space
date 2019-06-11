@@ -1,0 +1,25 @@
+ion-segment-button {
+  color: var(--ion-color-light) !important;
+}
+
+.segment-button-checked ion-icon {
+  color: var(--ion-color-primary) !important;
+}
+
+.sc-ion-segment-md-h {
+  --color-checked: var(--ion-color-dark) !important;
+}
+
+ion-label {
+  font-weight: bold;
+}
+
+ion-icon {
+  position: relative;
+  left: 15px;
+  color: var(--ion-color-medium);
+}
+
+ion-segment {
+  border-bottom: 2px solid var(--ion-color-primary);
+}

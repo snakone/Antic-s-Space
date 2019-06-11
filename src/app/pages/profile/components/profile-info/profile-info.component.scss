@@ -14,6 +14,12 @@ ion-label, ion-input {
   font-size: .8em !important;
 }
 
+ion-item-sliding {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
 ion-badge {
   width: 30px;
   height: 20px;

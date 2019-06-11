@@ -9,6 +9,7 @@ ion-button {
 
 ion-item {
   width: 100%;
+  margin: 5px auto;
 }
 
 form {
@@ -20,7 +21,7 @@ ion-list {
   width: 300px;
 }
 
-ion-checkbox {
+ion-checkbox, .remember {
   position: relative;
   top: 13px;
   --border-width: auto;
@@ -43,4 +44,8 @@ h4 {
   font-size: .7em;
   margin-top: 5px;
   margin-bottom: 10px;
+}
+
+.bold:hover {
+  cursor: pointer;
 }

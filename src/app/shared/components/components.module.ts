@@ -16,6 +16,8 @@ import { InputCommentComponent } from './input-comment/input-comment.component';
 import { HelpComponent } from './help/help.component';
 import { ColorSelectorComponent } from './color-selector/color-selector.component';
 import { FormsModule } from '@angular/forms';
+import { MainSliderComponent } from './main-slider/main-slider.component';
+import { SmallSliderComponent } from './small-slider/small-slider.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { FormsModule } from '@angular/forms';
     ReactionSelectorComponent,
     InputCommentComponent,
     HelpComponent,
-    ColorSelectorComponent
+    ColorSelectorComponent,
+    MainSliderComponent,
+    SmallSliderComponent
   ],
   imports: [
     CommonModule,
@@ -48,7 +52,9 @@ import { FormsModule } from '@angular/forms';
     ReactionSelectorComponent,
     InputCommentComponent,
     HelpComponent,
-    ColorSelectorComponent
+    ColorSelectorComponent,
+    MainSliderComponent,
+    SmallSliderComponent
   ],
   entryComponents: [
     HelpComponent,
