@@ -13,7 +13,8 @@ export class SegmentsComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
   segmentChanged(event) {
   }

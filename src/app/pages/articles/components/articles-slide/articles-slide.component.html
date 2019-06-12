@@ -1,5 +1,9 @@
-<ion-slides>
-  <ion-slide [style]="a.cover | sanitizer:'style'" *ngFor="let a of articles">
-    Hello
+<ion-slides (ionSlideDidChange)="slideChange($event)">
+  <ion-slide [style]="a.cover | sanitizer:'style'"
+             *ngFor="let a of articles">
+            <div class="content">
+            <h5>{{(a.category | translate) | uppercase}}</h5>
+            <p>{{a.title}}</p>
+          </div>
   </ion-slide>
 </ion-slides>

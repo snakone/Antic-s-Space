@@ -1,5 +1,7 @@
 <ion-segment (ionChange)="segmentChanged($event)"
-             scrollable fixed>
+              class="segment"
+              mode="md"
+              scrollable>
   <ion-segment-button color="light" *ngFor="let c of categories">
       <ion-item lines="none">
         <ion-icon [name]="c.icon" slot="start"></ion-icon>

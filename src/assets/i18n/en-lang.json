@@ -24,6 +24,7 @@
   "comments": "Comments",
   "reactions": "Reactions",
   "welcome.to": "Welcome to",
+  "login": "Login",
   "login.account": "Login to your account",
   "password": "Password",
   "remember": "Remember",
@@ -81,5 +82,7 @@
   "no.history": "No History registered",
   "only.users": "Only registered Users",
   "avoid.smart": "A clever person solves a problem. <br>A wise person avoids it",
-  "kill.theory": "Late or sooner, theory is murdered by experience."
+  "kill.theory": "Late or sooner, theory is murdered by experience.",
+  "guest.name": "Guest",
+  "guest.email": "Guest@AnticSpace.com"
 }

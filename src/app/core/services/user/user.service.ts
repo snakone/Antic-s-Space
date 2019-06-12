@@ -4,6 +4,7 @@ import { APP_CONSTANTS } from '@app/app.config';
 import { Observable } from 'rxjs';
 import { StorageService } from '@app/core/storage/storage.service';
 import { HttpService } from '../http/http.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable()
 
@@ -15,7 +16,8 @@ export class UserService {
   public user: User;
 
   constructor(private http: HttpService,
-              private storage: StorageService) {
+              private storage: StorageService,
+              private translate: TranslateService) {
     console.log('UserService');
     this.setGuest();
    }
@@ -75,8 +77,8 @@ export class UserService {
   public setGuest(): void {
     if (!this.user) {
       this.user = {
-        name: 'Guest',
-        email: 'Guest@AnticSpace.com',
+        name: this.translate.instant('guest.name'),
+        email: this.translate.instant('guest.email'),
         account: 'Guest',
         password: 'Guest'
       };

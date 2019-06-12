@@ -25,27 +25,27 @@ export class ArticlesPage implements OnInit {
     this._article.getArticles()
       .subscribe((res: ArticleResponse) => {
         if (res.ok) {
-          this.getMainArticles(res.articles);
+          // this.getMainArticles(res.articles);
           this.articles = res.articles;
-          this.removeMainArticles();
+          // this.removeMainArticles();
         }
     });
   }
 
-  private getMainArticles(articles: Article[]): void {
-    articles.map((x: Article) => {
-      MAIN.forEach((id: string) => {
-        if (x._id === id) { this.main.unshift(x); }
-      });
-    });
-  }
+  // private getMainArticles(articles: Article[]): void {
+  //   articles.map((x: Article) => {
+  //     MAIN.forEach((id: string) => {
+  //       if (x._id === id) { this.main.unshift(x); }
+  //     });
+  //   });
+  // }
 
-  private removeMainArticles(): void {
-    MAIN.forEach((id: string) => {
-      this.articles = this.articles
-        .filter((x: Article) => id !== x._id);
-    });
-    this.converted = true;
-  }
+  // private removeMainArticles(): void {
+  //   MAIN.forEach((id: string) => {
+  //     this.articles = this.articles
+  //       .filter((x: Article) => id !== x._id);
+  //   });
+  //   this.converted = true;
+  // }
 
 }

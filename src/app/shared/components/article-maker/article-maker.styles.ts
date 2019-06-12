@@ -7,7 +7,8 @@ export const ARTICLE_STYLES = `
   }
 
   code::-webkit-scrollbar {
-    width: 4px;
+    height: 8px;
+    display: block;
   }
 
   code::-webkit-scrollbar-track {

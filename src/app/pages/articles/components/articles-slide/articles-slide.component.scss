@@ -4,4 +4,47 @@ ion-slide {
   width: 100%;
   background-size: cover;
   background-position: center;
+  text-align: left;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+ion-slides {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.swiper-slide {
+  display: block;
+}
+
+.content {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+}
+
+h5 {
+  background: var(--ion-color-primary);
+  padding: 4px 24px;
+  width: fit-content;
+  font-size: .6em;
+  font-weight: 900;
+  border-radius: 2px;
+}
+
+p {
+  font-weight: 900;
+  padding-right: 90px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  text-shadow: 1px 2px 1px #474747, 1px 2px 2px #000000;
+}
+
+@media (min-width: 975px) {
+  p {
+    padding-right: 155px;
+  }
 }

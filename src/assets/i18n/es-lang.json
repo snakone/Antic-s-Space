@@ -82,5 +82,7 @@
   "no.history": "No hay Historial registrado",
   "only.users": "Sólo Usuarios registrados",
   "avoid.smart": "Una persona inteligente resuelve un problema.<br> Una persona sabia lo evita.",
-  "kill.theory": "La teoría es asesinada tarde o temprano por la experiencia."
+  "kill.theory": "La teoría es asesinada tarde o temprano por la experiencia.",
+  "guest.name": "Invitado",
+  "guest.email": "Invitado@AnticSpace.com"
 }
