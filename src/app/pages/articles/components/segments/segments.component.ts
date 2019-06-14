@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { CATEGORIES } from '@shared/shared.data';
 
 @Component({
@@ -10,12 +10,14 @@ import { CATEGORIES } from '@shared/shared.data';
 export class SegmentsComponent implements OnInit {
 
   categories = CATEGORIES;
+  @Output() category: EventEmitter<string> = new EventEmitter<string>();
 
   constructor() { }
 
   ngOnInit() {}
 
-  segmentChanged(event) {
+  segmentChanged(event: any) {
+    this.category.emit(event.detail.value);
   }
 
 }

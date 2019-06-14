@@ -81,6 +81,11 @@
   "error.updating": "¡Error al actualizar!",
   "no.history": "No hay Historial registrado",
   "only.users": "Sólo Usuarios registrados",
-  "avoid.smart": "Una persona inteligente resuelve un problema.<br> Una persona sabia lo evita.",
-  "kill.theory": "La teoría es asesinada tarde o temprano por la experiencia."
+  "avoid.smart": "Una persona inteligente resuelve un problema. Una persona sabia lo evita.",
+  "kill.theory": "La teoría es asesinada tarde o temprano por la experiencia.",
+  "good.bad": "Lo peor que hacen los malos es obligarnos a dudar de los buenos",
+  "guest.name": "Invitado/a",
+  "guest.email": "Email@AnticSpace.com",
+  "search.article": "¿Buscas algún Artículo?",
+  "articles.not.found": "No se han encontrado Artículos"
 }

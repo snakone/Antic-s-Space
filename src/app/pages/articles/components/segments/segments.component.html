@@ -1,6 +1,12 @@
 <ion-segment (ionChange)="segmentChanged($event)"
-             scrollable fixed>
-  <ion-segment-button color="light" *ngFor="let c of categories">
+              class="segment"
+              mode="md"
+              scrollable
+              scrollHorizontal
+              value="All">
+  <ion-segment-button color="light"
+                      *ngFor="let c of categories"
+                      [value]="c.name">
       <ion-item lines="none">
         <ion-icon [name]="c.icon" slot="start"></ion-icon>
         <ion-label text-capitalize>{{c.name}}</ion-label>

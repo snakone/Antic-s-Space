@@ -27,7 +27,7 @@ const routes: Routes = [
     canActivate: [NavigationGuard]
   },
   {
-    path: 'article/:id',
+    path: 'article/:slug',
     loadChildren: './pages/article/article.module#ArticlePageModule',
     canActivate: [NavigationGuard]
   },

@@ -91,8 +91,8 @@ export class SignInComponent implements OnInit, OnDestroy {
 
   async enterAsGuest() {
     await this.storage.reset();
-    this._user.setGuest();
-    this.nav.navigateRoot('/home');
+    this._user.setGuest()
+      .then(() => this.nav.navigateRoot('/home'));
   }
 
   private rememberMe(): void {

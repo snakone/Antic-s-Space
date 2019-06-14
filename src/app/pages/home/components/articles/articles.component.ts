@@ -21,8 +21,8 @@ export class ArticlesComponent implements OnInit {
     this.articles.shift();
   }
 
-  goToArticle(id: string): void {
-    this.nav.navigateForward('/article/' + id);
+  goToArticle(slug: string): void {
+    this.nav.navigateForward('/article/' + slug);
   }
 
   swipe(event: any): void {

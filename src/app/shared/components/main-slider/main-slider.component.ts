@@ -28,8 +28,8 @@ export class MainSliderComponent implements OnInit {
     this.onResize();
   }
 
-  goToArticle(id: string): void {
-    this.nav.navigateForward('/article/' + id);
+  goToArticle(slug: string): void {
+    this.nav.navigateForward('/article/' + slug);
   }
 
 }

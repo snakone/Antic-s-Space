@@ -2,6 +2,7 @@ ion-menu {
   --max-width: 360px;
   --min-width: 100%;
   --width: 100%;
+  // --background: var(--ion-color-dark-tint);
 }
 
 .split-pane-md.split-pane-visible > .split-pane-side {
@@ -12,6 +13,10 @@ ion-router-outlet {
   max-width: 650px;
   margin: 0 auto;
 }
+
+// ion-content {
+//   --background: var(--ion-color-dark-tint);
+// }
 
 
 

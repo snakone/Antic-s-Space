@@ -13,7 +13,6 @@ export class ArticlesPage implements OnInit {
 
   articles: Article[] = [];
   main: Article[] = [];
-  converted = false;
 
   constructor(private _article: ArticleService) { }
 
@@ -25,27 +24,39 @@ export class ArticlesPage implements OnInit {
     this._article.getArticles()
       .subscribe((res: ArticleResponse) => {
         if (res.ok) {
-          this.getMainArticles(res.articles);
+          // this.getMainArticles(res.articles);
           this.articles = res.articles;
-          this.removeMainArticles();
+          // this.removeMainArticles();
         }
     });
   }
 
-  private getMainArticles(articles: Article[]): void {
-    articles.map((x: Article) => {
-      MAIN.forEach((id: string) => {
-        if (x._id === id) { this.main.unshift(x); }
+  changeCategory(value: string): void {
+    if (value === 'All') {
+      this.getArticles();
+      return;
+    }
+
+    this._article.getArticlesByCategory(value)
+      .subscribe((res: ArticleResponse) => {
+        if (res.ok) { this.articles = res.articles; }
       });
-    });
   }
 
-  private removeMainArticles(): void {
-    MAIN.forEach((id: string) => {
-      this.articles = this.articles
-        .filter((x: Article) => id !== x._id);
-    });
-    this.converted = true;
-  }
+  // private getMainArticles(articles: Article[]): void {
+  //   articles.map((x: Article) => {
+  //     MAIN.forEach((id: string) => {
+  //       if (x._id === id) { this.main.unshift(x); }
+  //     });
+  //   });
+  // }
+
+  // private removeMainArticles(): void {
+  //   MAIN.forEach((id: string) => {
+  //     this.articles = this.articles
+  //       .filter((x: Article) => id !== x._id);
+  //   });
+  //   this.converted = true;
+  // }
 
 }

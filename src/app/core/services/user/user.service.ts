@@ -4,6 +4,7 @@ import { APP_CONSTANTS } from '@app/app.config';
 import { Observable } from 'rxjs';
 import { StorageService } from '@app/core/storage/storage.service';
 import { HttpService } from '../http/http.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable()
 
@@ -15,7 +16,8 @@ export class UserService {
   public user: User;
 
   constructor(private http: HttpService,
-              private storage: StorageService) {
+              private storage: StorageService,
+              private translate: TranslateService) {
     console.log('UserService');
     this.setGuest();
    }
@@ -72,15 +74,18 @@ export class UserService {
     this.user = user;
   }
 
-  public setGuest(): void {
-    if (!this.user) {
-      this.user = {
-        name: 'Guest',
-        email: 'Guest@AnticSpace.com',
-        account: 'Guest',
-        password: 'Guest'
-      };
-    }
+  public async setGuest(): Promise<void> {
+    return new Promise<void>(async (res, rej) => {
+      if (!this.user) {
+        this.user = {
+          name: await this.translate.get('guest.name').toPromise(),
+          email: await this.translate.get('guest.email').toPromise(),
+          account: 'Guest',
+          password: 'Guest'
+        };
+        if (this.user) { res(); }
+      }
+    });
   }
 
   public areYouOnline(): boolean {

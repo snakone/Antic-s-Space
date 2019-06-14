@@ -16,7 +16,7 @@ export class ArticleNextComponent implements OnInit {
   next: Article;
 
   constructor(private articleService: ArticleService,
-  private nav: NavController) { }
+              private nav: NavController) { }
 
   ngOnInit() {
     this.getNextPrev();
@@ -32,8 +32,8 @@ export class ArticleNextComponent implements OnInit {
     });
   }
 
-  goNext(id: string) {
-    this.nav.navigateForward('/article/' + id);
+  goNext(slug: string) {
+    this.nav.navigateForward('/article/' + slug);
   }
 
 }

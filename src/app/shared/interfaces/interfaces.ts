@@ -9,6 +9,7 @@ import { APP_CONSTANTS } from '../../app.config';
   created?: string;
   message?: string;
   comments?: number;
+  slug?: string;
   cover?: string;
   code?: Code[];
 }
