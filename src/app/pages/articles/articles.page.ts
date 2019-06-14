@@ -13,7 +13,6 @@ export class ArticlesPage implements OnInit {
 
   articles: Article[] = [];
   main: Article[] = [];
-  converted = false;
 
   constructor(private _article: ArticleService) { }
 
@@ -30,6 +29,18 @@ export class ArticlesPage implements OnInit {
           // this.removeMainArticles();
         }
     });
+  }
+
+  changeCategory(value: string): void {
+    if (value === 'All') {
+      this.getArticles();
+      return;
+    }
+
+    this._article.getArticlesByCategory(value)
+      .subscribe((res: ArticleResponse) => {
+        if (res.ok) { this.articles = res.articles; }
+      });
   }
 
   // private getMainArticles(articles: Article[]): void {

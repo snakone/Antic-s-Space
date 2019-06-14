@@ -74,15 +74,18 @@ export class UserService {
     this.user = user;
   }
 
-  public setGuest(): void {
-    if (!this.user) {
-      this.user = {
-        name: this.translate.instant('guest.name'),
-        email: this.translate.instant('guest.email'),
-        account: 'Guest',
-        password: 'Guest'
-      };
-    }
+  public async setGuest(): Promise<void> {
+    return new Promise<void>(async (res, rej) => {
+      if (!this.user) {
+        this.user = {
+          name: await this.translate.get('guest.name').toPromise(),
+          email: await this.translate.get('guest.email').toPromise(),
+          account: 'Guest',
+          password: 'Guest'
+        };
+        if (this.user) { res(); }
+      }
+    });
   }
 
   public areYouOnline(): boolean {

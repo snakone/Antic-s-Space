@@ -29,7 +29,7 @@ export class ArticleMakerComponent implements AfterViewInit, OnDestroy {
               private module: NgModuleRef<any>) {}
 
   ngAfterViewInit() {
-    const tmpID = this.route.snapshot.params.id;
+    const tmpID = this.route.snapshot.params.slug;
     if (tmpID) {
       this.routerOb = this.route.params.subscribe(() => {
         const tmpCmp = Component({

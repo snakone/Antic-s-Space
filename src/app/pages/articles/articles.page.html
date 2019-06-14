@@ -1,8 +1,13 @@
 <app-header></app-header>
 
 <ion-content>
-  <app-segments></app-segments>
+  <app-articles-search (search)="articles = $event"></app-articles-search>
+  <app-segments (category)="changeCategory($event)"></app-segments>
   <app-articles-slide *ngIf="articles.length > 0"
                       [articles]="articles">
   </app-articles-slide>
+  <div class="flex-box animated fadeIn"
+       *ngIf="articles.length === 0">
+    <h4>{{'articles.not.found' | translate}}</h4>
+  </div>
 </ion-content>

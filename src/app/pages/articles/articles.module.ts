@@ -5,11 +5,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ArticlesPage } from './articles.page';
+  import { ArticlesPage } from './articles.page';
 import { ComponentsModule } from '@app/shared/components/components.module';
 import { SegmentsComponent } from './components/segments/segments.component';
 import { ArticlesSlideComponent } from './components/articles-slide/articles-slide.component';
 import { SharedModule } from '@app/shared/shared.module';
+import { ArticlesSearchComponent } from './components/articles-search/articles-search.component';
 
 const routes: Routes = [
   {
@@ -30,7 +31,8 @@ const routes: Routes = [
   declarations: [
     ArticlesPage,
     SegmentsComponent,
-    ArticlesSlideComponent
+    ArticlesSlideComponent,
+    ArticlesSearchComponent
   ]
 })
 

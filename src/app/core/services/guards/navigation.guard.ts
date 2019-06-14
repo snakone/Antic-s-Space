@@ -19,6 +19,7 @@ export class NavigationGuard implements CanActivate {
     if (this.user.getUser() &&
         this.storage.getToken() ||
         this.user.areYouGuest()) { return true; }
+    console.log('blocked');
     return this.user.verifyToken()
       .then(async (res) => {
         if (!res) {

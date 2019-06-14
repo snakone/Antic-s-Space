@@ -1,4 +1,6 @@
-<ion-slides (ionSlideDidChange)="slideChange($event)">
+<ion-slides (ionSlideDidChange)="slideChange($event)"
+            [options]="sliderOpts"
+            pager="true">
   <ion-slide [style]="a.cover | sanitizer:'style'"
              *ngFor="let a of articles">
             <div class="content">

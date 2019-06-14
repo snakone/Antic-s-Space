@@ -21,8 +21,7 @@ export class LoginPage implements OnInit {
 
   constructor(private crafter: CrafterService) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   swipe(): void {
     this.slides.slideNext();

@@ -6,7 +6,7 @@
             *ngFor="let a of articles | paginate: { id: 'articles_pag',
                                                     itemsPerPage: itemsPerPage,
                                                     currentPage: page }"
-            (click)="goToArticle(a._id)">
+            (click)="goToArticle(a.slug)">
       <ion-col size="3">
         <img [src]="a.cover"/>
       </ion-col>

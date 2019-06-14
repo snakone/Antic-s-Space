@@ -2,7 +2,7 @@
   <ion-slide *ngFor="let article of articles"
              class="slide"
              [style]="article.cover | sanitizer:'style'"
-             (click)="goToArticle(article._id)">
+             (click)="goToArticle(article.slug)">
     <div class="content">
       <h5>{{(article.category | translate) | uppercase}}</h5>
       <p>{{article.title}}</p>

@@ -1,5 +1,6 @@
 ion-segment-button {
   color: var(--ion-color-light) !important;
+  --background-hover: var(--ion-color-dark) !important;
 }
 
 .segment-button-checked ion-icon {
@@ -21,7 +22,7 @@ ion-icon {
 }
 
 .segment::-webkit-scrollbar {
-  height: 8px;
+  height: 4px;
   display: block;
 }
 

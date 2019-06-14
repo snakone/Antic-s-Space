@@ -168,6 +168,25 @@ input:-webkit-autofill {
   -webkit-animation-fill-mode: both;
 }
 
+.swiper-pagination-bullet {
+  --bullet-background: var(--ion-color-dark-shade) !important;
+  width: 12px;
+  height: 12px;
+}
+
+.searchbar-clear-button.sc-ion-searchbar-ios {
+  right: 10px !important;
+}
+
+.searchbar-left-aligned.sc-ion-searchbar-ios-h
+.searchbar-input.sc-ion-searchbar-ios {
+  padding-inline-start: 40px !important;
+}
+
+.searchbar-left-aligned.sc-ion-searchbar-ios-h
+.searchbar-search-icon.sc-ion-searchbar-ios {
+  margin-inline-start: 10px !important;
+}
 
 
 

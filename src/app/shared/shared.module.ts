@@ -8,6 +8,7 @@ import { LanguageModule } from '@app/core/language/language.module';
 import { HighlightModule } from 'ngx-highlightjs';
 import { ThemeService } from './theme/theme.service';
 import { ErrorHandlerService } from '@core/error-handler/error-handler.service';
+import { DirectivesModule } from './directives/directives.module';
 
 @NgModule({
   declarations: [],
@@ -18,13 +19,15 @@ import { ErrorHandlerService } from '@core/error-handler/error-handler.service';
     TranslateModule,
     LanguageModule,
     HighlightModule,
+    DirectivesModule
   ],
   exports: [
     PipesModule,
     NativeModule,
     TranslateModule,
     LanguageModule,
-    HighlightModule
+    HighlightModule,
+    DirectivesModule
   ],
   providers: [
     ThemeService,

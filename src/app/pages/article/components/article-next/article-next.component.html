@@ -5,7 +5,7 @@
       < {{'previous.article' | translate}}
     </ion-item-divider>
     <ion-item lines="none"
-              (click)="goNext(prev._id)">
+              (click)="goNext(prev.slug)">
       <ion-label class="ion-text-wrap">
         {{prev.title}}
       </ion-label>
@@ -17,7 +17,7 @@
     </ion-item-divider>
     <ion-item lines="none"
               class="next"
-              (click)="goNext(next._id)">
+              (click)="goNext(next.slug)">
               <ion-label text-right class="ion-text-wrap">
                 {{next.title}}
               </ion-label>

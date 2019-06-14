@@ -16,7 +16,6 @@ import { NavController } from '@ionic/angular';
 export class ArticlePage implements OnInit {
 
   article: Article;
-  scrollbar = false;
 
   constructor(private route: ActivatedRoute,
               private _article: ArticleService,
@@ -28,13 +27,13 @@ export class ArticlePage implements OnInit {
 
   private getArticle() {
     this.route.params
-    .pipe(map((params: Params): string => params['id']),
-     switchMap((id: string) => this._article.getArticleById(id)))
-    .subscribe((res: ArticleResponse) => {
-      if (res.ok) {
-        this.article = res.article[0];
-        if (!this.article) { this.nav.navigateRoot('/home'); }
-      }
+    .pipe(map((params: Params): string => params['slug']),
+     switchMap((slug: string) => this._article.getArticleBySlug(slug)))
+      .subscribe((res: ArticleResponse) => {
+        if (res.ok) {
+          this.article = res.article[0];
+          if (!this.article) { this.nav.navigateRoot('/home'); }
+        }
     });
   }
 

@@ -18,7 +18,8 @@ export const mainSliderOpts = {
     767: { slidesPerView: 1.3 },
     625: { slidesPerView: 1.5 },
     535: { slidesPerView: 1 }
-  }
+  },
+  navigation: {}
 };
 
 export const smallSliderOpts = {
@@ -36,6 +37,14 @@ export const smallSliderOpts = {
   }
 };
 
+export const articleSliderOpts = {
+  slidesPerView: 1,
+  pagination: {
+    el: '.swiper-pagination',
+    dynamicBullets: true,
+  }
+};
+
 // CATEGORIES
 export const CATEGORIES: Category[] = [
   { name: 'All', icon: 'apps' },
@@ -50,7 +59,8 @@ export const CATEGORIES: Category[] = [
 
 export const TENDENCIES: string[] = [
   'avoid.smart',
-  'kill.theory'
+  'kill.theory',
+  'good.bad'
 ];
 
 // SOCIAL ICONS
@@ -78,8 +88,8 @@ export const MAIN: string[] = [
 
 // SECONDARY ARTICLES
 export const SECONDARY: string[] = [
-  '5cfc7c3b4146ce00171f078b',
-  '5cfd4d66b3a8850017b65263'
+  '5cfd4d66b3a8850017b65263',
+  '5cfc7c3b4146ce00171f078b'
 ];
 
 // COLORS
