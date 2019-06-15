@@ -11,7 +11,6 @@ import { Router } from '@angular/router';
 
 export class ArticleRelatedComponent implements OnInit {
 
-  @Input() category: string;
   @Input() article: Article;
   relateds: Article[] = [];
 
@@ -23,13 +22,15 @@ export class ArticleRelatedComponent implements OnInit {
   }
 
   private getRelatedArticles(): void {
-    this.articleService.getArticlesByCategory(this.category)
+    this.articleService.getArticlesByCategory(this.article.category)
       .subscribe((res: ArticleResponse) => {
-        res.articles.map((x: Article) => {
-          if (x._id !== this.article._id) {
-            this.relateds.push(x);
-          }
-        });
+        if (res.ok) {
+          res.articles.map((x: Article) => {
+            if (x._id !== this.article._id) {
+              this.relateds.push(x);
+            }
+          });
+        }
     });
   }
 

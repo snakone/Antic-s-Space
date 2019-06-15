@@ -8,12 +8,12 @@ import { HistoryResponse } from '@app/shared/interfaces/interfaces';
 
 export class HistoryService {
 
-  readonly API_ARTICLES = APP_CONSTANTS.END_POINT + 'history';
+  readonly API_HISTORY = APP_CONSTANTS.END_POINT + 'history';
 
   constructor(private http: HttpService) { }
 
   public getHistoryByUser(id: string): Observable<HistoryResponse> {
-    return this.http.get(this.API_ARTICLES + '/' + id);
+    return this.http.get(this.API_HISTORY + '/' + id);
   }
 
 }

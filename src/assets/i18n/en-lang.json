@@ -8,7 +8,9 @@
   "with": "with",
   "all.rights": "All Rights Reserved",
   "follow.me": "Follow me",
+  "user.account" : "Account",
   "your.comment": "Your Comment",
+  "create.an": "Create an",
   "leave.comment": "Leave your comment",
   "account.type": "Account Type",
   "visit.your": "Visit your",
@@ -87,5 +89,7 @@
   "guest.name": "Guest",
   "guest.email": "Guest@AnticSpace.com",
   "search.article": "Search for Articles...",
-  "articles.not.found": "No Articles found"
+  "articles.not.found": "No Articles found",
+  "theme.changed": "Theme changed!",
+  "continue.article":"Continue reading this Article..."
 }

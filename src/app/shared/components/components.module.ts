@@ -18,6 +18,7 @@ import { ColorSelectorComponent } from './color-selector/color-selector.componen
 import { FormsModule } from '@angular/forms';
 import { MainSliderComponent } from './main-slider/main-slider.component';
 import { SmallSliderComponent } from './small-slider/small-slider.component';
+import { ArticleMakerComponent } from './article-maker/article-maker.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { SmallSliderComponent } from './small-slider/small-slider.component';
     HelpComponent,
     ColorSelectorComponent,
     MainSliderComponent,
-    SmallSliderComponent
+    SmallSliderComponent,
+    ArticleMakerComponent
   ],
   imports: [
     CommonModule,
@@ -54,7 +56,8 @@ import { SmallSliderComponent } from './small-slider/small-slider.component';
     HelpComponent,
     ColorSelectorComponent,
     MainSliderComponent,
-    SmallSliderComponent
+    SmallSliderComponent,
+    ArticleMakerComponent
   ],
   entryComponents: [
     HelpComponent,

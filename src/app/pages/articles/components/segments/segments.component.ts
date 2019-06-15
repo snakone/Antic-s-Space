@@ -16,8 +16,14 @@ export class SegmentsComponent implements OnInit {
 
   ngOnInit() {}
 
-  segmentChanged(event: any) {
+  segmentChanged(event: any): void {
     this.category.emit(event.detail.value);
+  }
+
+  getArticles(value: string): void {
+    if (value === 'All') {
+      this.category.emit('All');
+    } else { return; }
   }
 
 }

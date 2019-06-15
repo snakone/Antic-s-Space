@@ -23,7 +23,7 @@ export class ColorSelectorComponent implements OnInit {
     this.themeService.removeBodyClass(theme);
     this.themeService.setTheme(color);
     this.themeService.addBodyClass(color);
-    this.crafter.alert('Theme changed!');
+    this.crafter.alert('theme.changed');
     this.crafter.close();
   }
 

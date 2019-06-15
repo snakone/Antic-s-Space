@@ -17,7 +17,6 @@ declare var ClipboardJS: any;
 
 export class ArticleMakerComponent implements AfterViewInit, OnDestroy {
 
-  public content = '';
   @Input() article: Article;
   @ViewChild('vc', { read: ViewContainerRef }) vc: ViewContainerRef;
   routerOb: Subscription = null;
@@ -29,8 +28,6 @@ export class ArticleMakerComponent implements AfterViewInit, OnDestroy {
               private module: NgModuleRef<any>) {}
 
   ngAfterViewInit() {
-    const tmpID = this.route.snapshot.params.slug;
-    if (tmpID) {
       this.routerOb = this.route.params.subscribe(() => {
         const tmpCmp = Component({
           template: this.article.message,
@@ -51,7 +48,7 @@ export class ArticleMakerComponent implements AfterViewInit, OnDestroy {
             RouterModule,
             IonicModule,
             CommonModule
-          ]
+          ],
         })(class {});
         this.compiler.compileModuleAndAllComponentsAsync(tmpModule)
           .then((factories) => {
@@ -64,7 +61,6 @@ export class ArticleMakerComponent implements AfterViewInit, OnDestroy {
             this.vc.insert(cmpRef.hostView);
           });
         });
-    }
   }
 
   ngOnDestroy() {

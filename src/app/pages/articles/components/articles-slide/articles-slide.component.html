@@ -2,7 +2,8 @@
             [options]="sliderOpts"
             pager="true">
   <ion-slide [style]="a.cover | sanitizer:'style'"
-             *ngFor="let a of articles">
+             *ngFor="let a of articles"
+             (click)="goToArticle(a.slug)">
             <div class="content">
             <h5>{{(a.category | translate) | uppercase}}</h5>
             <p>{{a.title}}</p>

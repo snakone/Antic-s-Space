@@ -17,7 +17,8 @@
         </ion-menu-toggle>
       </p>
       <p *ngIf="_user.user.account == 'Guest'">
-        <span class="bold" (click)="exit()">{{'exit' | translate}}</span>
+        {{'create.an' | translate}}
+        <span class="bold" (click)="exit()">{{'user.account' | translate}}</span>
       </p>
     </ion-label>
   </ion-item>

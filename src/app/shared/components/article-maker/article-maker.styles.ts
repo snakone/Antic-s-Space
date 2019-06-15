@@ -121,6 +121,10 @@ export const ARTICLE_STYLES = `
     margin-top: 15px;
   }
 
+  .mt-20 {
+    margin-top: 20px;
+  }
+
   .mb-25 {
     margin-bottom: 25px;
   }
@@ -130,6 +134,19 @@ export const ARTICLE_STYLES = `
     margin: 10px auto;
     margin-bottom: 20px;
     max-width: 100%;
+  }
+
+  @media (max-width: 5
+    50px) {
+    iframe {
+      height: 235px !important;
+    }
+  }
+
+  @media (min-width: 767px) and (max-width: 900px) {
+    iframe {
+      height: 235px !important;
+    }
   }
 
   .center {
@@ -142,12 +159,13 @@ export const ARTICLE_STYLES = `
   }
 
   .youtube-icon {
-    width: 60px;
+    width: 40px;
+    height: 47px;
     padding: 3px 0;
   }
 
   .yt-btn {
-    height: 80px;
+    height: 56px;
   }
 
   ol {

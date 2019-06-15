@@ -51,7 +51,7 @@ export class FaceReactionComponent implements OnInit, OnDestroy {
 
   private makeCounter(reactions: Reaction[]): void {
     this.counter = new Counter();
-    reactions.forEach(x => {
+    reactions.forEach((x: Reaction) => {
       switch (x.reaction) {
         case 'Love': this.counter.love++; break;
         case 'Laugh': this.counter.laugh++; break;

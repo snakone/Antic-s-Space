@@ -6,6 +6,18 @@ ion-content {
  display: flex;
  align-items: center;
  justify-content: center;
- height: 250px;
+ height: 65%;
  width: 100%;
+}
+
+.article {
+  padding: 16px;
+}
+
+.spinner {
+  height: 394px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
 }

@@ -11,6 +11,8 @@
   "your.comment": "Tu Comentario",
   "leave.comment": "Deja tu Comentario",
   "account.type": "Tipo de Cuenta",
+  "user.account" : "Cuenta",
+  "create.an": "Crea una",
   "visit.your": "Visita tu",
   "profile": "Perfil",
   "select.avatar": "Selecciona un Avatar",
@@ -87,5 +89,7 @@
   "guest.name": "Invitado/a",
   "guest.email": "Email@AnticSpace.com",
   "search.article": "¿Buscas algún Artículo?",
-  "articles.not.found": "No se han encontrado Artículos"
+  "articles.not.found": "No se han encontrado Artículos",
+  "theme.changed": "¡Tema cambiado!",
+  "continue.article":"Continúa leyendo este Artículo..."
 }

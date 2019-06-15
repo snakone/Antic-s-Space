@@ -1,13 +1,23 @@
 <app-header></app-header>
 
 <ion-content>
-  <app-articles-search (search)="articles = $event"></app-articles-search>
+  <app-articles-search (search)="searchArticle($event)"></app-articles-search>
   <app-segments (category)="changeCategory($event)"></app-segments>
   <app-articles-slide *ngIf="articles.length > 0"
-                      [articles]="articles">
+                      [articles]="articles"
+                      (slideChanged)="slideChanged($event)">
   </app-articles-slide>
+  <div class="article">
+    <app-article-maker *ngIf="articles.length > 0 && !loading"
+                        [article]="articles[i]">
+    </app-article-maker>
+  </div>
+
   <div class="flex-box animated fadeIn"
-       *ngIf="articles.length === 0">
-    <h4>{{'articles.not.found' | translate}}</h4>
+       *ngIf="articles.length === 0  && !loading">
+    <h5>{{'articles.not.found' | translate}}</h5>
+  </div>
+  <div class="spinner" *ngIf="loading">
+    <ion-spinner name="lines" color="primary"></ion-spinner>
   </div>
 </ion-content>

@@ -64,8 +64,7 @@ export class CrafterService {
   }
 
   private translateMessage(msg: string): string {
-    const message = this.translate.instant(msg);
-    return message;
+    return this.translate.instant(msg);
   }
 
 }

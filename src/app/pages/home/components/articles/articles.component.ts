@@ -22,7 +22,7 @@ export class ArticlesComponent implements OnInit {
   }
 
   goToArticle(slug: string): void {
-    this.nav.navigateForward('/article/' + slug);
+    this.nav.navigateRoot('/article/' + slug);
   }
 
   swipe(event: any): void {

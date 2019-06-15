@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { StorageService } from '@app/core/storage/storage.service';
 import { HttpService } from '../http/http.service';
 import { TranslateService } from '@ngx-translate/core';
+import { map } from 'rxjs/operators';
 
 @Injectable()
 
@@ -44,18 +45,16 @@ export class UserService {
               resolve();
             }
         });
-      } else {
-        rej();
-      }
+      } else { rej(); }
     });
   }
 
   public getUserById(id: string): Observable<UserResponse> {
-    return this.http.get(this.API_USERS + `/${id}`);
+    return this.http.get(this.API_USERS + '/' + id);
   }
 
   public getUserInfoById(id: string): Observable<UserInfoResponse> {
-    return this.http.get(this.API_USERS + `/info/${id}`);
+    return this.http.get(this.API_USERS + '/info/' + id);
   }
 
   public updateUser(user: User): Observable<UserResponse> {
@@ -67,7 +66,11 @@ export class UserService {
       this.loadUser();
       return;
     }
-    return this.http.post(this.API_TOKEN, this.user);
+    return this.http.post(this.API_TOKEN, this.user)
+      .pipe(map((res: UserResponse) => {
+        if (res.ok) { this.setUser(res.user); }
+        return res;
+    }));
   }
 
   public setUser(user: User): void {
@@ -84,7 +87,7 @@ export class UserService {
           password: 'Guest'
         };
         if (this.user) { res(); }
-      }
+      } else { rej('Already an User'); }
     });
   }
 

@@ -8,11 +8,11 @@ import { CrafterService } from '@shared/crafter/crafter.service';
 
 @Component({
   selector: 'app-article-share',
-  templateUrl: './share.component.html',
-  styleUrls: ['./share.component.scss'],
+  templateUrl: './article-share.component.html',
+  styleUrls: ['./article-share.component.scss'],
 })
 
-export class ShareComponent implements OnInit {
+export class ArticleShareComponent implements OnInit {
 
   @Input() article: Article;
   icons = SHARE;
