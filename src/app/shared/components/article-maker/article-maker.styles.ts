@@ -59,8 +59,16 @@ export const ARTICLE_STYLES = `
     margin: 10px auto;
   }
 
+  img {
+    display: block;
+    margin: auto;
+  }
+
   .image {
-    margin: 15px auto;
+    max-width: 100%;
+    display: block;
+    margin: 20px auto;
+    border-radius: 4px;
   }
 
   .favorites {
@@ -99,8 +107,24 @@ export const ARTICLE_STYLES = `
 
   ion-item-divider {
     border-bottom: 0;
-    font-size: 1em;
-    margin: 25px auto 10px -15px;
+    font-size: 1.15em;
+    margin: 30px auto 15px -15px;
+  }
+
+  @media (max-width: 600px) {
+    ion-item-divider {
+      font-size: 1em;
+    }
+  }
+
+  ion-item-divider:before {
+    content: "";
+    background-image: url('https://image.flaticon.com/icons/svg/60/60758.svg');
+    display: inline-block;
+    margin-right: 10px;
+    width: 15px;
+    height: 15px;
+    background-size: 100% 100%;
   }
 
   .copied {
@@ -113,10 +137,6 @@ export const ARTICLE_STYLES = `
     color: var(--ion-color-success);
   }
 
-  .divider {
-    margin-top: 23px !important;
-  }
-
   .mt-15 {
     margin-top: 15px;
   }
@@ -125,8 +145,24 @@ export const ARTICLE_STYLES = `
     margin-top: 20px;
   }
 
+  .mt-25 {
+    margin-top: 25px;
+  }
+
+  .m-20 {
+    margin: 20px auto;
+  }
+
+  .mb-20 {
+    margin-bottom: 20px;
+  }
+
   .mb-25 {
     margin-bottom: 25px;
+  }
+
+  .mb-35 {
+    margin-bottom: 35px;
   }
 
   iframe {

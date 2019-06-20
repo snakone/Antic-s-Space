@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ArticleService } from '@app/core/services/article/article.service';
 import { ArticleResponse, Article } from '@app/shared/interfaces/interfaces';
 import { MAIN, SECONDARY } from '@app/shared/shared.data';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-home',
@@ -9,13 +11,14 @@ import { MAIN, SECONDARY } from '@app/shared/shared.data';
   styleUrls: ['home.page.scss'],
 })
 
-export class HomePage implements OnInit {
+export class HomePage implements OnInit, OnDestroy {
 
   articles: Article[] = [];
   latest: Article;
   main: Article[] = [];
   secondary: Article[] = [];
   refresh = true;
+  private unsubscribe$ = new Subject<void>();
 
   constructor(private _article: ArticleService) {}
 
@@ -23,9 +26,15 @@ export class HomePage implements OnInit {
     this.getArticles();
   }
 
+  ngOnDestroy(): void {
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
+  }
+
   private getArticles(): void {
     this.articles = [];
     this._article.getArticles()
+      .pipe(takeUntil(this.unsubscribe$))
       .subscribe((res: ArticleResponse) => {
         if (res.ok) {
           this.getMainArticles(res.articles);

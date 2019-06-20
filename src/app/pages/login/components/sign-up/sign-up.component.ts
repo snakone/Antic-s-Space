@@ -1,11 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { User, UserResponse } from '@app/shared/interfaces/interfaces';
 import { AuthService, StorageService } from '@app/core/services/services.index';
 import { CrafterService } from '@app/shared/crafter/crafter.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { NavController } from '@ionic/angular';
-import { UserService } from '../../../../core/services/user/user.service';
+import { UserService } from '@core/services/user/user.service';
+import { takeUntil } from 'rxjs/operators';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-sign-up',
@@ -13,12 +15,13 @@ import { UserService } from '../../../../core/services/user/user.service';
   styleUrls: ['./sign-up.component.scss'],
 })
 
-export class SignUpComponent implements OnInit {
+export class SignUpComponent implements OnInit, OnDestroy {
 
   signUpForm: FormGroup;
   namePattern = '^[A-Za-z0-9 _]*[A-Za-z0-9][A-Za-z0-9 _]*$';
   matchError = false;
   avatar: string;
+  private unsubscribe$ = new Subject<void>();
 
   constructor(private auth: AuthService,
               private storage: StorageService,
@@ -26,8 +29,13 @@ export class SignUpComponent implements OnInit {
               private craft: CrafterService,
               private _user: UserService) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.createSignUpForm();
+  }
+
+  ngOnDestroy(): void {
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
   }
 
   private createSignUpForm(): void {
@@ -56,6 +64,7 @@ export class SignUpComponent implements OnInit {
 
   private signUp(user: User): void {
     this.auth.signUp(user)
+      .pipe(takeUntil(this.unsubscribe$))
       .subscribe(async (res: UserResponse) => {
         if (res.ok) {
           this._user.setUser(res.user);

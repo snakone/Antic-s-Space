@@ -7,6 +7,8 @@ import { UserService } from '@app/core/services/services.index';
 import { StorageService } from '@core/storage/storage.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { CrafterService } from '@shared/crafter/crafter.service';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-sign-in',
@@ -20,6 +22,7 @@ export class SignInComponent implements OnInit, OnDestroy {
   signInForm: FormGroup;
   remember = false;
   user: User;
+  private unsubscribe$ = new Subject<void>();
 
   constructor(private nav: NavController,
               private _user: UserService,
@@ -33,6 +36,12 @@ export class SignInComponent implements OnInit, OnDestroy {
     this.getUser();
     this.createSignUpForm();
     this.rememberMe();
+  }
+
+  ngOnDestroy(): void {
+    this.disableMenu(false);
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
   }
 
   private createSignUpForm(): void {
@@ -66,6 +75,7 @@ export class SignInComponent implements OnInit, OnDestroy {
 
   private signIn(e: string, p: string): void {
     this.auth.signIn(e, p)
+      .pipe(takeUntil(this.unsubscribe$))
       .subscribe(async (res: UserResponse) => {
         if (res.ok) {
           this._user.setUser(res.user);
@@ -98,6 +108,7 @@ export class SignInComponent implements OnInit, OnDestroy {
   private rememberMe(): void {
     if (this.storage.getRemember() && this.storage.getId()) {
       this._user.getUserById(this.storage.getId())
+        .pipe(takeUntil(this.unsubscribe$))
         .subscribe((res: UserResponse) => {
           this.remember = true;
           this.user = res.user;
@@ -106,10 +117,6 @@ export class SignInComponent implements OnInit, OnDestroy {
             console.log(err);
         });
     }
-  }
-
-  ngOnDestroy(): void {
-    this.disableMenu(false);
   }
 
 }

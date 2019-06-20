@@ -89,7 +89,8 @@ export const MAIN: string[] = [
 // SECONDARY ARTICLES
 export const SECONDARY: string[] = [
   '5cfd4d66b3a8850017b65263',
-  '5cfc7c3b4146ce00171f078b'
+  '5cfc7c3b4146ce00171f078b',
+  '5d0565716073e800177af37e'
 ];
 
 // COLORS

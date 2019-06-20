@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ArticleService } from '@app/core/services/article/article.service';
 import { ArticleResponse, Article } from '@app/shared/interfaces/interfaces';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-articles',
@@ -8,12 +10,13 @@ import { ArticleResponse, Article } from '@app/shared/interfaces/interfaces';
   styleUrls: ['./articles.page.scss'],
 })
 
-export class ArticlesPage implements OnInit {
+export class ArticlesPage implements OnInit, OnDestroy {
 
   articles: Article[] = [];
   main: Article[] = [];
   loading: boolean;
   i = 0;
+  private unsubscribe$ = new Subject<void>();
 
   constructor(private _article: ArticleService) { }
 
@@ -21,9 +24,15 @@ export class ArticlesPage implements OnInit {
     this.getArticles();
   }
 
+  ngOnDestroy(): void {
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
+  }
+
   private getArticles(): void {
     this.loading = true;
     this._article.getArticles()
+      .pipe(takeUntil(this.unsubscribe$))
       .subscribe((res: ArticleResponse) => {
         if (res.ok) {
           this.articles = res.articles;
@@ -47,6 +56,7 @@ export class ArticlesPage implements OnInit {
     }
 
     this._article.getArticlesByCategory(value)
+      .pipe(takeUntil(this.unsubscribe$))
       .subscribe((res: ArticleResponse) => {
         if (res.ok) {
           this.articles = res.articles;

@@ -91,5 +91,6 @@
   "search.article": "¿Buscas algún Artículo?",
   "articles.not.found": "No se han encontrado Artículos",
   "theme.changed": "¡Tema cambiado!",
-  "continue.article":"Continúa leyendo este Artículo..."
+  "continue.article":"Continúa leyendo este Artículo...",
+  "code.copy": "¡Copiado!"
 }

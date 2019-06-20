@@ -1,10 +1,11 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { ArticleService } from '@core/services/article/article.service';
 import { Article } from '@app/shared/interfaces/interfaces';
-import { switchMap, map } from 'rxjs/operators';
+import { switchMap, map, takeUntil } from 'rxjs/operators';
 import { ArticleResponse } from '@shared/interfaces/interfaces';
 import { NavController } from '@ionic/angular';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-article',
@@ -13,9 +14,10 @@ import { NavController } from '@ionic/angular';
   encapsulation: ViewEncapsulation.None
 })
 
-export class ArticlePage implements OnInit {
+export class ArticlePage implements OnInit, OnDestroy {
 
   article: Article;
+  private unsubscribe$ = new Subject<void>();
 
   constructor(private route: ActivatedRoute,
               private _article: ArticleService,
@@ -25,10 +27,16 @@ export class ArticlePage implements OnInit {
     this.getArticle();
   }
 
+  ngOnDestroy(): void {
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
+  }
+
   private getArticle() {
     this.route.params
     .pipe(map((params: Params): string => params['slug']),
-     switchMap((slug: string) => this._article.getArticleBySlug(slug)))
+      switchMap((slug: string) => this._article.getArticleBySlug(slug)),
+      takeUntil(this.unsubscribe$))
       .subscribe((res: ArticleResponse) => {
         if (res.ok) {
           this.article = res.article[0];

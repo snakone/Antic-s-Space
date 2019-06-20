@@ -91,5 +91,6 @@
   "search.article": "Search for Articles...",
   "articles.not.found": "No Articles found",
   "theme.changed": "Theme changed!",
-  "continue.article":"Continue reading this Article..."
+  "continue.article":"Continue reading this Article...",
+  "code.copy": "Copied!"
 }
