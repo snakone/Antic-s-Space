@@ -1,5 +1,6 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, ViewChild } from '@angular/core';
 import { CATEGORIES } from '@shared/shared.data';
+import { IonSegment } from '@ionic/angular';
 
 @Component({
   selector: 'app-segments',
@@ -11,6 +12,7 @@ export class SegmentsComponent implements OnInit {
 
   categories = CATEGORIES;
   @Output() category: EventEmitter<string> = new EventEmitter<string>();
+  @ViewChild(IonSegment) ionSegment: IonSegment;
 
   constructor() { }
 

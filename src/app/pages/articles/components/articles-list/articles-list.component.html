@@ -1,0 +1,19 @@
+<ion-list id="categories"
+          class="animated fadeIn fast"
+          (swipe)="swipe($event)">
+  <ion-item *ngFor="let a of articles | paginate: { id: 'category_slide',
+                                                    itemsPerPage: itemsPerPage,
+                                                    currentPage: page }"
+             detail
+            (click)="goToArticle(a)">
+    <ion-label>
+      <span>{{a.title}}</span>
+      <div>
+        <h5>{{a.category}}</h5>
+        <p>{{a.created}}</p>
+      </div>
+    </ion-label>
+  </ion-item>
+</ion-list>
+
+<app-pagination (index)="changeFrom($event)" id="category_slide"></app-pagination>

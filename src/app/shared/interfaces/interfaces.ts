@@ -93,6 +93,11 @@ export interface Category {
   icon: string;
 }
 
+export interface CategorySlide {
+  category: string;
+  image: string;
+}
+
 export interface History {
   title: string;
   created?: string;

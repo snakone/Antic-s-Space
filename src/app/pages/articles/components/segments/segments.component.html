@@ -10,7 +10,7 @@
                       (click)="getArticles(c.name)">
       <ion-item lines="none">
         <ion-icon [name]="c.icon" slot="start"></ion-icon>
-        <ion-label text-capitalize>{{c.name}}</ion-label>
+        <ion-label text-capitalize>{{c.name | translate}}</ion-label>
       </ion-item>
   </ion-segment-button>
 </ion-segment>

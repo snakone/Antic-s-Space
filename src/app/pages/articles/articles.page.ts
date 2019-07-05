@@ -15,7 +15,6 @@ export class ArticlesPage implements OnInit, OnDestroy {
   articles: Article[] = [];
   main: Article[] = [];
   loading: boolean;
-  i = 0;
   private unsubscribe$ = new Subject<void>();
 
   constructor(private _article: ArticleService) { }
@@ -44,7 +43,6 @@ export class ArticlesPage implements OnInit, OnDestroy {
   searchArticle(articles: Article[]): void {
     this.loading = true;
     this.articles = articles;
-    this.i = 0;
     this.loader();
   }
 
@@ -60,15 +58,14 @@ export class ArticlesPage implements OnInit, OnDestroy {
       .subscribe((res: ArticleResponse) => {
         if (res.ok) {
           this.articles = res.articles;
-          this.i = 0;
           this.loader();
         }
       });
   }
 
-  slideChanged(index: number): void {
+  slideChanged(category: string): void {
     this.loading = true;
-    this.i = index;
+    this.changeCategory(category);
     this.loader();
   }
 

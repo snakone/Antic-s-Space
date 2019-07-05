@@ -11,6 +11,8 @@ import { SegmentsComponent } from './components/segments/segments.component';
 import { ArticlesSlideComponent } from './components/articles-slide/articles-slide.component';
 import { SharedModule } from '@app/shared/shared.module';
 import { ArticlesSearchComponent } from './components/articles-search/articles-search.component';
+import { ArticlesListComponent } from './components/articles-list/articles-list.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 const routes: Routes = [
   {
@@ -26,13 +28,15 @@ const routes: Routes = [
     IonicModule,
     ComponentsModule,
     SharedModule,
+    NgxPaginationModule,
     RouterModule.forChild(routes)
   ],
   declarations: [
     ArticlesPage,
     SegmentsComponent,
     ArticlesSlideComponent,
-    ArticlesSearchComponent
+    ArticlesSearchComponent,
+    ArticlesListComponent
   ]
 })
 

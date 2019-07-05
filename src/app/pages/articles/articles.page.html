@@ -3,14 +3,12 @@
 <ion-content>
   <app-articles-search (search)="searchArticle($event)"></app-articles-search>
   <app-segments (category)="changeCategory($event)"></app-segments>
-  <app-articles-slide *ngIf="articles.length > 0"
-                      [articles]="articles"
-                      (slideChanged)="slideChanged($event)">
+  <app-articles-slide (slideChanged)="slideChanged($event)">
   </app-articles-slide>
   <div class="article">
-    <app-article-maker *ngIf="articles.length > 0 && !loading"
-                        [article]="articles[i]">
-    </app-article-maker>
+    <app-articles-list *ngIf="articles.length > 0 && !loading"
+                        [articles]="articles">
+    </app-articles-list>
   </div>
 
   <div class="flex-box animated fadeIn"

@@ -14,6 +14,7 @@ ion-slide {
 ion-slides {
   max-width: 100%;
   margin: 0 auto;
+  --bullet-background: var(--ion-color-light);
 }
 
 .swiper-slide {

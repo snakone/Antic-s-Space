@@ -1,12 +1,10 @@
 <ion-slides (ionSlideDidChange)="slideChange($event)"
             [options]="sliderOpts"
             pager="true">
-  <ion-slide [style]="a.cover | sanitizer:'style'"
-             *ngFor="let a of articles"
-             (click)="goToArticle(a.slug)">
+  <ion-slide [style]="c.image | sanitizer:'style'"
+             *ngFor="let c of categories">
             <div class="content">
-            <h5>{{(a.category | translate) | uppercase}}</h5>
-            <p>{{a.title}}</p>
+            <h5>{{(c.category | translate) | uppercase}}</h5>
           </div>
   </ion-slide>
 </ion-slides>

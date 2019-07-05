@@ -1,15 +1,14 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Router } from '@angular/router';
 import { Article } from '@app/shared/interfaces/interfaces';
 import { NavController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-articles',
-  templateUrl: './articles.component.html',
-  styleUrls: ['./articles.component.scss'],
+  selector: 'app-articles-list',
+  templateUrl: './articles-list.component.html',
+  styleUrls: ['./articles-list.component.scss'],
 })
 
-export class ArticlesComponent implements OnInit {
+export class ArticlesListComponent implements OnInit {
 
   @Input() articles: Article[];
   page = 1;
@@ -17,12 +16,10 @@ export class ArticlesComponent implements OnInit {
 
   constructor(private nav: NavController) { }
 
-  ngOnInit() {
-    this.articles.shift();
-  }
+  ngOnInit() {}
 
-  goToArticle(slug: string): void {
-    this.nav.navigateRoot('/article/' + slug);
+  goToArticle(article: Article): void {
+    this.nav.navigateRoot('article/' + article.slug);
   }
 
   swipe(event: any): void {
@@ -37,23 +34,23 @@ export class ArticlesComponent implements OnInit {
   }
 
   changeFrom(value: number): void {
-    const rows = document.getElementById('articles').classList;
+    const rows = document.getElementById('categories').classList;
     if (value - this.page >= 1) {
         rows.add('slideOutLeft');
         rows.remove('slideInRight', 'slideInLeft');
         setTimeout(() => {
           rows.remove('slideOutLeft');
           rows.add('slideInRight');
-        }, 400);
+        }, 500);
     } else if (value - this.page <= -1) {
         rows.add('slideOutRight');
         rows.remove('slideInRight', 'slideInLeft');
         setTimeout(() => {
           rows.remove('slideOutRight');
           rows.add('slideInLeft');
-        }, 400);
+        }, 500);
     }
-    setTimeout(() => { this.page = value; }, 400);
+    setTimeout(() => { this.page = value; }, 500);
   }
 
 }

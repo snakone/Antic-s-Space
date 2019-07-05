@@ -1,4 +1,4 @@
-import { Item, Share, Emoji, Color, Category } from './interfaces/interfaces';
+import { Item, Share, Emoji, Color, Category, CategorySlide } from './interfaces/interfaces';
 
 // MENU
 export const MENU: Item[] = [
@@ -104,4 +104,37 @@ export const COLORS: Color[] = [
   { name: 'yellow', color: '#ffd300' },
   { name: 'violet', color: '#7044ff' },
 ];
+
+// CATEGORY SLIDES
+export const CATEGORYSLIDES: CategorySlide[] = [
+  {
+    category: 'All',
+    image: 'https://drive.google.com/uc?export=download&id=1lInno_NonfB7qqT_ucBtZSB5BIGyduuz'
+  },
+  {
+    category: 'Code',
+    image: 'https://drive.google.com/uc?export=download&id=1G4qACUCm_4b-jItkJ_SWhqDxT3feGQkp'
+  },
+  {
+    category: 'Video',
+    image: 'https://drive.google.com/uc?export=download&id=1NUzxriqBQXqcZxXp-IXFOvlhna48VF4h'
+  }
+  ,  {
+    category: 'Lifestyle',
+    image: 'https://drive.google.com/uc?export=download&id=1FCPET70CKsxqAJ3Saw5pGXFyk6bIk0W8'
+  }
+  ,  {
+    category: 'Interview',
+    image: 'https://drive.google.com/uc?export=download&id=1eRxGUg7kSbH_KDI1-qhFPogqTfTxJc28'
+  }
+  ,  {
+    category: 'Review',
+    image: 'https://drive.google.com/uc?export=download&id=1UNivOKSuWdY1VjI0B1iYHYCDRPhISS__'
+  }
+  ,  {
+    category: 'Antic',
+    image: 'https://drive.google.com/uc?export=download&id=1fF0JlfC6fhklfOjehhyF7Dl2kjxgVxtN'
+  }
+];
+
 
